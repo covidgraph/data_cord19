@@ -1,0 +1,341 @@
+{
+    "paper_id": "0a3d78fb4b228cdc20e48fcc96f9da3f92ce1207",
+    "metadata": {
+        "title": "SARS-CoV Sampling from 3 Portals",
+        "authors": [
+            {
+                "first": "Tommy",
+                "middle": [
+                    "R"
+                ],
+                "last": "Tong",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "Princess Margaret Hospital",
+                    "location": {
+                        "addrLine": "Room P-725, Block P, 7/F",
+                        "settlement": "Kowloon, Hong Kong"
+                    }
+                },
+                "email": "tommytong@yahoo.com"
+            }
+        ]
+    },
+    "abstract": [],
+    "body_text": [
+        {
+            "text": "To the Editor: Wang et al. detected severe acute respiratory syndrome-associated coronavirus (SARS-CoV) from throat wash and saliva specimens and suggested that these specimens have advantages over other specimens, including ease of procurement and safety for medical personnel (1) . The virus has been detected with variable success from nasopharyngeal aspirates, nose and throat swabs, and tears (2, 3) . Advocates of all of these sampling methods emphasize the need for early diagnosis of SARS. The probability for nosocomial transmission to healthcare workers when they obtain specimens from patients has not been adequately addressed. In a study of outbreak control for SARS, Chowell et al. suggest \"\u2026 the strong sensitivity of R 0 to the transmission rate \u03b2 indicates that efforts in finding intervention strategies that manage to systematically lower the contact rate of persons of all age groups promise an effective means for lowering R 0 \" (4).",
+            "cite_spans": [
+                {
+                    "start": 278,
+                    "end": 281,
+                    "text": "(1)",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 398,
+                    "end": 401,
+                    "text": "(2,",
+                    "ref_id": null
+                },
+                {
+                    "start": 402,
+                    "end": 404,
+                    "text": "3)",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "An important component of a comprehensive strategy to lower the contact rate is improving the safety measures recommended for clinical specimen collection by healthcare workers. Recognizing the importance of obtaining multiple specimens and the difficulties associated with obtaining samples from the 3 usual portals of entry, we devised and tested a novel method of specimen collection, conjunctiva-upper respiratory tract irrigation (5) . We coupled our specimen collection method with detailed written instructions to enable the patients themselves to perform the entire procedures. Almost all other specimen collection methods require assistance from healthcare workers or have other limitations, such as inabil-ity to sample all 3 portals. The method is not perfect because some persons have difficulty performing the procedure; however, self-instillation of the irrigation into the nostrils, with or without the addition of a throat wash or saliva, is likely to improve the success rate. The data supplied by Loon et al. (3) and Wang et al. (1) confirm that collecting specimens by a method that involves minimal contact between a possible source of infection and susceptible persons is desirable.",
+            "cite_spans": [
+                {
+                    "start": 435,
+                    "end": 438,
+                    "text": "(5)",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 1047,
+                    "end": 1050,
+                    "text": "(1)",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "The author has shares of a company that owns a patent-pending conjunctivaupper respiratory tract irrigation system.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "To the Editor: Severe acute respiratory syndrome (SARS), an occupational disease risk for healthcare workers, warrants an occupational health response, as clearly described by Esswein et al. (1) . Occupational health professionals played a role in the assessment of healthcare facilities in Taiwan and many other countries. For example, occupational health professionals were invited to perform audits in at least 2 hospitals in Singapore during the height of the crisis, (2) and to conduct follow-up discussions with the hospital management. In addition to assessment of the industrial hygiene aspects, which included evaluating the ventilation modifications needed for effective infection control, temperature and humidity were significant factors affecting the use of protective gear in a tropical country like Singapore. The occupational health audits included site inspections and reviews of work processes of those areas where actual transmission of SARS had occurred and where triage of febrile patients was taking place. Other issues identified as requiring urgent attention were providing sufficient rest, shower, and changing facilities for staff, monitoring staff sickness absenteeism, and proactively managing staff mental health. Occupational health physicians subsequently served on hospital SARS debriefing committees that reviewed institutional shortcomings and recommended new measures for future outbreaks. An occupational health service unit headed by a trained occupational health physician was formed in 1 hospital.",
+            "cite_spans": [
+                {
+                    "start": 191,
+                    "end": 194,
+                    "text": "(1)",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 472,
+                    "end": 475,
+                    "text": "(2)",
+                    "ref_id": null
+                }
+            ],
+            "ref_spans": [],
+            "section": "Occupational Health Response to SARS"
+        },
+        {
+            "text": "Other occupational groups, as well as healthcare workers, are also at potential risk. These groups may include the following: 1) food handlers, defined as persons who handle,",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Occupational Health Response to SARS"
+        }
+    ],
+    "bib_entries": {
+        "BIBREF0": {
+            "ref_id": "b0",
+            "title": "Detection of SARS-associated coronavirus in throat wash and saliva in early diagnosis",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [
+                        "K"
+                    ],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [
+                        "Y"
+                    ],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [
+                        "J"
+                    ],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [
+                        "C"
+                    ],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [
+                        "L"
+                    ],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [
+                        "F"
+                    ],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Emerg Infect Dis",
+            "volume": "10",
+            "issn": "",
+            "pages": "1213--1222",
+            "other_ids": {}
+        },
+        "BIBREF2": {
+            "ref_id": "b2",
+            "title": "The severe acute respiratory syndrome coronavirus in tears",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [
+                        "C"
+                    ],
+                    "last": "Loon",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [
+                        "C"
+                    ],
+                    "last": "Teoh",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [
+                        "L"
+                    ],
+                    "last": "Oon",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [
+                        "Y"
+                    ],
+                    "last": "Se-Thoe",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [
+                        "E"
+                    ],
+                    "last": "Ling",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [
+                        "S"
+                    ],
+                    "last": "Leo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Br J Ophthalmol",
+            "volume": "88",
+            "issn": "",
+            "pages": "861--864",
+            "other_ids": {}
+        },
+        "BIBREF3": {
+            "ref_id": "b3",
+            "title": "Model parameters and outbreak control for SARS",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Castillo-Chavez",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [
+                        "W"
+                    ],
+                    "last": "Fenimore",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Kribs-Zaleta",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Arriola",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Hyman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Emerg Infect Dis",
+            "volume": "10",
+            "issn": "",
+            "pages": "1258--63",
+            "other_ids": {}
+        },
+        "BIBREF4": {
+            "ref_id": "b4",
+            "title": "Conjunctiva-upper respiratory tract irrigation for early diagnosis of severe acute respiratory syndrome",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [
+                        "R"
+                    ],
+                    "last": "Tong",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [
+                        "H"
+                    ],
+                    "last": "Lam",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [
+                        "K"
+                    ],
+                    "last": "Ng",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [
+                        "T"
+                    ],
+                    "last": "Lai",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [
+                        "K"
+                    ],
+                    "last": "Tong",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [
+                        "N"
+                    ],
+                    "last": "Chau",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Clin Microbiol",
+            "volume": "41",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        }
+    },
+    "ref_entries": {},
+    "back_matter": []
+}

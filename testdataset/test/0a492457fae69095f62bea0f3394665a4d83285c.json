@@ -1,0 +1,1052 @@
+{
+    "paper_id": "0a492457fae69095f62bea0f3394665a4d83285c",
+    "metadata": {
+        "title": "Coxsackievirus A21, Enterovirus 68, and Acute Respiratory Tract Infection, China",
+        "authors": [
+            {
+                "first": "Zichun",
+                "middle": [],
+                "last": "Xiang",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "Key Laboratory of Systems Biology of Pathogens",
+                    "institution": "",
+                    "location": {
+                        "settlement": "Beijing, Beijing, Beijing (",
+                        "country": "China, People's Republic of China"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Richard",
+                "middle": [],
+                "last": "Gonzalez",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "Key Laboratory of Systems Biology of Pathogens",
+                    "institution": "",
+                    "location": {
+                        "settlement": "Beijing, Beijing, Beijing (",
+                        "country": "China, People's Republic of China"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Zhong",
+                "middle": [],
+                "last": "Wang",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "Key Laboratory of Systems Biology of Pathogens",
+                    "institution": "",
+                    "location": {
+                        "settlement": "Beijing, Beijing, Beijing (",
+                        "country": "China, People's Republic of China"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Lili",
+                "middle": [],
+                "last": "Ren",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "Key Laboratory of Systems Biology of Pathogens",
+                    "institution": "",
+                    "location": {
+                        "settlement": "Beijing, Beijing, Beijing (",
+                        "country": "China, People's Republic of China"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Yan",
+                "middle": [],
+                "last": "Xiao",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "Key Laboratory of Systems Biology of Pathogens",
+                    "institution": "",
+                    "location": {
+                        "settlement": "Beijing, Beijing, Beijing (",
+                        "country": "China, People's Republic of China"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Jianguo",
+                "middle": [],
+                "last": "Li",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "Key Laboratory of Systems Biology of Pathogens",
+                    "institution": "",
+                    "location": {
+                        "settlement": "Beijing, Beijing, Beijing (",
+                        "country": "China, People's Republic of China"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Yongjun",
+                "middle": [],
+                "last": "Li",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "Key Laboratory of Systems Biology of Pathogens",
+                    "institution": "",
+                    "location": {
+                        "settlement": "Beijing, Beijing, Beijing (",
+                        "country": "China, People's Republic of China"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Guy",
+                "middle": [],
+                "last": "Vernet",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "Key Laboratory of Systems Biology of Pathogens",
+                    "institution": "",
+                    "location": {
+                        "settlement": "Beijing, Beijing, Beijing (",
+                        "country": "China, People's Republic of China"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Gl\u00e1ucia",
+                "middle": [],
+                "last": "Paranhos-Baccal\u00e0",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "Key Laboratory of Systems Biology of Pathogens",
+                    "institution": "",
+                    "location": {
+                        "settlement": "Beijing, Beijing, Beijing (",
+                        "country": "China, People's Republic of China"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Qi",
+                "middle": [],
+                "last": "Jin",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "Key Laboratory of Systems Biology of Pathogens",
+                    "institution": "",
+                    "location": {
+                        "settlement": "Beijing, Beijing, Beijing (",
+                        "country": "China, People's Republic of China"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Jianwei",
+                "middle": [],
+                "last": "Wang",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "Key Laboratory of Systems Biology of Pathogens",
+                    "institution": "",
+                    "location": {
+                        "settlement": "Beijing, Beijing, Beijing (",
+                        "country": "China, People's Republic of China"
+                    }
+                },
+                "email": ""
+            }
+        ]
+    },
+    "abstract": [
+        {
+            "text": "2 rare human enterovirus serotypes, coxsackievirus A21 and enterovirus 68, were detected most frequently in human enterovirus-positive adults with acute respiratory tract infections. Thus, during some years, these 2 viruses cause a substantial proportion of enterovirus-associated adult acute respiratory tract infections.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Abstract"
+        }
+    ],
+    "body_text": [
+        {
+            "text": "H uman enteroviruses (HEVs) are small, nonenveloped RNA viruses belonging to the family Picornaviridae. HEVs are classifi ed into 4 species (HEV-A to -D) according to their molecular and antigenic properties (1) . HEVs are associated with diverse clinical syndromes, ranging from mild upper respiratory tract illnesses to severe and potentially fatal conditions, such as aseptic meningitis, encephalitis, myocarditis, acute fl accid paralysis, and handfoot-and-mouth disease (1) .",
+            "cite_spans": [
+                {
+                    "start": 208,
+                    "end": 211,
+                    "text": "(1)",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 475,
+                    "end": 478,
+                    "text": "(1)",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "Although HEV serotypes can cocirculate, spatial and temporal factors determine the predominant serotype. For instance, in France and Spain, echovirus 11 and echovirus 6 are the predominant serotypes in patients with enterovirus respiratory infections (2, 3) . Clusters of the rare serotype enterovirus 68 (EV68), which causes severe respiratory infections in children, have been recently reported in the Philippines (4) and Japan (5) . To help clinicians and public health offi cials better understand the epidemiologic and clinical profi les of HEV respiratory infections, temporal and geographic patterns of circulation, especially the dynamics of HEV serotype shift, need to be determined. We report that in some years in Beijing, People's Republic of China, the rarely reported coxsackievirus A21 (CVA21) and EV68 are the predominant serotypes in adults with enterovirusassociated acute respiratory tract infection (ARTI).",
+            "cite_spans": [
+                {
+                    "start": 251,
+                    "end": 254,
+                    "text": "(2,",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 255,
+                    "end": 257,
+                    "text": "3)",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 430,
+                    "end": 433,
+                    "text": "(5)",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "From August 2006 through April 2010, throat and nasal swabs were collected from 6,942 (3,158 male and 3,784 female) adult patients (>15 years of age) at the time of admission to the Fever Clinic Department at the Peking Union Medical College Hospital for ARTI. The 6,942 participants were randomly selected by physicians, as described (6) . To detect HEV, we amplifi ed 350-400 bp of the viral protein 1 (VP1) gene by reverse transcription PCR (7) and verifi ed the fi ndings by sequence analysis (GenBank accession nos. JN168998-JN169120). According to results of BLAST analysis (www.ncbi.nlm.nih.gov), the HEV detected in a sample was assigned to the serotype with which the amplifi ed sequence shared >75% nt or >88% aa sequence identity (8) . All samples were simultaneously screened for infl uenza viruses (A, B, and C), human parainfl uenza viruses (1-4), respiratory syncytial virus, human coronaviruses (229E, NL63, HKU1, and OC43), metapneumovirus, adenovirus, and rhinovirus (6) .",
+            "cite_spans": [
+                {
+                    "start": 335,
+                    "end": 338,
+                    "text": "(6)",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 444,
+                    "end": 447,
+                    "text": "(7)",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 741,
+                    "end": 744,
+                    "text": "(8)",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 985,
+                    "end": 988,
+                    "text": "(6)",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "ref_spans": [],
+            "section": "The Study"
+        },
+        {
+            "text": "HEV was detected in 130 (69 male and 61 female) patients 15-70 years of age (median 27.5 years, mean 29.6 years). We identifi ed 21 HEV serotypes. The most frequently detected serotypes were 2 that are rarely reported: CVA21 and EV68. The only HEV-C serotype detected in this study, CVA21, was found in 34 (26.2%) patients. The only HEV-D serotype detected in this study, EV68, was found in 13 (10%) patients. We also found 7 HEV-A serotypes and 12 HEV-B serotypes ( Figure 1 Table 1 ). The peaks of CVA21 and EV68 overlapped during August-October 2006. We codetected other respiratory viruses in only 1 CVA21-positive patient and only 1 EV68-positive patient, indicating that the ARTIs in these patients are primarily associated with CVA21 or EV68 (Table 2) .",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 467,
+                    "end": 475,
+                    "text": "Figure 1",
+                    "ref_id": null
+                },
+                {
+                    "start": 476,
+                    "end": 483,
+                    "text": "Table 1",
+                    "ref_id": null
+                },
+                {
+                    "start": 749,
+                    "end": 758,
+                    "text": "(Table 2)",
+                    "ref_id": "TABREF1"
+                }
+            ],
+            "section": "The Study"
+        },
+        {
+            "text": "Major symptoms associated with HEV infection included pharyngeal congestion, headache, myalgia, chills, and sore throat but not increased respiratory rate or diffi culty breathing. According to the Guidelines for Surveillance on Severe Acute Respiratory Infections at Sentinel Hospitals moh.gov.cn/publicfiles/business/htmlfiles/mohjbyfkzj/ s3577/201102/50590.htm), ARTI patients >5 years of age who had increased respiratory rate (>25 breaths/min) or diffi culty breathing were considered to have a severe ARTI. Our data showed that all CVA21-or EV68-positive patients identifi ed in this study had mild ARTIs. The VP1 nucleotide sequences of the CVA21 and EV68 strains identifi ed showed high sequence identity and were located in the same cluster in their phylogenetic trees, HEV-C and HEV-D, respectively ( Figure 2 ). Nucleotide identity among the CVA21 strains identifi ed was 95.6%-100% and that among EV68 strains was 92.3%-99.7%. However, the CVA21 and EV68 strains had low nucleotide identity compared with their prototype strains (CVA21, GenBank accession no. AF546702, 87%-89.2%; EV68, GenBank accession no. AY426531, 76.6%-78.9%). Alignment of the putative VP1 amino acid sequences of HEV strains with their respective prototype strains revealed a limited divergence; only 2 substitutions were found in CVA21, and 9 substitutions and 1 deletion was found in EV68 (data not shown). These fi ndings suggest that the CVA21 or EV68 strains were similar but are changing and diverging from their prototype strains.",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 811,
+                    "end": 819,
+                    "text": "Figure 2",
+                    "ref_id": null
+                }
+            ],
+            "section": "The Study"
+        },
+        {
+            "text": "The frequency of detecting CVA21 and EV68 among HEV-positive adults with ARTIs in Beijing, China, was high. The difference in the HEV serotypes we detected compared with serotypes detected by others (2, 3) suggests that the spectrum of HEV serotypes associated with ARTIs differs among geographic regions.",
+            "cite_spans": [
+                {
+                    "start": 199,
+                    "end": 202,
+                    "text": "(2,",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 203,
+                    "end": 205,
+                    "text": "3)",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Conclusions"
+        },
+        {
+            "text": "Since isolation of these viruses, infections with CVA21 and EV68 have been rarely reported (9, 10 The reason for the high frequency of CVA21 and EV68 infections in Beijing is unclear. The EV68 strains identifi ed in this study are probably novel strains or genetic variants to which the population is immune. Moreover, the deduced amino acid identity of the EV68 strains with strains detected in children in Japan (GenBank accession nos. AB601872- AB601885) (5) was 89.4%-93.8%, indicating the possible co-existence of 2 distinct phylogenetic lineages of EV68 strains (13) . The emergence of new genetic lineages might be the reason for increasing activity of EV68 (5, 13) . Because the median age of CVA21-positive patients was signifi cantly lower than that of other HEV-positive patients ( Table 2) , we suspect that years of CVA21quiescence probably resulted in increased susceptibility of the younger population (11) . Outbreaks of classical HEVs tend to occur in several-year cycles (11) . We noted that CVA21 infections were concentrated in 2006 and 2008. However, because patients were not enrolled in our study after April 2010, our data on HEV circulation might be incomplete. Longer surveillance would be useful for determining the cycle of CVA21 and EV68 infections. Another limitation of this study is that samples were collected from outpatients but not hospitalized patients, which could bias the classifi cation of illness toward being mild. However, this study presents evidence that CVA21 and EV68 cause mild disease and fi lls a void left by other studies that included only hospitalized patients.",
+            "cite_spans": [
+                {
+                    "start": 91,
+                    "end": 94,
+                    "text": "(9,",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 95,
+                    "end": 97,
+                    "text": "10",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 568,
+                    "end": 572,
+                    "text": "(13)",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 665,
+                    "end": 668,
+                    "text": "(5,",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 669,
+                    "end": 672,
+                    "text": "13)",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 917,
+                    "end": 921,
+                    "text": "(11)",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 989,
+                    "end": 993,
+                    "text": "(11)",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "ref_spans": [
+                {
+                    "start": 793,
+                    "end": 801,
+                    "text": "Table 2)",
+                    "ref_id": "TABREF1"
+                }
+            ],
+            "section": "Conclusions"
+        },
+        {
+            "text": "In conclusion, we provide evidence that during some years in adults in Beijing, China, the rarely reported HEV serotypes CVA21 and EV68 are responsible for a substantial proportion of enterovirus-associated ARTIs. Our fi ndings provide further insight into the pathogenesis of HEVs and increase our awareness of their clinical role. To predict possible outbreaks, global surveillance and investigation of HEV serotypes in patients with ARTIs should be strengthened.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Conclusions"
+        }
+    ],
+    "bib_entries": {
+        "BIBREF0": {
+            "ref_id": "b0",
+            "title": "Enteroviruses: polioviruses, coxsackieviruses, echoviruses, and newer enteroviruses",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Pallansch",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Roos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Fields virology",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF1": {
+            "ref_id": "b1",
+            "title": "Epidemiological, molecular, and clinical features of enterovirus respiratory infections in French children between 1999 and",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Jacques",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Moret",
+                    "suffix": ""
+                },
+                {
+                    "first": "Minette",
+                    "middle": [
+                        "D"
+                    ],
+                    "last": "L\u00e9v\u00eaque",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Jovenin",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Desl\u00e9e",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Clin Microbiol",
+            "volume": "46",
+            "issn": "",
+            "pages": "206--219",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.01414-07"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "ref_id": "b2",
+            "title": "Enteroviruses in Spain over the decade 1998-2007: virological and epidemiological studies",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Trallero",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Avellon",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Otero",
+                    "suffix": ""
+                },
+                {
+                    "first": "De",
+                    "middle": [],
+                    "last": "Miguel",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "P\u00e9rez",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Rabella",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J Clin Virol",
+            "volume": "47",
+            "issn": "",
+            "pages": "170--176",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jcv.2009.11.013"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "ref_id": "b3",
+            "title": "Enterovirus 68 among children with severe acute respiratory infection, the Philippines",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Imamura",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Fuji",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Suzuki",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Tamaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Saito",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Aniceto",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Emerg Infect Dis",
+            "volume": "17",
+            "issn": "",
+            "pages": "1430--1435",
+            "other_ids": {}
+        },
+        "BIBREF4": {
+            "ref_id": "b4",
+            "title": "Enterovirus 68 in children with acute respiratory tract infections",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kaida",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kubo",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sekiguchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Kohdera",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Togawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Shiomi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Emerg Infect Dis",
+            "volume": "17",
+            "issn": "",
+            "pages": "1494--1501",
+            "other_ids": {}
+        },
+        "BIBREF5": {
+            "ref_id": "b5",
+            "title": "Prevalence of human respiratory viruses in adults with acute respiratory tract infections in Beijing",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Ren",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Gonzalez",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Xiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Clin Microbiol Infect",
+            "volume": "15",
+            "issn": "",
+            "pages": "1146--53",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1469-0691.2009.02746.x"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "ref_id": "b6",
+            "title": "Sensitive, seminested PCR amplifi cation of VP1 sequences for direct identifi cation of all enterovirus serotypes from original clinical specimens",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Nix",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [
+                        "S"
+                    ],
+                    "last": "Oberste",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Pallansch",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Clin Microbiol",
+            "volume": "44",
+            "issn": "",
+            "pages": "2698--704",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.00542-06"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "ref_id": "b7",
+            "title": "Molecular evolution of the human enteroviruses: correlation of serotype with VP1 sequence and application to picornavirus classifi cation",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [
+                        "S"
+                    ],
+                    "last": "Oberste",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Maher",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [
+                        "R"
+                    ],
+                    "last": "Kilpatrick",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Pallansch",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "J Virol",
+            "volume": "73",
+            "issn": "",
+            "pages": "1941--1949",
+            "other_ids": {}
+        },
+        "BIBREF8": {
+            "ref_id": "b8",
+            "title": "The Coe virus: an apparently new virus recovered from patients with mild respiratory disease",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [
+                        "H"
+                    ],
+                    "last": "Lennette",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [
+                        "L"
+                    ],
+                    "last": "Fox",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [
+                        "J"
+                    ],
+                    "last": "Schmidt",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [
+                        "O"
+                    ],
+                    "last": "Culver",
+                    "suffix": ""
+                }
+            ],
+            "year": 1958,
+            "venue": "Am J Hyg",
+            "volume": "68",
+            "issn": "",
+            "pages": "272--87",
+            "other_ids": {}
+        },
+        "BIBREF9": {
+            "ref_id": "b9",
+            "title": "A probable new human picornavirus associated with respiratory diseases",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [
+                        "H"
+                    ],
+                    "last": "Schieble",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [
+                        "L"
+                    ],
+                    "last": "Fox",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [
+                        "H"
+                    ],
+                    "last": "Lennette",
+                    "suffix": ""
+                }
+            ],
+            "year": 1967,
+            "venue": "Am J Epidemiol",
+            "volume": "85",
+            "issn": "",
+            "pages": "297--310",
+            "other_ids": {}
+        },
+        "BIBREF10": {
+            "ref_id": "b10",
+            "title": "Enterovirus surveillance-United States",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Khetsuriani",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Lamonte-Fowlkes",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Oberst",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Pallansch",
+                    "suffix": ""
+                }
+            ],
+            "year": 1970,
+            "venue": "MMWR Surveill Summ",
+            "volume": "55",
+            "issn": "",
+            "pages": "1--20",
+            "other_ids": {}
+        },
+        "BIBREF11": {
+            "ref_id": "b11",
+            "title": "Molecular diagnosis of respiratory enterovirus infections: use of PCR and molecular identifi cation for a best approach of the main circulating strains during",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Petitjean-Lecherbonnier",
+                    "suffix": ""
+                },
+                {
+                    "first": "Dina",
+                    "middle": [
+                        "J"
+                    ],
+                    "last": "Nguyen",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Gouarin",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Lebigot",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Vabret",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Pathol Biol",
+            "volume": "59",
+            "issn": "",
+            "pages": "113--134",
+            "other_ids": {}
+        },
+        "BIBREF12": {
+            "ref_id": "b12",
+            "title": "Upsurge of human enterovirus 68 infections in patients with severe respiratory tract infections",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Rahamat-Langendoen",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Riezebos-Brilman",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Borger",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Van Der Heide",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Brandenburg",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Sch\u00f6lvinck",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J Clin Virol",
+            "volume": "52",
+            "issn": "",
+            "pages": "103--109",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jcv.2011.06.019"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "ref_id": "b13",
+            "title": "Clusters of acute respiratory illness associated with human enterovirus 68-Asia, Europe, and United States",
+            "authors": [],
+            "year": 2008,
+            "venue": "MMWR Morb Mortal Wkly Rep",
+            "volume": "60",
+            "issn": "",
+            "pages": "1301--1305",
+            "other_ids": {}
+        },
+        "BIBREF14": {
+            "ref_id": "b14",
+            "title": "Enterovirus 68 infection in children with asthma attacks: virusinduced asthma in Japanese children",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Hasegawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Hirano",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Okamoto-Nakagawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ichiyama",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Shirabe",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Allergy",
+            "volume": "66",
+            "issn": "",
+            "pages": "1618--1638",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1398-9995.2011.02725.x"
+                ]
+            }
+        }
+    },
+    "ref_entries": {
+        "FIGREF0": {
+            "text": ", panel A). We detected 21 cases of CVA21 during August-December 2006 and 8 cases during September-December 2008, which accounted for 41.2% and 26.7% of all cases of HEVs, respectively. A few CVA21-positive cases were also detected in March and during June-August 2007. EV68 was detected in only 11 samples collected during August-October 2006 and in 2 samples in August 2008 (Figure 1, panel B;",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "(2011) issued by the Chinese Ministry of Health (www. Emerging Infectious Diseases \u2022 www.cdc.gov/eid \u2022 Vol. 18, No. 5, May 2012 821 Author affi liations: MOH Key Laboratory of Systems Biology of Pathogens, Beijing, People's Republic of China (Z. Xiang, L. Ren, J. Li, Q. Jin, J. Wang); Institute of Pathogen Biology, Beijing (Z. Xiang, R. Gonzalez, Z. Wang, L. Ren, Y. Xiao, J. Li, Q. Jin, J. Wang); Fondation M\u00e9rieux, Lyon, France (R. Gonzalez, Y. Li, G. Vernet, G. Paranhos-Baccal\u00e0); and Peking Union Medical College Hospital, Beijing (Z. Wang) DOI: http://dx.doi.org/10.3201/eid1805.111376",
+            "latex": null,
+            "type": "figure"
+        },
+        "TABREF0": {
+            "text": "). In the United States, only 42 detections of CVA21 and 26 detections of EV68 have been reported during 36 years of HEV surveillance(11). However, EV68 was recently associated with ARTIs in France, the Netherlands, the United States, the Philippines, and Japan(4,5,(12)(13)(14)(15), indicating epidemics of EV68 are increasing in number and severity.",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Demographic and clinical characteristics of sampled population with human enterovirus infections, People's Republic of China, August 2006-April 2010* AY421762, and AF499642, respectively) were used as outgroups. B) Phylogenetic tree of partial EV68 VP1 gene. The 390-bp fragments, which correspond to the locations of nt 2494-2883 of the EV68 prototype strain (GenBank accession no. AY426531), were used to construct the phylogenetic tree. CVA9, CVA4, CVA21, and EV70 (GenBank accession nos. D00627, AY421762, AF546702, and D00820, respectively) were used as outgroups.",
+            "latex": null,
+            "type": "table"
+        }
+    },
+    "back_matter": [
+        {
+            "text": "We thank Lan Chen, Jing Zhang, Wei Wang, and Qingqing Yang for their excellent technical assistance and the clinicians from Peking Union Medical College Hospital for their help with sample collection. ",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Acknowledgments"
+        }
+    ]
+}

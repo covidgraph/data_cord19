@@ -1,0 +1,2456 @@
+{
+  "paper_id": "0a6e9aa35d1320355bf071879e98aabcacfe2b85",
+  "metadata": {
+    "title": "Twelve Essentials of Science-based Policy \u2022 Centers for Disease Control and Prevention 7",
+    "authors": [
+      {
+        "first": "Bernard",
+        "middle": ["C K"],
+        "last": "Choi",
+        "suffix": "",
+        "affiliation": {
+          "laboratory": "Centre for Chronic Disease Prevention and Control, Public Health Agency of Canada, PL 6701A",
+          "institution": "University of Ottawa",
+          "location": {
+            "addrLine": "120 Colonnade Rd",
+            "postCode": "K1A",
+            "settlement": "Ottawa, Ottawa",
+            "region": "Ontario, Ontario",
+            "country": "Canada"
+          }
+        },
+        "email": "1b4.telephone:613-957-1074.e-mail:bernard_choi@phac-aspc.gc.ca."
+      }
+    ]
+  },
+  "abstract": [
+    {
+      "text": "This article presents a systematic framework of 12 essentials, or basic elements, of science-based policy. The 12 essentials are grouped into three categories, or areas, as follows: 1) knowledge generation, which includes credible design, accurate data, sound analysis, and comprehensive synthesis; 2) knowledge exchange, which includes relevant content, appropriate translation, timely dissemination, and modulated release; and 3) knowledge uptake, which includes accessible information, readable message, motivated user, and rewarding outcome.",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Abstract"
+    }
+  ],
+  "body_text": [
+    {
+      "text": "The relationship between science and policy is an important topic in evidence-based public health policy and practice (1) . It seems logical to assume that as scientific research generates more quality findings, policymakers will make better decisions. However, numerous underlying obstacles exist (2) .",
+      "cite_spans": [
+        {
+          "start": 118,
+          "end": 121,
+          "text": "(1)",
+          "ref_id": "BIBREF0"
+        },
+        {
+          "start": 298,
+          "end": 301,
+          "text": "(2)",
+          "ref_id": "BIBREF1"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Introduction"
+    },
+    {
+      "text": "A systematic framework can be used to describe the key components that link science to policy. The framework, which consists of three areas that are subdivided into 12 essentials (basic elements), reveals issues and solutions related to science-based decision making. In this article, policy is defined broadly to include not only legislation but also \"prudence or wisdom in the management of affairs\" and \"a definite course or method of action selected from among alternatives in light of given conditions to guide and determine present and future decisions\" (3) . Therefore, the term policymakers may encompass public health practitioners, public health researchers, and even the general public, because members of the general public make health decisions for themselves and their families.",
+      "cite_spans": [
+        {
+          "start": 560,
+          "end": 563,
+          "text": "(3)",
+          "ref_id": "BIBREF2"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Introduction"
+    },
+    {
+      "text": "Science-based policy involves producing high-quality scientific evidence, building bridges between the producers and users of scientific evidence, and incorporating scientific evidence into health policy and practice (4) . Accordingly, the three primary areas in science-based policy are knowledge generation, knowledge exchange, and knowledge uptake (Table 1) . Within these three areas, the 12 essentials are categorized as follows: knowledge generation -1) credible design, 2) accurate data, 3) sound analysis, and 4) comprehensive synthesis; knowledge exchange -5) relevant content, 6) appropriate translation, 7) timely dissemination, and 8) modulated release; and knowledge uptake -9) accessible information, 10) readable message, 11) motivated user, and 12) rewarding outcome ( Table 1) .",
+      "cite_spans": [
+        {
+          "start": 217,
+          "end": 220,
+          "text": "(4)",
+          "ref_id": "BIBREF4"
+        }
+      ],
+      "ref_spans": [
+        {
+          "start": 351,
+          "end": 360,
+          "text": "(Table 1)",
+          "ref_id": null
+        },
+        {
+          "start": 785,
+          "end": 793,
+          "text": "Table 1)",
+          "ref_id": null
+        }
+      ],
+      "section": "Introduction"
+    },
+    {
+      "text": "The names of the three areas described in this framework vary in other articles. For example, knowledge generation (5, 6) has also been called knowledge acquisition (7) and knowledge creation (8) ; knowledge exchange (6, (9) (10) (11) has been called knowledge dissemination (7, 8, 12) , knowledge transfer (9, 11) , knowledge brokering (10) , knowledge translation (13), and knowledge access (5) ; and knowledge uptake (6, 9) has been referred to as knowledge application (7, 8) , knowledge utilization (8, 12) , and knowledge use (5) . The meanings of the terms vary slightly. For example, the term dissemination implies a one-way transmission of knowledge, whereas the terms transfer and exchange imply a two-way transfer of information (14) . The term",
+      "cite_spans": [
+        {
+          "start": 115,
+          "end": 118,
+          "text": "(5,",
+          "ref_id": "BIBREF5"
+        },
+        {
+          "start": 119,
+          "end": 121,
+          "text": "6)",
+          "ref_id": "BIBREF6"
+        },
+        {
+          "start": 165,
+          "end": 168,
+          "text": "(7)",
+          "ref_id": "BIBREF7"
+        },
+        {
+          "start": 192,
+          "end": 195,
+          "text": "(8)",
+          "ref_id": "BIBREF8"
+        },
+        {
+          "start": 217,
+          "end": 220,
+          "text": "(6,",
+          "ref_id": "BIBREF6"
+        },
+        {
+          "start": 221,
+          "end": 224,
+          "text": "(9)",
+          "ref_id": "BIBREF9"
+        },
+        {
+          "start": 225,
+          "end": 229,
+          "text": "(10)",
+          "ref_id": "BIBREF10"
+        },
+        {
+          "start": 230,
+          "end": 234,
+          "text": "(11)",
+          "ref_id": "BIBREF11"
+        },
+        {
+          "start": 275,
+          "end": 278,
+          "text": "(7,",
+          "ref_id": "BIBREF7"
+        },
+        {
+          "start": 279,
+          "end": 281,
+          "text": "8,",
+          "ref_id": "BIBREF8"
+        },
+        {
+          "start": 282,
+          "end": 285,
+          "text": "12)",
+          "ref_id": "BIBREF12"
+        },
+        {
+          "start": 307,
+          "end": 310,
+          "text": "(9,",
+          "ref_id": "BIBREF9"
+        },
+        {
+          "start": 311,
+          "end": 314,
+          "text": "11)",
+          "ref_id": "BIBREF11"
+        },
+        {
+          "start": 337,
+          "end": 341,
+          "text": "(10)",
+          "ref_id": "BIBREF10"
+        },
+        {
+          "start": 393,
+          "end": 396,
+          "text": "(5)",
+          "ref_id": "BIBREF5"
+        },
+        {
+          "start": 420,
+          "end": 423,
+          "text": "(6,",
+          "ref_id": "BIBREF6"
+        },
+        {
+          "start": 424,
+          "end": 426,
+          "text": "9)",
+          "ref_id": "BIBREF9"
+        },
+        {
+          "start": 473,
+          "end": 476,
+          "text": "(7,",
+          "ref_id": "BIBREF7"
+        },
+        {
+          "start": 477,
+          "end": 479,
+          "text": "8)",
+          "ref_id": "BIBREF8"
+        },
+        {
+          "start": 504,
+          "end": 507,
+          "text": "(8,",
+          "ref_id": "BIBREF8"
+        },
+        {
+          "start": 508,
+          "end": 511,
+          "text": "12)",
+          "ref_id": "BIBREF12"
+        },
+        {
+          "start": 532,
+          "end": 535,
+          "text": "(5)",
+          "ref_id": "BIBREF5"
+        },
+        {
+          "start": 740,
+          "end": 744,
+          "text": "(14)",
+          "ref_id": "BIBREF14"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Introduction"
+    },
+    {
+      "text": "The opinions expressed by authors contributing to this journal do not necessarily reflect the opinions of the U.S. Department of Health and Human Services, the Public Health Service, the Centers for Disease Control and Prevention, or the authors' affiliated institutions. Use of trade names is for identification only and does not imply endorsement by any of the groups named above. brokering seems to be associated with a process, the objective of which is to exchange information (10).",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Introduction"
+    },
+    {
+      "text": "Ideally, evidence for policy decisions should be generated from scientific research based on high-quality study designs. In general, the strength of data generated by various study designs results in a hierarchical pattern. Experimental studies such as clinical trials and field trials provide strong evidence; community trials and observational studies such as cohort studies and case-control studies provide moderate evidence; other observational studies such as historical cohort studies, cross-sectional studies, and ecological studies provide weak evidence; and case reports and news reports provide minimal evidence (15) (16) (17) (18) .",
+      "cite_spans": [
+        {
+          "start": 622,
+          "end": 626,
+          "text": "(15)",
+          "ref_id": "BIBREF15"
+        },
+        {
+          "start": 627,
+          "end": 631,
+          "text": "(16)",
+          "ref_id": "BIBREF16"
+        },
+        {
+          "start": 632,
+          "end": 636,
+          "text": "(17)",
+          "ref_id": "BIBREF17"
+        },
+        {
+          "start": 637,
+          "end": 641,
+          "text": "(18)",
+          "ref_id": "BIBREF18"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Credible design"
+    },
+    {
+      "text": "However, the scientific evidence hierarchy is often turned upside down when policy decisions are being made. News reports and case reports often play an important role in policy decisions, because decision makers, including those in the general public, often do not have the time, ability, or expertise to access and synthesize the evidence from high-quality studies. For example, in 1999, the newspaper USA Today published the following health-related headlines: \"'Scars' May Be Cancer Predictor,\" \"Persistent Heartburn Is a Cancer Warning Sign,\" \"Two Drinks a Day Keep Stroke Away,\" \"Study: High-Fiber Diets Don't Cut Colon Cancer,\" and \"No Link Found Between Fat, Breast Cancer\" (19) . News headlines can be based on inconclusive evidence (e.g., \"may be\"), scare tactics (e.g., \"warning sign\"), disregard of details (e.g., the health risks of drinking, such as liver disease), and conflicting messages (e.g., reporting results that are different from numerous other studies).",
+      "cite_spans": [
+        {
+          "start": 682,
+          "end": 686,
+          "text": "(19)",
+          "ref_id": "BIBREF19"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Credible design"
+    },
+    {
+      "text": "Even when scientific evidence is produced from adequately designed studies, current knowledge generation can be hindered by a false-positive research cycle (Figure) (20) . Consider the following scenario. Evidence relating cellular telephone use and brain tumors is still inconclusive, despite the multiple studies that have been done and the widespread attention given to the topic (21) . Assume the null hypothesis is true -that cellular telephone use does not cause brain tumors. In addition, assume that as a result of chance or bias (and not a high-quality study), some researchers report finding an association between cellular telephone use and brain tumors (a false-positive study). Publication of the false-positive study creates concern, and the problem becomes a hot topic (hot topic bias) which results in more studies -perhaps even 100 -that are designed to investigate the potential problem (22) . At the conventional significance level, or \u03b1 level, of .05, five of the 100 studies are expected to have positive results (23) ; in other words, five of the studies in this example would be expected to find that cellular telephone use causes brain tumors. The researchers who obtain positive results are more likely to document their results and submit papers to a journal (positive results bias), and journal editors are more likely to publish studies with positive results (editor's bias) (20) . In other words, the five positive studies (which are actually false-positive studies) are more likely to be published, and few of the other 95 studies that did not find an association between cellular telephone use and brain tumors will be published (publication bias). The five additional false-positive studies make the topic even more urgent in the research community, and the false-positive research cycle begins again as more studies are designed to assess the problem. Through this biased process, researchers can often \"prove\" something out of nothing.",
+      "cite_spans": [
+        {
+          "start": 165,
+          "end": 169,
+          "text": "(20)",
+          "ref_id": "BIBREF20"
+        },
+        {
+          "start": 383,
+          "end": 387,
+          "text": "(21)",
+          "ref_id": "BIBREF21"
+        },
+        {
+          "start": 905,
+          "end": 909,
+          "text": "(22)",
+          "ref_id": "BIBREF22"
+        },
+        {
+          "start": 1034,
+          "end": 1038,
+          "text": "(23)",
+          "ref_id": "BIBREF23"
+        },
+        {
+          "start": 1403,
+          "end": 1407,
+          "text": "(20)",
+          "ref_id": "BIBREF20"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Credible design"
+    },
+    {
+      "text": "Bias is defined as the \"deviation of results or inferences from the truth, or processes leading to such deviation\" (24) . The best way to identify bias is by comparing results with the truth, or a gold standard. For example, researchers conducted a study to determine the baseline accuracy of dentists' readings of dental radiographs (bitewings) (25) . The study's methodology involved constructing 15 models of the posterior part of a natural dentition. The models had extracted teeth mounted in a medium with a radiodensity similar to that of human bone. Bitewing radiographs were taken of the simulated dentitions. The teeth used in the model mounts were removed from the models, serially sectioned, and examined with a microscope for caries. The results of the microscopic examination were established as the gold standard. Dentists were asked to read independently the 15 sets of bitewing radiographs and make treatment decisions about the teeth. The agreement between the dentists' readings and the gold standard established by the microscope results was poor (mean \u03ba = 0.35) (25).",
+      "cite_spans": [
+        {
+          "start": 115,
+          "end": 119,
+          "text": "(24)",
+          "ref_id": "BIBREF24"
+        },
+        {
+          "start": 346,
+          "end": 350,
+          "text": "(25)",
+          "ref_id": "BIBREF25"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Accurate data"
+    },
+    {
+      "text": "Even laboratory tests cannot guarantee the accuracy of a study's data. For example, many physicians use four different types of laboratory tests to diagnose leukemia (routine morphology testing, electron microscopy, cell surface marker identification, and cancer cytogenetics), and the four test results often seem contradictory. An interrater agreement study was conducted, with each of the four laboratories being classified as a rater. The interrater reliability result confirmed that the results were contradictory. Results from the four diagnostic laboratories correlated poorly for cell type identification in leukemia (pairwise \u03ba = 0.17-0.40) (26) .",
+      "cite_spans": [
+        {
+          "start": 650,
+          "end": 654,
+          "text": "(26)",
+          "ref_id": "BIBREF26"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Accurate data"
+    },
+    {
+      "text": "Health data often come from health surveys using questionnaires, and the accuracy of the data is likely affected by questionnaire biases. For example, questions or answers may be phrased in a way that misleads respondents and causes them to make an incorrect choice (framing bias) (27) . An example of framing bias follows:",
+      "cite_spans": [
+        {
+          "start": 281,
+          "end": 285,
+          "text": "(27)",
+          "ref_id": "BIBREF27"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Accurate data"
+    },
+    {
+      "text": "[ ] An operation that has a 5% mortality [ ] An operation that 90% of the patients will survive People may choose the second option when they read \"90%\" and \"survive,\" even though a 90% survival rate (which is a 10% mortality rate) is actually worse than a 5% mortality rate.",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Which operation would you prefer?"
+    },
+    {
+      "text": "According to a comprehensive assessment of 109 instances of bias that were found in scientific research (literature review, 4; study design, 31; study execution, 3; data collection, 46; analysis, 15; interpretation, 7; publication, 3), most of the instances of bias were found in the data collection phase of research (46 of 109, or 42%, of the total instances) (22) .",
+      "cite_spans": [
+        {
+          "start": 362,
+          "end": 366,
+          "text": "(22)",
+          "ref_id": "BIBREF22"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Which operation would you prefer?"
+    },
+    {
+      "text": "Failure to control for confounding effects is a common problem in data analysis. A confounder is a factor \"that can cause or prevent the outcome of interest, is not an intermediate variable, and is associated with the factor under investigation\" (24) . For example, if researchers were studying the association between drinking alcohol and lung disease, they would need to treat smoking as a potential confounder because 1) smoking is known to cause lung disease, and 2) smoking and drinking alcohol are often associated behaviors. Techniques to control for confounding include stratification and mathematical modeling (28, 29) .",
+      "cite_spans": [
+        {
+          "start": 246,
+          "end": 250,
+          "text": "(24)",
+          "ref_id": "BIBREF24"
+        },
+        {
+          "start": 619,
+          "end": 623,
+          "text": "(28,",
+          "ref_id": "BIBREF28"
+        },
+        {
+          "start": 624,
+          "end": 627,
+          "text": "29)",
+          "ref_id": "BIBREF29"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Sound analysis"
+    },
+    {
+      "text": "Failing to conduct a sound data analysis could completely change the results of a study. In a mass screening for colorectal cancer, Zheng et al evaluated the accuracy of occult blood testing, using rectoscopy as the gold standard for comparison (30) . Clinical and epidemiological data from 60,496 individuals were collected. It was found that of the 477 individuals who had colorectal cancer diagnosed by rectoscopy (the gold standard), 437 were identified as having colorectal cancer by the occult blood test. This corresponded to a test sensitivity of 92% (437/477), which indicated that the occult blood test was a good screening test for colorectal cancer. The results were submitted to a scientific journal, and comments from two reviewers were received. One reviewer was pleased with the study and recommended publication. The other reviewer pointed out a gross error in the calculations and mentioned \"work-up bias.\" According to the original paper on work-up bias, it is not an easy issue to address (31) . An appropriate mathematical procedure was subsequently developed to address the work-up bias (32) . Using the new procedure, the occult blood test sensitivity was recalculated to be 28%, indicating that it was not a good screening test for colorectal cancer (30) . Therefore, the proper analysis completely reversed the study's conclusion.",
+      "cite_spans": [
+        {
+          "start": 245,
+          "end": 249,
+          "text": "(30)",
+          "ref_id": "BIBREF30"
+        },
+        {
+          "start": 1009,
+          "end": 1013,
+          "text": "(31)",
+          "ref_id": "BIBREF31"
+        },
+        {
+          "start": 1109,
+          "end": 1113,
+          "text": "(32)",
+          "ref_id": "BIBREF32"
+        },
+        {
+          "start": 1274,
+          "end": 1278,
+          "text": "(30)",
+          "ref_id": "BIBREF30"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Sound analysis"
+    },
+    {
+      "text": "Scientific papers are being published constantly. Approximately 30,000 biomedical journals are being published currently, and 17,000 new biomedical books are published every year. On average, physicians would have to read 19 articles each day to stay knowledgeable about new developments in their field (33, 34) . Comprehensive syntheses of current information are needed to address potential problems such as lack of time and lack of expertise (35) . Comprehensive syntheses include narrative reviews, systematic reviews, meta-analyses, meta-databases, inventories of best practices, and public health observatories. They make life easier for consumers of scientific material, such as scientists, physicians, and policymakers, collectively referred to as knowledge users in this article.",
+      "cite_spans": [
+        {
+          "start": 303,
+          "end": 307,
+          "text": "(33,",
+          "ref_id": "BIBREF33"
+        },
+        {
+          "start": 308,
+          "end": 311,
+          "text": "34)",
+          "ref_id": "BIBREF34"
+        },
+        {
+          "start": 445,
+          "end": 449,
+          "text": "(35)",
+          "ref_id": "BIBREF35"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Comprehensive synthesis"
+    },
+    {
+      "text": "A narrative review is a summary of the literature that exists on a particular topic; informal and subjective methods are used to collect and interpret information (33, 36) . A systematic review is a summary that is written after a comprehensive search for relevant studies and then evaluated and synthesized according to a predetermined and an explicit method (33, 37, 38) . A meta-analysis (an analysis of several analyses) takes a systematic review one step further by mathematically aggregating available data from independent studies to yield a more statistically powerful estimate (33, 36, 39) . A meta-database (a database of several databases) includes information about the location, source, content, and other details of the relevant databases (40) . An inventory of best practices (or better practices) is created using an approach based largely on less rigorous study designs of practices and programs. The inventory often focuses on particular organizational behaviors for which conclusive quantitative evaluations are difficult to design and execute (41) . A public health observatory is more detached from actual health phenomena and events, provides objective descriptions and analyses, and provides forecasting of patterns, interrelationships, processes, and public health outcomes (42, 43) .",
+      "cite_spans": [
+        {
+          "start": 163,
+          "end": 167,
+          "text": "(33,",
+          "ref_id": "BIBREF33"
+        },
+        {
+          "start": 168,
+          "end": 171,
+          "text": "36)",
+          "ref_id": "BIBREF36"
+        },
+        {
+          "start": 360,
+          "end": 364,
+          "text": "(33,",
+          "ref_id": "BIBREF33"
+        },
+        {
+          "start": 365,
+          "end": 368,
+          "text": "37,",
+          "ref_id": "BIBREF37"
+        },
+        {
+          "start": 369,
+          "end": 372,
+          "text": "38)",
+          "ref_id": "BIBREF38"
+        },
+        {
+          "start": 586,
+          "end": 590,
+          "text": "(33,",
+          "ref_id": "BIBREF33"
+        },
+        {
+          "start": 591,
+          "end": 594,
+          "text": "36,",
+          "ref_id": "BIBREF36"
+        },
+        {
+          "start": 595,
+          "end": 598,
+          "text": "39)",
+          "ref_id": "BIBREF39"
+        },
+        {
+          "start": 753,
+          "end": 757,
+          "text": "(40)",
+          "ref_id": "BIBREF40"
+        },
+        {
+          "start": 1063,
+          "end": 1067,
+          "text": "(41)",
+          "ref_id": "BIBREF41"
+        },
+        {
+          "start": 1298,
+          "end": 1302,
+          "text": "(42,",
+          "ref_id": "BIBREF42"
+        },
+        {
+          "start": 1303,
+          "end": 1306,
+          "text": "43)",
+          "ref_id": null
+        }
+      ],
+      "ref_spans": [],
+      "section": "Comprehensive synthesis"
+    },
+    {
+      "text": "Comprehensive syntheses can be a major undertaking. For example, a lifestyle modification guide was created to prevent and control hypertension. It was a 50-page supplementary issue of a scientific journal based on a review of 37 years (1960 to 1996) of scientific literature on weight, alcohol, exercise, sodium, calcium, magnesium, potassium, and stress and their effects on the body (44).",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Comprehensive synthesis"
+    },
+    {
+      "text": "Some comprehensive syntheses require a review of not only contemporary literature but also historical literature. For example, one analysis was composed of 12 lessons for public health surveillance in the twenty-first century. The lessons were created after conducting a broad review of the historical documents on major epidemics during the past 5000 years (since 3180 BC) and included the plague, smallpox, dancing mania, cholera, the Spanish flu, and lung cancer (45) .",
+      "cite_spans": [
+        {
+          "start": 466,
+          "end": 470,
+          "text": "(45)",
+          "ref_id": "BIBREF44"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Comprehensive synthesis"
+    },
+    {
+      "text": "Information should not be disseminated all at once and should not be provided to everyone. Only relevant information needs to be disseminated. For example, depending on the audience, one of two information dissemination approaches can be used: the encyclopedia approach or the fire-alarm approach (46) . The encyclopedia approach involves conveying all available information in the form of reports, atlases, Web sites, and other methods. This type of information is needed by knowledge users such as scientists and certain policymakers who need extremely detailed information.",
+      "cite_spans": [
+        {
+          "start": 297,
+          "end": 301,
+          "text": "(46)",
+          "ref_id": "BIBREF45"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Relevant content"
+    },
+    {
+      "text": "For most policymakers and the general public, the firealarm approach may be more appropriate. This approach involves only conveying information when selected indicators are not in the normal range and indicate a potential problem. For example, it has been proposed that new composite indicators for public health, similar to economic indicators such as the Dow Jones average or the consumer price index, be developed to document the relevant health information needed for public health decisions (20, 47) . Many stockholders trade successfully by buying or selling their stock holdings based on the performance of economic composite indicators. In a similar way, indicators such as a national health index, national heart health index, and national diet index could be helpful to health policymakers.",
+      "cite_spans": [
+        {
+          "start": 496,
+          "end": 500,
+          "text": "(20,",
+          "ref_id": "BIBREF20"
+        },
+        {
+          "start": 501,
+          "end": 504,
+          "text": "47)",
+          "ref_id": "BIBREF46"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Relevant content"
+    },
+    {
+      "text": "As scientists make new discoveries, more sophisticated methods and theories are developed. At some point, the average policymaker and even some scientists cannot understand the information. The key is to strike a balance between providing all available information and providing what is needed by knowledge users. \"Complex models with simple model-user interface\" can be used to achieve this goal (48) . Following is an example of how such a model-user interface was created for public health practitioners.",
+      "cite_spans": [
+        {
+          "start": 397,
+          "end": 401,
+          "text": "(48)",
+          "ref_id": "BIBREF47"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Appropriate translation"
+    },
+    {
+      "text": "During the first months of the severe acute respiratory syndrome (SARS) epidemic in 2003, a mathematical model was developed to predict the spread of SARS (49) . The mathematical model can be thought of as a machine, with the engine of the machine comprising a series of four mathematical equations:",
+      "cite_spans": [
+        {
+          "start": 155,
+          "end": 159,
+          "text": "(49)",
+          "ref_id": "BIBREF48"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Appropriate translation"
+    },
+    {
+      "text": "where C ti indicates the predicted number of incident cases on day ti, and t is time expressed in the number of incubation periods; C, the predicted total number of cases; D ti + d , the predicted number of deaths on day ti + d, and t is time expressed in the number of incubation periods; D, the predicted total number of deaths; R 0 , the basic reproductive number (i.e., the expected number of new infectious cases per infectious case); F, the case-fatality rate (i.e., the proportion of cases who die within the symptomatic period); i, the incubation period (i.e., the time from infection to symptoms); and d, duration of disease (i.e., the time from symptoms to recovery or death).",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Appropriate translation"
+    },
+    {
+      "text": "These equations are complex but do not have to be understood to be used, just as a person who drives a car does not have to understand how the engine works. The model-user interface is simple. The required information for using the previous SARS model to predict the number of SARS cases and deaths consists of only R 0, F, i, and d, and the result is a set of several line graphs showing the predicted and observed numbers of SARS cases and deaths. The deviation of the observed numbers from the predicted numbers indicates the success of infection control measures (49) .",
+      "cite_spans": [
+        {
+          "start": 567,
+          "end": 571,
+          "text": "(49)",
+          "ref_id": "BIBREF48"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Appropriate translation"
+    },
+    {
+      "text": "For the general public, an effective yet simple and basic way to convey, or translate, complex information is by using health proverbs (50) . Sayings such as \"an apple a day keeps the doctor away\" (51) have helped convey important health messages through the years. They were created by our ancestors, and we have the responsibility to create new science-based health proverbs for future generations.",
+      "cite_spans": [
+        {
+          "start": 135,
+          "end": 139,
+          "text": "(50)",
+          "ref_id": "BIBREF49"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Appropriate translation"
+    },
+    {
+      "text": "Public health practitioners can learn about knowledge translation techniques from weather forecasters (52), who use symbols (such as a sun partly covered by clouds) and maps to explain the weather. Symbols could be used to denote public health events, and the public could receive short-and long-term public health forecasts and public health alerts, complete with color-coded maps to illustrate public health problems in space and time.",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Appropriate translation"
+    },
+    {
+      "text": "Timely dissemination of information requires an ongoing information distribution mechanism. For example, 365 health indicators relevant to the general public could be developed, with one per day being discussed on the evening news (20) . After the news and the weather forecasts, the reporter could discuss one of the indicators, such as air pollution during the previous 5 years and its predicted relationship to asthma in the next 3 years. The public would not be expected to watch the news without fail, but if the information dissemination occurred daily, the public's awareness and knowledge would increase with time (53) .",
+      "cite_spans": [
+        {
+          "start": 231,
+          "end": 235,
+          "text": "(20)",
+          "ref_id": "BIBREF20"
+        },
+        {
+          "start": 622,
+          "end": 626,
+          "text": "(53)",
+          "ref_id": "BIBREF52"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Timely dissemination"
+    },
+    {
+      "text": "In Canada, approximately 167,456 deaths result from chronic diseases each year. A chronic disease clock was developed by the Public Health Agency of Canada to disseminate information in real time on its Web site (54) . The chronic disease clock is a digital clock with two categories: chronic-disease-related deaths so far this year and chronicdisease-related deaths so far today (as of 12:00 midnight). People can actually watch the number of deaths attributable to chronic disease increase every few minutes because one death occurs every 3 minutes in Canada. The clock keeps running 24 hours per day, 365 days per year.",
+      "cite_spans": [
+        {
+          "start": 212,
+          "end": 216,
+          "text": "(54)",
+          "ref_id": "BIBREF53"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Timely dissemination"
+    },
+    {
+      "text": "The general public is overwhelmed by health information. The end result is that they do nothing to improve their health because they do not know how to begin the process. The various types of available information need to be prioritized and disseminated in stages.",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Modulated release"
+    },
+    {
+      "text": "For example, the World Health Organization's The World Health Report contains an immense amount of information (55) . Chapter 4 of The World Health Report 2002 is about major health risks. In industrialized countries, the leading risk factors for chronic diseases are tobacco use, high blood pressure, excessive alcohol consumption, high cholesterol, overweight, low fruit and vegetable intake, and physical inactivity. The four major chronic diseases in terms of resulting disability are cardiovascular disease, cancer, chronic respiratory diseases, and The opinions expressed by authors contributing to this journal do not necessarily reflect the opinions of the U.S. Department of Health and Human Services, the Public Health Service, the Centers for Disease Control and Prevention, or the authors' affiliated institutions. Use of trade names is for identification only and does not imply endorsement by any of the groups named above.",
+      "cite_spans": [
+        {
+          "start": 111,
+          "end": 115,
+          "text": "(55)",
+          "ref_id": "BIBREF54"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Modulated release"
+    },
+    {
+      "text": "neuropsychiatric disorders (55) . The information in the chapter can be prioritized for modulated release (56) in three steps. To promote health, the public is told to play it SAFE (with the acronym SAFE representing smoking, alcohol, food, and exercise) -refrain from smoking, drink alcohol in moderation, eat a balanced diet, and increase physical activity. If they do not play it SAFE, they have to call a COP to assess the situation (with COP representing cholesterol, obesity, and pressure) -go for annual medical examinations to assess blood cholesterol levels, weight, and blood pressure. If they do not play it SAFE and call a COP, they have to expect HARM (with HARM representing heart disease, abnormal growth, respiratory disease, and mental disorders) -in the form of chronic conditions such as heart disease, cancer, lung disease, and mental disorders. They would then have to seek treatment. SAFE-COP-HARM concisely summarizes the important information (56).",
+      "cite_spans": [
+        {
+          "start": 27,
+          "end": 31,
+          "text": "(55)",
+          "ref_id": "BIBREF54"
+        },
+        {
+          "start": 106,
+          "end": 110,
+          "text": "(56)",
+          "ref_id": "BIBREF55"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Modulated release"
+    },
+    {
+      "text": "Scientific findings must be published in accessible formats. For example, information posted on a Web site may be considered accessible; however, some people do not have access to the Internet. Even people who do have Internet access may have difficulty retrieving a specific piece of information. For example, a Google search of the Internet using the key words health information resulted in 13,200,000 Web sites (53) .",
+      "cite_spans": [
+        {
+          "start": 415,
+          "end": 419,
+          "text": "(53)",
+          "ref_id": "BIBREF52"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Accessible information"
+    },
+    {
+      "text": "Various unique information dissemination tools have been invented. For example, executives at Xerox's Palo Alto Research Center (Palo Alto, Calif) can monitor the company's overall share price by watching an office fountain. The water flow is controlled through an Ethernet connection to a computer that has the latest stock data. Flow strengthens when the price increases (57).",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Accessible information"
+    },
+    {
+      "text": "New ways to actively market information and make it accessible to various populations are needed. A group of experts at an occupational health workshop for Latin Americans suggested unique ideas such as writing folk songs for the radio on the health effects of pesticides and organizing concerts with themes related to healthy living (58) . The Brazilian Ministry of Health distributes a free package of two decks of playing cards, and one health mes-sage is written on each card, for a total of 104 health messages. Messages include tips such as \"Take a walk with your dog for 30 minutes to burn up to 200 calories\" and \"Increase your fruit and vegetable consumption to five times a day.\" Other ways to make information accessible include incorporating messages into theatrical performances and story-telling sessions (53) .",
+      "cite_spans": [
+        {
+          "start": 334,
+          "end": 338,
+          "text": "(58)",
+          "ref_id": "BIBREF57"
+        },
+        {
+          "start": 819,
+          "end": 823,
+          "text": "(53)",
+          "ref_id": "BIBREF52"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Accessible information"
+    },
+    {
+      "text": "To be understood by different audiences, a message must be conveyed in relevant terms. For example, Canadian policymakers readily understand the economic and health impact of smoking on society. For them, a relevant message would be that eliminating tobacco use for 1 year in Canada would save $16.5 billion and prevent 47,000 deaths per year (59) . This message may not be relevant to members of the general public who are not interested in policy and economics but are passionate about sports. Instead of telling them about how much society will save if they quit smoking, you could tell them how many important sports events, such as Stanley Cup hockey playoffs, World Cup international soccer games, or Super Bowl football playoffs, they would miss in their lifetime if they continued smoking (59) .",
+      "cite_spans": [
+        {
+          "start": 343,
+          "end": 347,
+          "text": "(59)",
+          "ref_id": "BIBREF58"
+        },
+        {
+          "start": 797,
+          "end": 801,
+          "text": "(59)",
+          "ref_id": "BIBREF58"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Readable message"
+    },
+    {
+      "text": "For younger audiences, a relevant message such as \"smoking makes you ugly\" could be an innovative way to convey smoking-related information (60) . Teenage smokers who do not care about the long-term health effects of tobacco smoking may be able relate to the more immediate effects on appearance, such as smoking-induced facial wrinkles (61, 62) and baldness (63) .",
+      "cite_spans": [
+        {
+          "start": 140,
+          "end": 144,
+          "text": "(60)",
+          "ref_id": "BIBREF59"
+        },
+        {
+          "start": 337,
+          "end": 341,
+          "text": "(61,",
+          "ref_id": "BIBREF60"
+        },
+        {
+          "start": 342,
+          "end": 345,
+          "text": "62)",
+          "ref_id": "BIBREF61"
+        },
+        {
+          "start": 359,
+          "end": 363,
+          "text": "(63)",
+          "ref_id": "BIBREF62"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Readable message"
+    },
+    {
+      "text": "It is important to raise awareness of how scientific evidence can be used to make health policy decisions. The key is to create an atmosphere in which knowledge users are interested in and seeking out scientific knowledge rather than being inundated with unwanted information. Knowledge users can be motivated in many ways, and education plays an important role. Presenting facts is not enough. For example, after returning home from a doctor's office, a colleague's teenage son told her that his doctor told him he was obese. The boy then said that he really did not need to worry about the problem because obesity was so common. The boy had the facts but was not motivated to do anything about them.",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Motivated user"
+    },
+    {
+      "text": "Educating people by teaching them about the severity and consequences of a health problem helps motivate them to act. For example, obese people need to know that they have a higher risk of developing chronic diseases such as diabetes and heart disease. Knowing the number of people who became blind or had limbs amputated because of diabetes would be a better way to drive home the ramifications of diabetes than simply stating the number of people who had diabetes.",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Motivated user"
+    },
+    {
+      "text": "Policymakers and the general public must be convinced that using science for making health decisions will be beneficial and have a noticeable impact on their healthin other words, that it will have a rewarding outcome. For example, mathematical prediction models could help policymakers evaluate how various policies will affect a particular situation. To help show the general public how scientific evidence can be used to make health decisions and improve their health, computer software could be used to calculate the probability of disease risks or overall health outcomes based on input related to personal lifestyle choices, demographics, diet, and smoking (20) . For example, a 20-year-old man in excellent health may find out that he is expected to live 75 years. The computer program could be used to show him that if he were to start smoking, he would only be expected to live 67 years (64) . The 8-year difference may be rewarding enough for him to decide not to start smoking.",
+      "cite_spans": [
+        {
+          "start": 663,
+          "end": 667,
+          "text": "(20)",
+          "ref_id": "BIBREF20"
+        },
+        {
+          "start": 896,
+          "end": 900,
+          "text": "(64)",
+          "ref_id": "BIBREF63"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Rewarding outcome"
+    },
+    {
+      "text": "The science-based policy framework of knowledge generation, knowledge exchange, and knowledge uptake has similarities to Boyer's research (65) . Boyer studied the concept of scholarship and distinguished four kinds of scholarly pursuits: discovery, integration, application, and teaching (65) . Many parallels exist between Boyer's work and the framework described in this article: Boyer's discovery category parallels the framework's knowledge generation area, his integration category parallels the knowledge exchange area, and his application category parallels the knowledge uptake area. Overall, education is important in all three areas of the framework.",
+      "cite_spans": [
+        {
+          "start": 138,
+          "end": 142,
+          "text": "(65)",
+          "ref_id": "BIBREF64"
+        },
+        {
+          "start": 288,
+          "end": 292,
+          "text": "(65)",
+          "ref_id": "BIBREF64"
+        }
+      ],
+      "ref_spans": [],
+      "section": "Conclusion"
+    },
+    {
+      "text": "Corresponding to the 12 essentials are 12 recommendations for the future (Table 2 ). It is hoped that these recom-mendations will stimulate additional research and provide evidence for the necessity of a strong evidence base in public health policy.",
+      "cite_spans": [],
+      "ref_spans": [
+        {
+          "start": 73,
+          "end": 81,
+          "text": "(Table 2",
+          "ref_id": "TABREF3"
+        }
+      ],
+      "section": "Conclusion"
+    },
+    {
+      "text": "The opinions expressed by authors contributing to this journal do not necessarily reflect the opinions of the U.S. Department of Health and Human Services, the Public Health Service, the Centers for Disease Control and Prevention, or the authors' affiliated institutions. Use of trade names is for identification only and does not imply endorsement by any of the groups named above.",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Conclusion"
+    },
+    {
+      "text": "Knowledge Uptake Use high-quality study designs and apply a systematic approach in research to prevent the false-positive research cycle.",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Knowledge Generation Knowledge Exchange"
+    },
+    {
+      "text": "Apply existing methods and develop new methods for reducing bias and increasing data accuracy obtained from scientific research.",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Knowledge Generation Knowledge Exchange"
+    },
+    {
+      "text": "Apply sound analysis methods to produce high-quality results from scientific research.",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Knowledge Generation Knowledge Exchange"
+    },
+    {
+      "text": "(Continued on next page) The opinions expressed by authors contributing to this journal do not necessarily reflect the opinions of the U.S. Department of Health and Human Services, the Public Health Service, the Centers for Disease Control and Prevention, or the authors' affiliated institutions. Use of trade names is for identification only and does not imply endorsement by any of the groups named above. Apply existing methods and develop new methods to extract relevant content from existing information.",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Knowledge Generation Knowledge Exchange"
+    },
+    {
+      "text": "Develop new techniques for information translation, and simplify the science-user interface.",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Knowledge Generation Knowledge Exchange"
+    },
+    {
+      "text": "Develop innovative ways to disseminate information in a timely way.",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Knowledge Generation Knowledge Exchange"
+    },
+    {
+      "text": "Create new methods for organizing the release of prioritized information.",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Knowledge Generation Knowledge Exchange"
+    },
+    {
+      "text": "Invent new ways to market health information and make it more accessible.",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Knowledge Generation Knowledge Exchange"
+    },
+    {
+      "text": "Produce information in a readable, understandable format that is relevant to the audience.",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Knowledge Generation Knowledge Exchange"
+    },
+    {
+      "text": "Educate and motivate policymakers so that they actively seek out scientific evidence to make decisions.",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Knowledge Generation Knowledge Exchange"
+    },
+    {
+      "text": "Develop new ways to effectively show how using science to make decisions is beneficial.",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Knowledge Generation Knowledge Exchange"
+    }
+  ],
+  "bib_entries": {
+    "BIBREF0": {
+      "ref_id": "b0",
+      "title": "Evidence based health promotion: recollections, reflections, and reconsiderations",
+      "authors": [
+        {
+          "first": "K",
+          "middle": ["C"],
+          "last": "Tang",
+          "suffix": ""
+        },
+        {
+          "first": "J",
+          "middle": ["P"],
+          "last": "Ehsani",
+          "suffix": ""
+        },
+        {
+          "first": "D",
+          "middle": ["V"],
+          "last": "Mcqueen",
+          "suffix": ""
+        }
+      ],
+      "year": 2003,
+      "venue": "J Epidemiol Community Health",
+      "volume": "57",
+      "issn": "",
+      "pages": "841--844",
+      "other_ids": {}
+    },
+    "BIBREF1": {
+      "ref_id": "b1",
+      "title": "The unbearable lightness of healthcare policy making: a description of a process aimed at giving it some weight",
+      "authors": [
+        {
+          "first": "I",
+          "middle": ["B"],
+          "last": "Scheel",
+          "suffix": ""
+        },
+        {
+          "first": "K",
+          "middle": ["B"],
+          "last": "Hagen",
+          "suffix": ""
+        },
+        {
+          "first": "A",
+          "middle": ["D"],
+          "last": "Oxman",
+          "suffix": ""
+        }
+      ],
+      "year": 2003,
+      "venue": "J Epidemiol Community Health",
+      "volume": "57",
+      "issn": "",
+      "pages": "483--490",
+      "other_ids": {}
+    },
+    "BIBREF2": {
+      "ref_id": "b2",
+      "title": "Dictionary On-Line",
+      "authors": [
+        {
+          "first": "",
+          "middle": [],
+          "last": "Merriam-Webster",
+          "suffix": ""
+        }
+      ],
+      "year": null,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF4": {
+      "ref_id": "b4",
+      "title": "Barriers and bridges to evidence based clinical practice",
+      "authors": [
+        {
+          "first": "B",
+          "middle": [],
+          "last": "Haynes",
+          "suffix": ""
+        },
+        {
+          "first": "A",
+          "middle": [],
+          "last": "Haines",
+          "suffix": ""
+        }
+      ],
+      "year": 1998,
+      "venue": "BMJ",
+      "volume": "317",
+      "issn": "",
+      "pages": "273--279",
+      "other_ids": {}
+    },
+    "BIBREF5": {
+      "ref_id": "b5",
+      "title": "Oxfordshire (UK): CAB International",
+      "authors": [
+        {
+          "first": "",
+          "middle": [],
+          "last": "Cab International",
+          "suffix": ""
+        }
+      ],
+      "year": 2004,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF6": {
+      "ref_id": "b6",
+      "title": "Centre for Global eHealth Innovation. The Global eHealth Innovation Network. Ontario, Canada: Centre for Global eHealth Innovation",
+      "authors": [],
+      "year": 2005,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF7": {
+      "ref_id": "b7",
+      "title": "Knowledge acquisition, dissemination and application",
+      "authors": [],
+      "year": 2005,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF8": {
+      "ref_id": "b8",
+      "title": "The Knowledge Management Forum",
+      "authors": [],
+      "year": 2005,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF9": {
+      "ref_id": "b9",
+      "title": "Enhancing the uptake of research knowledge in health policy. Presentation slides",
+      "authors": [
+        {
+          "first": "J",
+          "middle": ["N"],
+          "last": "Lavis",
+          "suffix": ""
+        }
+      ],
+      "year": 2004,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF10": {
+      "ref_id": "b10",
+      "title": "Canada: Canadian Health Services Research Foundation",
+      "authors": [],
+      "year": 2004,
+      "venue": "Canadian Health Services Research Foundation. Knowledge brokering. Ottawa",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF11": {
+      "ref_id": "b11",
+      "title": "Knowledge transfer and exchange. Toronto, Canada: Institute for Work and Health",
+      "authors": [],
+      "year": 2004,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF12": {
+      "ref_id": "b12",
+      "title": "NIDRR's long range plan -knowledge dissemination and utilization",
+      "authors": [],
+      "year": null,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF13": {
+      "ref_id": "b13",
+      "title": "Canadian Institutes of Health Research. Knowledge translation overview. Ottawa, Canada: Canadian Institutes of Health Research",
+      "authors": [],
+      "year": 2001,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF14": {
+      "ref_id": "b14",
+      "title": "Getting the right knowledge to the right people at the right time: an invitational roundtable on knowledge transfer. Ottawa, Canada: Health Canada",
+      "authors": [],
+      "year": 2004,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF15": {
+      "ref_id": "b15",
+      "title": "Epidemiologic design options for health risk studies on dental amalgam",
+      "authors": [
+        {
+          "first": "Bck",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        },
+        {
+          "first": "Awp",
+          "middle": [],
+          "last": "Pak",
+          "suffix": ""
+        },
+        {
+          "first": "J",
+          "middle": ["L"],
+          "last": "Leake",
+          "suffix": ""
+        }
+      ],
+      "year": 1996,
+      "venue": "Can J Community Dentistry",
+      "volume": "11",
+      "issn": "",
+      "pages": "7--12",
+      "other_ids": {}
+    },
+    "BIBREF16": {
+      "ref_id": "b16",
+      "title": "World Health Organization",
+      "authors": [
+        {
+          "first": "R",
+          "middle": [],
+          "last": "Beaglehole",
+          "suffix": ""
+        },
+        {
+          "first": "R",
+          "middle": [],
+          "last": "Bonita",
+          "suffix": ""
+        },
+        {
+          "first": "T",
+          "middle": [],
+          "last": "Kjellstrom",
+          "suffix": ""
+        }
+      ],
+      "year": 1993,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF17": {
+      "ref_id": "b17",
+      "title": "Concepts of modern risk assessment and management",
+      "authors": [
+        {
+          "first": "S",
+          "middle": ["B"],
+          "last": "Corbin",
+          "suffix": ""
+        }
+      ],
+      "year": 1994,
+      "venue": "J Am College Dentists",
+      "volume": "61",
+      "issn": "",
+      "pages": "17--25",
+      "other_ids": {}
+    },
+    "BIBREF18": {
+      "ref_id": "b18",
+      "title": "Levels of evidence and grades of recommendation",
+      "authors": [],
+      "year": 2001,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF19": {
+      "ref_id": "b19",
+      "title": "Health insight -take charge of health information",
+      "authors": [],
+      "year": 2004,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF20": {
+      "ref_id": "b20",
+      "title": "Perspectives on epidemiologic surveillance in the 21 st century",
+      "authors": [
+        {
+          "first": "Bck",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        }
+      ],
+      "year": 1998,
+      "venue": "Chron Dis Canada",
+      "volume": "19",
+      "issn": "",
+      "pages": "145--51",
+      "other_ids": {}
+    },
+    "BIBREF21": {
+      "ref_id": "b21",
+      "title": "Mobile phone -brain tumor risk in the limelight again: focus on Swedish and U.S. epi studies. New York: Microwave News",
+      "authors": [],
+      "year": 1999,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF22": {
+      "ref_id": "b22",
+      "title": "Bias, overview",
+      "authors": [
+        {
+          "first": "Bck",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        },
+        {
+          "first": "Awp",
+          "middle": [],
+          "last": "Pak",
+          "suffix": ""
+        }
+      ],
+      "year": null,
+      "venue": "Encyclopaedia of biostatistics. 1",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF23": {
+      "ref_id": "b23",
+      "title": "Hypothesis Testing, Type I and Type II Errors",
+      "authors": [],
+      "year": 2004,
+      "venue": "Course BIOL 483. Lecture on",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF24": {
+      "ref_id": "b24",
+      "title": "A dictionary of epidemiology",
+      "authors": [
+        {
+          "first": "J",
+          "middle": ["M"],
+          "last": "Last",
+          "suffix": ""
+        }
+      ],
+      "year": 2001,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF25": {
+      "ref_id": "b25",
+      "title": "Reducing variability in treatment decision making: effectiveness of educating clinicians about uncertainty",
+      "authors": [
+        {
+          "first": "Bck",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        },
+        {
+          "first": "A",
+          "middle": [],
+          "last": "Jokovic",
+          "suffix": ""
+        },
+        {
+          "first": "E",
+          "middle": ["J"],
+          "last": "Kay",
+          "suffix": ""
+        },
+        {
+          "first": "P",
+          "middle": ["A"],
+          "last": "Main",
+          "suffix": ""
+        },
+        {
+          "first": "J",
+          "middle": ["L"],
+          "last": "Leake",
+          "suffix": ""
+        }
+      ],
+      "year": 1998,
+      "venue": "Medical Educ",
+      "volume": "32",
+      "issn": "1",
+      "pages": "105--116",
+      "other_ids": {}
+    },
+    "BIBREF26": {
+      "ref_id": "b26",
+      "title": "Cell type identification in leukemia: the level of agreement among four independent diagnostic methods",
+      "authors": [
+        {
+          "first": "Bck",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        },
+        {
+          "first": "E",
+          "middle": [],
+          "last": "De Harven",
+          "suffix": ""
+        },
+        {
+          "first": "D",
+          "middle": ["J"],
+          "last": "Bailey",
+          "suffix": ""
+        },
+        {
+          "first": "I",
+          "middle": ["D"],
+          "last": "Dube",
+          "suffix": ""
+        },
+        {
+          "first": "D",
+          "middle": [],
+          "last": "Pantalony",
+          "suffix": ""
+        }
+      ],
+      "year": 1994,
+      "venue": "Cancer Detect Prev",
+      "volume": "18",
+      "issn": "5",
+      "pages": "383--91",
+      "other_ids": {}
+    },
+    "BIBREF27": {
+      "ref_id": "b27",
+      "title": "A catalog of biases in questionnaires",
+      "authors": [
+        {
+          "first": "Bck",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        },
+        {
+          "first": "Awp",
+          "middle": [],
+          "last": "Pak",
+          "suffix": ""
+        }
+      ],
+      "year": 2005,
+      "venue": "Prev Chronic Dis",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF28": {
+      "ref_id": "b28",
+      "title": "Look before you leap: stratify before you standardize",
+      "authors": [
+        {
+          "first": "Bck",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        },
+        {
+          "first": "N",
+          "middle": [],
+          "last": "De Guia",
+          "suffix": ""
+        },
+        {
+          "first": "P",
+          "middle": [],
+          "last": "Walsh",
+          "suffix": ""
+        }
+      ],
+      "year": 1999,
+      "venue": "Am J Epidemiol",
+      "volume": "149",
+      "issn": "12",
+      "pages": "1087--96",
+      "other_ids": {}
+    },
+    "BIBREF29": {
+      "ref_id": "b29",
+      "title": "Modern epidemiology",
+      "authors": [
+        {
+          "first": "K",
+          "middle": [],
+          "last": "Rothman",
+          "suffix": ""
+        },
+        {
+          "first": "S",
+          "middle": [],
+          "last": "Greenland",
+          "suffix": ""
+        }
+      ],
+      "year": 1998,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF30": {
+      "ref_id": "b30",
+      "title": "Mass screening for rectal neoplasm in Jiashan County",
+      "authors": [
+        {
+          "first": "G",
+          "middle": [],
+          "last": "Zheng",
+          "suffix": ""
+        },
+        {
+          "first": "Bck",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        },
+        {
+          "first": "X",
+          "middle": [],
+          "last": "Yu",
+          "suffix": ""
+        },
+        {
+          "first": "R",
+          "middle": [],
+          "last": "Zou",
+          "suffix": ""
+        },
+        {
+          "first": "Y",
+          "middle": [],
+          "last": "Shao",
+          "suffix": ""
+        },
+        {
+          "first": "X",
+          "middle": [],
+          "last": "Ma",
+          "suffix": ""
+        }
+      ],
+      "year": 1991,
+      "venue": "China. J Clin Epidemiol",
+      "volume": "44",
+      "issn": "",
+      "pages": "1379--85",
+      "other_ids": {}
+    },
+    "BIBREF31": {
+      "ref_id": "b31",
+      "title": "Problems of spectrum and bias in evaluating the efficacy of diagnostic tests",
+      "authors": [
+        {
+          "first": "D",
+          "middle": ["F"],
+          "last": "Ransohoff",
+          "suffix": ""
+        },
+        {
+          "first": "A",
+          "middle": ["R"],
+          "last": "Feinstein",
+          "suffix": ""
+        }
+      ],
+      "year": 1978,
+      "venue": "N Engl J Med",
+      "volume": "299",
+      "issn": "17",
+      "pages": "926--956",
+      "other_ids": {}
+    },
+    "BIBREF32": {
+      "ref_id": "b32",
+      "title": "Sensitivity and specificity of a single diagnostic test in the presence of work-up bias",
+      "authors": [
+        {
+          "first": "Bck",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        }
+      ],
+      "year": 1992,
+      "venue": "J Clin Epidemiol",
+      "volume": "45",
+      "issn": "",
+      "pages": "581--587",
+      "other_ids": {}
+    },
+    "BIBREF33": {
+      "ref_id": "b33",
+      "title": "Guides for reading and interpreting systematic reviews",
+      "authors": [
+        {
+          "first": "T",
+          "middle": ["P"],
+          "last": "Klassen",
+          "suffix": ""
+        },
+        {
+          "first": "",
+          "middle": [],
+          "last": "Jadadar",
+          "suffix": ""
+        },
+        {
+          "first": "D",
+          "middle": [],
+          "last": "Moher",
+          "suffix": ""
+        }
+      ],
+      "year": 1998,
+      "venue": "Arch Pediatr Adolesc Med",
+      "volume": "152",
+      "issn": "",
+      "pages": "700--704",
+      "other_ids": {}
+    },
+    "BIBREF34": {
+      "ref_id": "b34",
+      "title": "Evidencebased medicine",
+      "authors": [
+        {
+          "first": "F",
+          "middle": [],
+          "last": "Davidoff",
+          "suffix": ""
+        },
+        {
+          "first": "B",
+          "middle": [],
+          "last": "Haynes",
+          "suffix": ""
+        },
+        {
+          "first": "D",
+          "middle": [],
+          "last": "Sackett",
+          "suffix": ""
+        },
+        {
+          "first": "R",
+          "middle": [],
+          "last": "Smith",
+          "suffix": ""
+        }
+      ],
+      "year": 1995,
+      "venue": "BMJ",
+      "volume": "310",
+      "issn": "",
+      "pages": "1085--1093",
+      "other_ids": {}
+    },
+    "BIBREF35": {
+      "ref_id": "b35",
+      "title": "Bridging the gap between scientists and decision makers",
+      "authors": [
+        {
+          "first": "Bck",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        },
+        {
+          "first": "D",
+          "middle": ["V"],
+          "last": "Mcqueen",
+          "suffix": ""
+        },
+        {
+          "first": "I",
+          "middle": [],
+          "last": "Rootman",
+          "suffix": ""
+        }
+      ],
+      "year": 2003,
+      "venue": "J Epidemiol Community Health",
+      "volume": "57",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF36": {
+      "ref_id": "b36",
+      "title": "Meta-analysis. Potentials and promise",
+      "authors": [
+        {
+          "first": "M",
+          "middle": [],
+          "last": "Egger",
+          "suffix": ""
+        },
+        {
+          "first": "G",
+          "middle": ["D"],
+          "last": "Smith",
+          "suffix": ""
+        }
+      ],
+      "year": 1997,
+      "venue": "BMJ",
+      "volume": "315",
+      "issn": "",
+      "pages": "1371--1375",
+      "other_ids": {}
+    },
+    "BIBREF37": {
+      "ref_id": "b37",
+      "title": "Systematic review of near patient test evaluations in primary care",
+      "authors": [
+        {
+          "first": "B",
+          "middle": ["C"],
+          "last": "Delaney",
+          "suffix": ""
+        },
+        {
+          "first": "C",
+          "middle": ["J"],
+          "last": "Hyde",
+          "suffix": ""
+        },
+        {
+          "first": "R",
+          "middle": ["J"],
+          "last": "Mcmanus",
+          "suffix": ""
+        },
+        {
+          "first": "S",
+          "middle": [],
+          "last": "Wilson",
+          "suffix": ""
+        },
+        {
+          "first": "D",
+          "middle": ["A"],
+          "last": "Fitzmaurice",
+          "suffix": ""
+        },
+        {
+          "first": "S",
+          "middle": [],
+          "last": "Jowett",
+          "suffix": ""
+        }
+      ],
+      "year": 1999,
+      "venue": "BMJ",
+      "volume": "319",
+      "issn": "",
+      "pages": "824--831",
+      "other_ids": {}
+    },
+    "BIBREF38": {
+      "ref_id": "b38",
+      "title": "What are the most effective ways of improving population health through transport interventions? Evidence from systematic reviews",
+      "authors": [
+        {
+          "first": "D",
+          "middle": ["S"],
+          "last": "Morrison",
+          "suffix": ""
+        },
+        {
+          "first": "M",
+          "middle": [],
+          "last": "Petticrew",
+          "suffix": ""
+        },
+        {
+          "first": "H",
+          "middle": [],
+          "last": "Thomson",
+          "suffix": ""
+        }
+      ],
+      "year": 2003,
+      "venue": "J Epidemiol Community Health",
+      "volume": "57",
+      "issn": "",
+      "pages": "327--360",
+      "other_ids": {}
+    },
+    "BIBREF39": {
+      "ref_id": "b39",
+      "title": "Meta-analysis: principles and procedures",
+      "authors": [
+        {
+          "first": "M",
+          "middle": [],
+          "last": "Egger",
+          "suffix": ""
+        },
+        {
+          "first": "G",
+          "middle": ["D"],
+          "last": "Smith",
+          "suffix": ""
+        },
+        {
+          "first": "A",
+          "middle": ["N"],
+          "last": "Phillips",
+          "suffix": ""
+        }
+      ],
+      "year": 1997,
+      "venue": "BMJ",
+      "volume": "315",
+      "issn": "",
+      "pages": "1533--1540",
+      "other_ids": {}
+    },
+    "BIBREF40": {
+      "ref_id": "b40",
+      "title": "World Wide Web electronic publication. Glossary Searched Term: Metadatabase",
+      "authors": [
+        {
+          "first": "R",
+          "middle": [],
+          "last": "Froese",
+          "suffix": ""
+        },
+        {
+          "first": "D",
+          "middle": [],
+          "last": "Pauly",
+          "suffix": ""
+        }
+      ],
+      "year": 2004,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF41": {
+      "ref_id": "b41",
+      "title": "Committee of Officials for the Ministers Responsible for Seniors. An inventory of Canadian programs for the prevention of falls among seniors living in the community. Ottawa, Canada: Health Canada",
+      "authors": [
+        {
+          "first": "",
+          "middle": [],
+          "last": "F/P/T",
+          "suffix": ""
+        }
+      ],
+      "year": 2001,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF42": {
+      "ref_id": "b42",
+      "title": "What is a public health observatory?",
+      "authors": [
+        {
+          "first": "J",
+          "middle": [],
+          "last": "Hemmings",
+          "suffix": ""
+        },
+        {
+          "first": "J",
+          "middle": [],
+          "last": "Wilkinson",
+          "suffix": ""
+        }
+      ],
+      "year": 2003,
+      "venue": "J Epidemiol Community Health",
+      "volume": "57",
+      "issn": "",
+      "pages": "324--330",
+      "other_ids": {}
+    },
+    "BIBREF43": {
+      "ref_id": "b43",
+      "title": "Lifestyle modifications to prevent and control hypertension",
+      "authors": [
+        {
+          "first": "Nrc",
+          "middle": [],
+          "last": "Campbell",
+          "suffix": ""
+        },
+        {
+          "first": "E",
+          "middle": [],
+          "last": "Burgess",
+          "suffix": ""
+        },
+        {
+          "first": "Bck",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        },
+        {
+          "first": "G",
+          "middle": [],
+          "last": "Taylor",
+          "suffix": ""
+        },
+        {
+          "first": "E",
+          "middle": [],
+          "last": "Wilson",
+          "suffix": ""
+        },
+        {
+          "first": "J",
+          "middle": [],
+          "last": "Cl\u00e9roux",
+          "suffix": ""
+        }
+      ],
+      "year": 1999,
+      "venue": "Can Med Assoc J",
+      "volume": "160",
+      "issn": "9",
+      "pages": "1--6",
+      "other_ids": {}
+    },
+    "BIBREF44": {
+      "ref_id": "b44",
+      "title": "Lessons for surveillance in the 21 st century: a historical perspective from the past 5 millennia",
+      "authors": [
+        {
+          "first": "Bck",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        },
+        {
+          "first": "Awp",
+          "middle": [],
+          "last": "Pak",
+          "suffix": ""
+        }
+      ],
+      "year": 2001,
+      "venue": "Soz Praventivmed",
+      "volume": "46",
+      "issn": "",
+      "pages": "361--369",
+      "other_ids": {}
+    },
+    "BIBREF45": {
+      "ref_id": "b45",
+      "title": "Two information dissemination approaches for public health decision-makers: encyclopaedia and fire alarm",
+      "authors": [
+        {
+          "first": "Bck",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        },
+        {
+          "first": "A",
+          "middle": [],
+          "last": "Orlova",
+          "suffix": ""
+        },
+        {
+          "first": "M",
+          "middle": [],
+          "last": "Marsh",
+          "suffix": ""
+        },
+        {
+          "first": "N",
+          "middle": [],
+          "last": "Issa",
+          "suffix": ""
+        },
+        {
+          "first": "H",
+          "middle": [],
+          "last": "Morrison",
+          "suffix": ""
+        }
+      ],
+      "year": 2004,
+      "venue": "J Epidemiol Community Health",
+      "volume": "58",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF46": {
+      "ref_id": "b46",
+      "title": "Understanding the basic concepts of public health surveillance",
+      "authors": [
+        {
+          "first": "Bck",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        },
+        {
+          "first": "Awp",
+          "middle": [],
+          "last": "Pak",
+          "suffix": ""
+        },
+        {
+          "first": "J",
+          "middle": ["M"],
+          "last": "Ottoson",
+          "suffix": ""
+        }
+      ],
+      "year": 2002,
+      "venue": "J Epidemiol Community Health",
+      "volume": "56",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF47": {
+      "ref_id": "b47",
+      "title": "Future challenges for diagnostic research: striking a balance between simplicity and complexity",
+      "authors": [
+        {
+          "first": "Bck",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        }
+      ],
+      "year": 2002,
+      "venue": "J Epidemiol Community Health",
+      "volume": "56",
+      "issn": "",
+      "pages": "334--339",
+      "other_ids": {}
+    },
+    "BIBREF48": {
+      "ref_id": "b48",
+      "title": "A simple approximate mathematical model to predict the number of severe acute respiratory syndrome cases and deaths",
+      "authors": [
+        {
+          "first": "Bck",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        },
+        {
+          "first": "Awp",
+          "middle": [],
+          "last": "Pak",
+          "suffix": ""
+        }
+      ],
+      "year": 2003,
+      "venue": "J Epidemiol Community Health",
+      "volume": "57",
+      "issn": "",
+      "pages": "831--836",
+      "other_ids": {}
+    },
+    "BIBREF49": {
+      "ref_id": "b49",
+      "title": "Health proverbs",
+      "authors": [
+        {
+          "first": "Bck",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        },
+        {
+          "first": "Awp",
+          "middle": [],
+          "last": "Pak",
+          "suffix": ""
+        },
+        {
+          "first": "Jcl",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        },
+        {
+          "first": "Ecl",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        }
+      ],
+      "year": 2004,
+      "venue": "J Epidemiol Community Health",
+      "volume": "58",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF50": {
+      "ref_id": "b50",
+      "title": "The concise oxford dictionary of proverbs",
+      "authors": [
+        {
+          "first": "J",
+          "middle": [],
+          "last": "Simpson",
+          "suffix": ""
+        }
+      ],
+      "year": 1992,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF51": {
+      "ref_id": "b51",
+      "title": "Public health practitioners can learn from the weather forecasters",
+      "authors": [
+        {
+          "first": "Bck",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        }
+      ],
+      "year": 2004,
+      "venue": "J Epidemiol Community Health",
+      "volume": "58",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF52": {
+      "ref_id": "b52",
+      "title": "Innovative ideas needed for timely and effective information dissemination",
+      "authors": [
+        {
+          "first": "Bck",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        }
+      ],
+      "year": 2005,
+      "venue": "J Epidemiol Community Health",
+      "volume": "59",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF53": {
+      "ref_id": "b53",
+      "title": "Centre for Chronic Disease Prevention and Control, Public Health Agency of Canada. Chronic disease clock",
+      "authors": [],
+      "year": 2004,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF54": {
+      "ref_id": "b54",
+      "title": "World Health Organization. The World Health Report",
+      "authors": [],
+      "year": 2002,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF55": {
+      "ref_id": "b55",
+      "title": "Modulated release of health risk informa",
+      "authors": [
+        {
+          "first": "Bck",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        }
+      ],
+      "year": 2005,
+      "venue": "",
+      "volume": "2",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF56": {
+      "ref_id": "b56",
+      "title": "National Post. Sowing PARC's next revolution: Xerox squandered the 1970s innovations of its Palo Alto Research Center, but hopes to make amends",
+      "authors": [],
+      "year": 1999,
+      "venue": "J Epidemiol Community Health",
+      "volume": "58",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF57": {
+      "ref_id": "b57",
+      "title": "Prioritization of occupational sentinel health events for workplace health and hazard surveillance: the Pan American Health Organization experience",
+      "authors": [
+        {
+          "first": "Bck",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        },
+        {
+          "first": "Gjm",
+          "middle": [],
+          "last": "Eijkemans",
+          "suffix": ""
+        },
+        {
+          "first": "L",
+          "middle": ["M"],
+          "last": "Tennassee",
+          "suffix": ""
+        }
+      ],
+      "year": 2001,
+      "venue": "J Occup Environ Med",
+      "volume": "43",
+      "issn": "",
+      "pages": "147--57",
+      "other_ids": {}
+    },
+    "BIBREF58": {
+      "ref_id": "b58",
+      "title": "Understanding the basic principles of knowledge translation",
+      "authors": [
+        {
+          "first": "Bck",
+          "middle": [],
+          "last": "Choi",
+          "suffix": ""
+        }
+      ],
+      "year": 2005,
+      "venue": "J Epidemiol Community Health",
+      "volume": "59",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF59": {
+      "ref_id": "b59",
+      "title": "Smoking makes you uglyan innovative approach to smoking cessation",
+      "authors": [
+        {
+          "first": "A",
+          "middle": ["M"],
+          "last": "Canny",
+          "suffix": ""
+        },
+        {
+          "first": "T",
+          "middle": ["W"],
+          "last": "Goodrich",
+          "suffix": ""
+        }
+      ],
+      "year": 2001,
+      "venue": "AORN J",
+      "volume": "74",
+      "issn": "",
+      "pages": "722--727",
+      "other_ids": {}
+    },
+    "BIBREF60": {
+      "ref_id": "b60",
+      "title": "Cigarette smoking associated with premature facial wrinkling: image analysis of facial skin replicas",
+      "authors": [
+        {
+          "first": "J",
+          "middle": ["S"],
+          "last": "Koh",
+          "suffix": ""
+        },
+        {
+          "first": "H",
+          "middle": [],
+          "last": "Kang",
+          "suffix": ""
+        },
+        {
+          "first": "S",
+          "middle": ["W"],
+          "last": "Choi",
+          "suffix": ""
+        },
+        {
+          "first": "Kim",
+          "middle": [],
+          "last": "Ho",
+          "suffix": ""
+        }
+      ],
+      "year": 2002,
+      "venue": "Int J Dermatol",
+      "volume": "41",
+      "issn": "",
+      "pages": "21--28",
+      "other_ids": {}
+    },
+    "BIBREF61": {
+      "ref_id": "b61",
+      "title": "Tobacco isolated as a cause of skin aging still another reason to quit smoking",
+      "authors": [
+        {
+          "first": "N",
+          "middle": [],
+          "last": "Goldstein",
+          "suffix": ""
+        }
+      ],
+      "year": 2002,
+      "venue": "Hawaii Med J",
+      "volume": "61",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF62": {
+      "ref_id": "b62",
+      "title": "Association between smoking and hair loss: another opportunity for health education against smoking?",
+      "authors": [
+        {
+          "first": "R",
+          "middle": ["M"],
+          "last": "Trueb",
+          "suffix": ""
+        }
+      ],
+      "year": 2003,
+      "venue": "Dermatology",
+      "volume": "206",
+      "issn": "",
+      "pages": "189--91",
+      "other_ids": {}
+    },
+    "BIBREF63": {
+      "ref_id": "b63",
+      "title": "Life Expectancy Calculator",
+      "authors": [
+        {
+          "first": "Insurance",
+          "middle": [],
+          "last": "Toronto",
+          "suffix": ""
+        }
+      ],
+      "year": null,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    },
+    "BIBREF64": {
+      "ref_id": "b64",
+      "title": "Scholarship reconsidered: priorities of the professorate",
+      "authors": [
+        {
+          "first": "E",
+          "middle": ["L"],
+          "last": "Boyer",
+          "suffix": ""
+        }
+      ],
+      "year": null,
+      "venue": "",
+      "volume": "",
+      "issn": "",
+      "pages": "",
+      "other_ids": {}
+    }
+  },
+  "ref_entries": {
+    "TABREF0": {
+      "text": "www.cdc.gov/pcd/issues/2005/oct/05_0005.htm \u2022 Centers for Disease Control and Prevention 1",
+      "latex": null,
+      "type": "table"
+    },
+    "TABREF1": {
+      "text": "www.cdc.gov/pcd/issues/2005/oct/05_0005.htm \u2022 Centers for Disease Control and Prevention 3",
+      "latex": null,
+      "type": "table"
+    },
+    "TABREF3": {
+      "text": "Twelve Recommendations for the Future of Science-based Policy",
+      "latex": null,
+      "type": "table"
+    },
+    "TABREF4": {
+      "text": "www.cdc.gov/pcd/issues/2005/oct/05_0005.htm \u2022 Centers for Disease Control and Prevention 11",
+      "latex": null,
+      "type": "table"
+    },
+    "TABREF5": {
+      "text": "(continued) Twelve Recommendations for the Future of Science-based Policy Use existing tools and develop new tools for summarizing scientific findings.",
+      "latex": null,
+      "type": "table"
+    }
+  },
+  "back_matter": [
+    {
+      "text": "Views presented in this article are those of the author and cannot be attributed to the Public Health Agency of Canada, the University of Ottawa, or the University of Toronto Author Information",
+      "cite_spans": [],
+      "ref_spans": [],
+      "section": "Acknowledgments"
+    }
+  ]
+}

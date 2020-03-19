@@ -1,0 +1,2 @@
+py2neo
+git+https://git.connect.dzd-ev.de/dzdtools/pythonmodules.git#subdirectory=DZDjson2Graph
