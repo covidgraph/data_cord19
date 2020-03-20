@@ -3,7 +3,7 @@ import json
 import pathlib
 import multiprocessing
 import numpy as np
-from py2neo import Graph
+from py2neo import Graph, Schema
 from DZDjson2Graph import Json2graph
 
 if __name__ == "__main__":
@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
 
 GRAPH = Graph()
-WORKER_COUNT = 2
+WORKER_COUNT = 4
 
 DATA_BASE_DIR = os.path.join(SCRIPT_DIR, "dataset/2020-03-13/")
 DATA_DIRS = [
@@ -29,7 +29,40 @@ DATA_DIRS = [
 ]
 """
 
-JSON2GRAPH_LABELOVERRIDE = {"authors": "Author"}
+# Override label names
+JSON2GRAPH_LABELOVERRIDE = {
+    "authors": "Author",
+}
+
+# Define for which labels auto primary keys should be generated
+JSON2GRAPH_GENERATED_IDS = {
+    "Abstract": ["text"],  # Generate an id based on the property "text"
+    "Affiliation": "All",  # Generate an id based all properties
+    "Author": "All",
+    "Back_matter": "All",
+    "Bibref": "All",
+    "Bib_entries": None,  # Generate a random id
+    "Body_text": "All",
+    "Cite_spans": "All",
+    "Figref": "All",
+    "Location": "All",
+    "Metadata": "All",
+    "Other_ids": None,
+    "Ref_entries": None,
+    "Ref_spans": "All",
+    "Tabref": "All",
+}
+
+# Define which properties can be taken as primary key for specific labels
+# {"label":"attribute-that-works-as-id"}
+JSON2GRAPH_ID_ATTR = {
+    "Arxiv": "arXiv",
+    "Doi": "DOI",
+    "Paper": "paper_id",
+    "Pmcid": "PMCID",
+    "Pmid": "PMID",
+}
+JSON2GRAPH_CONCAT_LIST_ATTR = {"middle": " "}
 
 
 class DataLoader(object):
@@ -43,14 +76,60 @@ class DataLoader(object):
 
     def _cast_json(self):
         c = Json2graph(self.data)
-        c.label_override = JSON2GRAPH_LABELOVERRIDE
+        c.config_dict_label_override = JSON2GRAPH_LABELOVERRIDE
+        c.config_func_custom_relation_name_generator = DataTransformer.nameRelation
+        c.config_dict_primarykey_generated_hashed_attrs_by_label = (
+            JSON2GRAPH_GENERATED_IDS
+        )
+        c.config_dict_concat_list_attr = JSON2GRAPH_CONCAT_LIST_ATTR
+        c.config_dict_primarykey_attr_by_label = JSON2GRAPH_ID_ATTR
         return c.get_subgraph("Paper")
 
     def load_data(self):
         self._parse_file()
         tx = GRAPH.begin()
-        tx.create(self._cast_json())
+        tx.create(DataTransformer.renameLabels(self._cast_json()))
         tx.commit()
+
+
+class DataTransformer(object):
+    @classmethod
+    def renameLabels(cls, subgraph):
+        for node in subgraph.nodes:
+            for label in node.labels:
+                if label.startswith("Bibref"):
+                    node.remove_label(label)
+                    node.add_label("Bibref")
+                if label.startswith("Figref"):
+                    node["_id"] = label
+                    node.remove_label(label)
+                    node.add_label("Figref")
+                if label.startswith("Tabref"):
+                    node["_id"] = label
+                    node.remove_label(label)
+                    node.add_label("Tabref")
+        return subgraph
+
+    @classmethod
+    def nameRelation(cls, parent_node, child_node, relation_props):
+        names = []
+        for node in [parent_node, child_node]:
+
+            if node.__primarylabel__.startswith("Bibref"):
+                names.append("BIBREF")
+            elif node.__primarylabel__.startswith("Figref"):
+                names.append("FIGREF")
+            elif node.__primarylabel__.startswith("Tabref"):
+                names.append("TABREF")
+            else:
+                names.append(node.__primarylabel__.upper())
+        return "{}_HAS_{}".format(names[0], names[1])
+
+
+class IndexCreator(object):
+    @classmethod
+    def create(cls):
+        schema = Schema(GRAPH)
 
 
 class Worker(multiprocessing.Process):
@@ -86,7 +165,6 @@ class Worker(multiprocessing.Process):
         workers = []
         worker_no = 1
         for bucket in file_buckets:
-            print(bucket)
             workers.append(cls("WORKER_{}".format(worker_no), bucket))
             worker_no += 1
         return workers
