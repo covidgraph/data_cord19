@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
 GRAPH = Graph()
 WORKER_COUNT = 2
-"""
+
 DATA_BASE_DIR = os.path.join(SCRIPT_DIR, "dataset/2020-03-13/")
 DATA_DIRS = [
     "biorxiv_medrxiv/biorxiv_medrxiv",
@@ -27,6 +27,9 @@ DATA_BASE_DIR = os.path.join(SCRIPT_DIR, "testdataset")
 DATA_DIRS = [
     "test",
 ]
+"""
+
+JSON2GRAPH_LABELOVERRIDE = {"authors": "Author"}
 
 
 class DataLoader(object):
@@ -39,7 +42,9 @@ class DataLoader(object):
             self.data = json.load(json_file)
 
     def _cast_json(self):
-        return Json2graph(self.data).get_subgraph("Paper")
+        c = Json2graph(self.data)
+        c.label_override = JSON2GRAPH_LABELOVERRIDE
+        return c.get_subgraph("Paper")
 
     def load_data(self):
         self._parse_file()
@@ -65,6 +70,7 @@ class Worker(multiprocessing.Process):
             )
             files_cnt += 1
             loader = DataLoader(file)
+
             loader.load_data()
         print(self.name, " FINISHED!")
 
