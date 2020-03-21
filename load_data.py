@@ -3,6 +3,10 @@ import json
 import pathlib
 import multiprocessing
 import numpy as np
+from py2neo.database import TransientError,TransactionError
+import time
+import random
+# from graphio import NodeSet, RelationshipSet
 from py2neo import Graph, Schema
 from DZDjson2Graph import Json2graph
 
@@ -13,7 +17,7 @@ if __name__ == "__main__":
 
 
 GRAPH = Graph()
-WORKER_COUNT = 4
+WORKER_COUNT = 32
 
 DATA_BASE_DIR = os.path.join(SCRIPT_DIR, "dataset/2020-03-13/")
 DATA_DIRS = [
@@ -37,20 +41,20 @@ JSON2GRAPH_LABELOVERRIDE = {
 # Define for which labels auto primary keys should be generated
 JSON2GRAPH_GENERATED_IDS = {
     "Abstract": ["text"],  # Generate an id based on the property "text"
-    "Affiliation": "All",  # Generate an id based all properties
-    "Author": "All",
-    "Back_matter": "All",
-    "Bibref": "All",
-    "Bib_entries": None,  # Generate a random id
-    "Body_text": "All",
-    "Cite_spans": "All",
-    "Figref": "All",
-    "Location": "All",
-    "Metadata": "All",
-    "Other_ids": None,
-    "Ref_entries": None,
-    "Ref_spans": "All",
-    "Tabref": "All",
+    "Affiliation": "AllAttributes",  # Generate an id based all properties
+    "Author": "AllAttributes",
+    "Back_matter": "AllAttributes",
+    "Bibref": "AllAttributes",
+    "Bib_entries": "AllInnerContent",  # Generate an id based all attr and childrens attr
+    "Body_text": "AllAttributes",
+    "Cite_spans": "AllAttributes",
+    "Figref": "AllAttributes",
+    "Location": "AllAttributes",
+    "Metadata": "AllAttributes",
+    "Other_ids": "AllInnerContent",
+    "Ref_entries": "AllInnerContent",
+    "Ref_spans": "AllAttributes",
+    "Tabref": "AllAttributes",
 }
 
 # Define which properties can be taken as primary key for specific labels
@@ -63,6 +67,7 @@ JSON2GRAPH_ID_ATTR = {
     "Pmid": "PMID",
 }
 JSON2GRAPH_CONCAT_LIST_ATTR = {"middle": " "}
+JSON2GRAPH_GENERATED_ID_ATTR_NAME = "hash_id"
 
 
 class DataLoader(object):
@@ -83,32 +88,80 @@ class DataLoader(object):
         )
         c.config_dict_concat_list_attr = JSON2GRAPH_CONCAT_LIST_ATTR
         c.config_dict_primarykey_attr_by_label = JSON2GRAPH_ID_ATTR
+        c.config_bool_reduce_relation_nodes_to_pk = False
+        c.config_str_primarykey_generated_attr_name = JSON2GRAPH_GENERATED_ID_ATTR_NAME
+        c.config_func_node_pre_modifier = DataTransformer.renameLabels
         return c.get_subgraph("Paper")
 
     def load_data(self):
         self._parse_file()
-        tx = GRAPH.begin()
-        tx.create(DataTransformer.renameLabels(self._cast_json()))
-        tx.commit()
+        
+        sg = self._cast_json()
+        #self._merge(sg.nodes)
+        #self._merge(sg.relationships)
+        for n in sg.nodes:
+            try:
+                self._merge([n])
+            except:
+                
+                print(n)
+                raise
+        for r in sg.relationships:
+            try:
+                self._merge([n])
+            except:
+                print(r)
+                raise
+    def _merge(self,objs):
+        try_count = 0
+        insert_running = True
+        max_retry_wait_time_sec = 5
+        max_retries_on_insert_errors = 10
+        while insert_running:
+            try:
+                tx = GRAPH.begin()
+                for obj in objs:
+                    tx.merge(obj)
+                tx.commit()
+                insert_running = False
+            except (TransactionError, TransientError):
+                if try_count == max_retries_on_insert_errors:
+                    raise
+                else:
+                    try_count += 1
+                    waittime = (
+                        random.randrange(1, max_retry_wait_time_sec, 1)
+                        * try_count
+                    )
+                    print(
+                        "Error while inserting '{}'. But relax maybe its just a NodeLock. Will retry {} times. Waiting {} seconds until next retry".format(
+                            obj,
+                            max_retries_on_insert_errors - try_count,
+                            waittime,
+                        )
+                    )
+                    time.sleep(waittime)
 
 
 class DataTransformer(object):
     @classmethod
-    def renameLabels(cls, subgraph):
-        for node in subgraph.nodes:
-            for label in node.labels:
-                if label.startswith("Bibref"):
-                    node.remove_label(label)
-                    node.add_label("Bibref")
-                if label.startswith("Figref"):
-                    node["_id"] = label
-                    node.remove_label(label)
-                    node.add_label("Figref")
-                if label.startswith("Tabref"):
-                    node["_id"] = label
-                    node.remove_label(label)
-                    node.add_label("Tabref")
-        return subgraph
+    def renameLabels(cls, node):
+        for label in node.labels:
+            if label.startswith("Bibref"):
+                node.remove_label(label)
+                node.add_label("Bibref")
+                node.__primarylabel__ = "Bibref"
+            if label.startswith("Figref"):
+                node["_id"] = label
+                node.remove_label(label)
+                node.add_label("Figref")
+                node.__primarylabel__ = "Figref"
+            if label.startswith("Tabref"):
+                node["_id"] = label
+                node.remove_label(label)
+                node.add_label("Tabref")
+                node.__primarylabel__ = "Tabref"
+        return node
 
     @classmethod
     def nameRelation(cls, parent_node, child_node, relation_props):
@@ -126,10 +179,39 @@ class DataTransformer(object):
         return "{}_HAS_{}".format(names[0], names[1])
 
 
-class IndexCreator(object):
+class GraphSchema(object):
     @classmethod
-    def create(cls):
-        schema = Schema(GRAPH)
+    def create_indexes(cls):
+        
+        for label in JSON2GRAPH_GENERATED_IDS.keys():
+            g = GRAPH.begin()
+            schema = Schema(g)
+            schema.create_index(label, JSON2GRAPH_GENERATED_ID_ATTR_NAME)
+            g.finish()
+        for label, attr in JSON2GRAPH_ID_ATTR.items():
+            g = GRAPH.begin()
+            schema = Schema(g)
+            schema.create_index(label, attr)
+            g.finish()
+        
+
+    @classmethod
+    def create_uniqueness_constraint(cls):
+        for label in JSON2GRAPH_GENERATED_IDS.keys():
+            g = GRAPH
+            schema = Schema(g)
+            print(label)
+            schema.create_uniqueness_constraint(
+                label, JSON2GRAPH_GENERATED_ID_ATTR_NAME
+            )
+            #g.finish()
+        for label, attr in JSON2GRAPH_ID_ATTR.items():
+            g = GRAPH
+            schema = Schema(g)
+            print(label)
+            schema.create_uniqueness_constraint(label, attr)
+            #g.finish()
+        
 
 
 class Worker(multiprocessing.Process):
@@ -173,8 +255,11 @@ class Worker(multiprocessing.Process):
 def start():
     for datadir in DATA_DIRS:
         pth = os.path.join(DATA_BASE_DIR, datadir)
-
+        print("Create contraints/indexes")
+        GraphSchema.create_uniqueness_constraint()
+        print("Generate Workers")
         workers = Worker.generate_workers(pth)
+        print("Start Workers")
         for w in workers:
             w.start()
 
