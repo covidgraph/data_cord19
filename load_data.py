@@ -16,7 +16,8 @@ if __name__ == "__main__":
     )
 
 
-GRAPH = Graph()
+GRAPH = Graph("bolt://192.168.178.77:7687")
+#GRAPH = Graph()
 WORKER_COUNT = 32
 
 DATA_BASE_DIR = os.path.join(SCRIPT_DIR, "dataset/2020-03-13/")
@@ -38,7 +39,7 @@ JSON2GRAPH_LABELOVERRIDE = {
     "authors": "Author",
 }
 
-# Define for which labels auto primary keys should be generated
+# Define for which labels and how a hash id attr should be generated
 JSON2GRAPH_GENERATED_IDS = {
     "Abstract": ["text"],  # Generate an id based on the property "text"
     "Affiliation": "AllAttributes",  # Generate an id based all properties
@@ -67,7 +68,7 @@ JSON2GRAPH_ID_ATTR = {
     "Pmid": "PMID",
 }
 JSON2GRAPH_CONCAT_LIST_ATTR = {"middle": " "}
-JSON2GRAPH_GENERATED_ID_ATTR_NAME = "hash_id"
+JSON2GRAPH_GENERATED_ID_ATTR_NAME = "_hash_id"
 
 
 class DataLoader(object):
@@ -108,7 +109,7 @@ class DataLoader(object):
                 raise
         for r in sg.relationships:
             try:
-                self._merge([n])
+                self._merge([r])
             except:
                 print(r)
                 raise
@@ -198,21 +199,42 @@ class GraphSchema(object):
     @classmethod
     def create_uniqueness_constraint(cls):
         for label in JSON2GRAPH_GENERATED_IDS.keys():
+            """
             g = GRAPH
             schema = Schema(g)
             print(label)
-            schema.create_uniqueness_constraint(
-                label, JSON2GRAPH_GENERATED_ID_ATTR_NAME
-            )
+            try:
+                schema.create_uniqueness_constraint(
+                    label, JSON2GRAPH_GENERATED_ID_ATTR_NAME
+                )
+            except:
+                pass
             #g.finish()
+            """
+            cls._create_constraint(label,JSON2GRAPH_GENERATED_ID_ATTR_NAME)
         for label, attr in JSON2GRAPH_ID_ATTR.items():
+            """
             g = GRAPH
             schema = Schema(g)
             print(label)
-            schema.create_uniqueness_constraint(label, attr)
+            try:
+                schema.create_uniqueness_constraint(label, attr)
+            except:
+                pass
             #g.finish()
+            """
+            cls._create_constraint(label,attr)
+            
+            
+    @classmethod
+    def _create_constraint(cls, label, attr):
+        tx = GRAPH.begin()
+        cypher = "CREATE CONSTRAINT ON (_:{}) ASSERT _.{} IS UNIQUE".format(
+            label, attr)
+        print(cypher)
+        tx.run(cypher)
+        tx.commit()
         
-
 
 class Worker(multiprocessing.Process):
     def __init__(self, worker_name: str, json_files: list):
@@ -253,10 +275,11 @@ class Worker(multiprocessing.Process):
 
 
 def start():
+    #print("Create contraints/indexes")
+    #GraphSchema.create_uniqueness_constraint()
     for datadir in DATA_DIRS:
         pth = os.path.join(DATA_BASE_DIR, datadir)
-        print("Create contraints/indexes")
-        GraphSchema.create_uniqueness_constraint()
+        
         print("Generate Workers")
         workers = Worker.generate_workers(pth)
         print("Start Workers")
@@ -267,5 +290,5 @@ def start():
             # i dont know exactly what i am doing here. CargoCult. Take a deep dive when time is available
             w.join()
 
-
+# GraphSchema.create_uniqueness_constraint()
 start()
