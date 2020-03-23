@@ -6,6 +6,7 @@ import numpy as np
 from py2neo.database import ClientError
 import time
 import random
+from linetimer import CodeTimer
 
 # from graphio import NodeSet, RelationshipSet
 from py2neo import Graph, Schema
@@ -38,7 +39,6 @@ DATA_DIRS = [
     "test",
 ]
 """
-
 
 # Override label names
 JSON2GRAPH_LABELOVERRIDE = {
@@ -235,4 +235,6 @@ def start():
 
 
 GraphSchema.create_uniqueness_constraint()
-start()
+
+with CodeTimer(unit="s"):
+    start()
