@@ -3,9 +3,10 @@ import json
 import pathlib
 import multiprocessing
 import numpy as np
-from py2neo.database import TransientError,TransactionError
+from py2neo.database import TransientError, TransactionError
 import time
 import random
+
 # from graphio import NodeSet, RelationshipSet
 from py2neo import Graph, Schema
 from DZDjson2Graph import Json2graph
@@ -16,10 +17,14 @@ if __name__ == "__main__":
     )
 
 
-GRAPH = Graph("bolt://192.168.178.77:7687")
-#GRAPH = Graph()
-WORKER_COUNT = 32
+# GRAPH = Graph("bolt://192.168.178.77:7687")
+GRAPH = Graph()
 
+WORKER_COUNT = 1
+COMMIT_INTERVAL = 20
+
+
+"""
 DATA_BASE_DIR = os.path.join(SCRIPT_DIR, "dataset/2020-03-13/")
 DATA_DIRS = [
     "biorxiv_medrxiv/biorxiv_medrxiv",
@@ -28,11 +33,12 @@ DATA_DIRS = [
     "pmc_custom_license/pmc_custom_license",
 ]
 """
+
 DATA_BASE_DIR = os.path.join(SCRIPT_DIR, "testdataset")
 DATA_DIRS = [
     "test",
 ]
-"""
+
 
 # Override label names
 JSON2GRAPH_LABELOVERRIDE = {
@@ -94,26 +100,33 @@ class DataLoader(object):
         c.config_func_node_pre_modifier = DataTransformer.renameLabels
         return c.get_subgraph("Paper")
 
+    @classmethod
+    def chunks(cls, lst, n):
+        """Yield successive n-sized chunks from lst."""
+        for i in range(0, len(lst), n):
+            yield lst[i : i + n]
+
     def load_data(self):
         self._parse_file()
-        
+
         sg = self._cast_json()
-        #self._merge(sg.nodes)
-        #self._merge(sg.relationships)
-        for n in sg.nodes:
+        # self._merge(sg.nodes)
+        # self._merge(sg.relationships)
+        for n in self.chunks(list(sg.nodes), COMMIT_INTERVAL):
             try:
-                self._merge([n])
+                self._merge(n)
             except:
-                
+
                 print(n)
                 raise
-        for r in sg.relationships:
+        for r in self.chunks(list(sg.relationships), COMMIT_INTERVAL):
             try:
-                self._merge([r])
+                self._merge(r)
             except:
                 print(r)
                 raise
-    def _merge(self,objs):
+
+    def _merge(self, objs):
         try_count = 0
         insert_running = True
         max_retry_wait_time_sec = 5
@@ -131,14 +144,11 @@ class DataLoader(object):
                 else:
                     try_count += 1
                     waittime = (
-                        random.randrange(1, max_retry_wait_time_sec, 1)
-                        * try_count
+                        random.randrange(1, max_retry_wait_time_sec, 1) * try_count
                     )
                     print(
                         "Error while inserting '{}'. But relax maybe its just a NodeLock. Will retry {} times. Waiting {} seconds until next retry".format(
-                            obj,
-                            max_retries_on_insert_errors - try_count,
-                            waittime,
+                            obj, max_retries_on_insert_errors - try_count, waittime,
                         )
                     )
                     time.sleep(waittime)
@@ -183,7 +193,7 @@ class DataTransformer(object):
 class GraphSchema(object):
     @classmethod
     def create_indexes(cls):
-        
+
         for label in JSON2GRAPH_GENERATED_IDS.keys():
             g = GRAPH.begin()
             schema = Schema(g)
@@ -194,7 +204,6 @@ class GraphSchema(object):
             schema = Schema(g)
             schema.create_index(label, attr)
             g.finish()
-        
 
     @classmethod
     def create_uniqueness_constraint(cls):
@@ -211,7 +220,7 @@ class GraphSchema(object):
                 pass
             #g.finish()
             """
-            cls._create_constraint(label,JSON2GRAPH_GENERATED_ID_ATTR_NAME)
+            cls._create_constraint(label, JSON2GRAPH_GENERATED_ID_ATTR_NAME)
         for label, attr in JSON2GRAPH_ID_ATTR.items():
             """
             g = GRAPH
@@ -223,18 +232,16 @@ class GraphSchema(object):
                 pass
             #g.finish()
             """
-            cls._create_constraint(label,attr)
-            
-            
+            cls._create_constraint(label, attr)
+
     @classmethod
     def _create_constraint(cls, label, attr):
         tx = GRAPH.begin()
-        cypher = "CREATE CONSTRAINT ON (_:{}) ASSERT _.{} IS UNIQUE".format(
-            label, attr)
+        cypher = "CREATE CONSTRAINT ON (_:{}) ASSERT _.{} IS UNIQUE".format(label, attr)
         print(cypher)
         tx.run(cypher)
         tx.commit()
-        
+
 
 class Worker(multiprocessing.Process):
     def __init__(self, worker_name: str, json_files: list):
@@ -275,11 +282,11 @@ class Worker(multiprocessing.Process):
 
 
 def start():
-    #print("Create contraints/indexes")
-    #GraphSchema.create_uniqueness_constraint()
+    # print("Create contraints/indexes")
+    # GraphSchema.create_uniqueness_constraint()
     for datadir in DATA_DIRS:
         pth = os.path.join(DATA_BASE_DIR, datadir)
-        
+
         print("Generate Workers")
         workers = Worker.generate_workers(pth)
         print("Start Workers")
@@ -289,6 +296,7 @@ def start():
         for w in workers:
             # i dont know exactly what i am doing here. CargoCult. Take a deep dive when time is available
             w.join()
+
 
 # GraphSchema.create_uniqueness_constraint()
 start()
