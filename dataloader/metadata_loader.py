@@ -74,8 +74,9 @@ def load():
         stats["attrs-added"]["per-attr"][attr] = 0
 
     data = pandas.read_csv(metadata_file)
-
+    data_len = len(data)
     for index, row in data.iterrows():
+        print("Row {} of {}".format(index + 1, data_len))
         if not pandas.isna(row["sha"]):
             tx = graph.begin()
             # Find :Paper node that is matching metadata file row
