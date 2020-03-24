@@ -16,3 +16,7 @@ def download():
     os.makedirs(config.DATA_BASE_DIR)
     cotools.download(dir=config.DATA_BASE_DIR)
     log.info("Finished downloading CORD-19 Dataset...")
+
+
+if __name__ == "__main__":
+    download()

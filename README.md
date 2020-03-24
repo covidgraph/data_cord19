@@ -9,11 +9,15 @@ Version: 0.0.1
 
 Python-version: Python3
 
+ThanksTo: https://pypi.org/project/cord-19-tools/
+
 # Usage
 
 Enter your neo4j connection string in `dataloader/env/DEFAULT.env` into the variable `CONFIGS_NEO4J_CON`
 
 (or create a new .env file with you environment name. For more details have a look at the [Configs](https://git.connect.dzd-ev.de/dzdtools/pythonmodules/tree/master/Configs) module)
+
+**Hint**: You can change you env quickly with `export ENV="MYENVNAME"`
 
 ```
 CONFIGS_NEO4J_CON='bolt://localhost:7687'
