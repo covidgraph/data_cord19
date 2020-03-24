@@ -11,6 +11,15 @@ graph = Graph(config.NEO4J_CON)
 metadata_file = config.METADATA_FILE
 
 
+def _findPaperNode(paper_nodes, sha):
+    for paper_node in paper_nodes.nodes:
+        if paper_node["paper_id"] == sha:
+            # remove node to accelarte future searches
+            paper_nodes = paper_nodes - paper_node
+            return paper_nodes, paper_node
+    return paper_nodes, None
+
+
 def load():
 
     stats = {
@@ -73,21 +82,25 @@ def load():
     for attr in attr_columns:
         stats["attrs-added"]["per-attr"][attr] = 0
 
+    # fetching paper nodes
+    print("Fetch all :Paper nodes")
+    tx = graph.begin()
+    # Find :Paper node that is matching metadata file row
+    # NodeMatcher is broken in current py2neo stable version
+    # https://github.com/technige/py2neo/issues/791
+    # matcher = NodeMatcher(tx)
+    # paper_node = matcher.match("Paper").first()
+    paper_nodes = tx.run("MATCH (_:Paper) RETURN _").to_subgraph()
+    tx.finish()
+    print("Successfull fetched {} :Paper nodes.".format(len(paper_nodes.nodes)))
+
     data = pandas.read_csv(metadata_file)
     data_len = len(data)
     for index, row in data.iterrows():
         print("Row {} of {}".format(index + 1, data_len))
         if not pandas.isna(row["sha"]):
-            tx = graph.begin()
-            # Find :Paper node that is matching metadata file row
-            # NodeMatcher is broken in current py2neo stable version
-            # https://github.com/technige/py2neo/issues/791
-            # matcher = NodeMatcher(tx)
-            # paper_node = matcher.match("Paper", paper_id=row["sha"]).first()
-            paper_node = tx.run(
-                "MATCH (_:Paper) WHERE _.paper_id = '{}' RETURN _".format(row["sha"])
-            ).to_subgraph()
-            tx.finish()
+
+            paper_nodes, paper_node = _findPaperNode(paper_nodes, row["sha"])
             if paper_node is None:
                 stats["sha-miss"]["count"] += 1
                 continue
