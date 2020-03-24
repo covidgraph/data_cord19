@@ -19,6 +19,7 @@ class DEFAULT(ConfigBase):
         "noncomm_use_subset",
         "custom_license",
     ]
+    METADATA_FILE = os.path.join(DATA_BASE_DIR, "metadata.csv")
 
     # Override label names
     JSON2GRAPH_LABELOVERRIDE = {
@@ -54,6 +55,7 @@ class DEFAULT(ConfigBase):
         "Pmid": "PMID",
     }
     JSON2GRAPH_CONCAT_LIST_ATTR = {"middle": " "}
+    JSON2GRAPH_COLLECTION_NODE_LABEL = "CollectionHub"
 
 
 # All following config classes inherit from DEFAULT
@@ -67,3 +69,4 @@ class DEVELOPMENT(DEFAULT):
     DATA_DIRS = [
         "test",
     ]
+    METADATA_FILE = os.path.join(DATA_BASE_DIR, "metadata.csv")

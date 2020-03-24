@@ -28,6 +28,7 @@ class DataLoader(object):
             config.JSON2GRAPH_GENERATED_HASH_IDS
         )
         c.config_dict_concat_list_attr = config.JSON2GRAPH_CONCAT_LIST_ATTR
+        c.config_str_collection_anchor_label = config.JSON2GRAPH_COLLECTION_NODE_LABEL
         c.config_dict_primarykey_attr_by_label = config.JSON2GRAPH_ID_ATTR
         c.config_str_primarykey_generated_attr_name = (
             config.JSON2GRAPH_GENERATED_HASH_ID_ATTR_NAME
