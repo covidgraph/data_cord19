@@ -1,3 +1,0 @@
-py2neo
-linetimer
-git+https://git.connect.dzd-ev.de/dzdtools/pythonmodules.git#subdirectory=DZDjson2Graph

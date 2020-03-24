@@ -1,0 +1,5 @@
+py2neo
+linetimer
+cord-19-tools
+git+https://git.connect.dzd-ev.de/dzdtools/pythonmodules.git#subdirectory=DZDjson2GraphIO
+git+https://git.connect.dzd-ev.de/dzdtools/pythonmodules.git#subdirectory=Configs

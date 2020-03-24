@@ -1,1 +1,4 @@
 dataset/
+
+*.env
+!*/env/DEFAULT.env
