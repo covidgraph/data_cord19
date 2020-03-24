@@ -19,7 +19,8 @@ if __name__ == "__main__":
 
 
 # GRAPH = Graph("bolt://192.168.178.77:7687")
-GRAPH = Graph()
+
+# GRAPH = Graph()
 
 # commit every n files
 COMMIT_INTERVAL = 100
@@ -30,7 +31,7 @@ DATA_DIRS = [
     "biorxiv_medrxiv/biorxiv_medrxiv",
     "comm_use_subset/comm_use_subset",
     "noncomm_use_subset/noncomm_use_subset",
-    "pmc_custom_license/pmc_custom_license",
+    "custom_license/custom_license",
 ]
 
 """
@@ -54,15 +55,16 @@ JSON2GRAPH_GENERATED_IDS = {
     "Bibref": "AllAttributes",
     "Bib_entries": "AllInnerContent",  # Generate an id based all attr and childrens attr
     "Body_text": "AllAttributes",
-    "Cite_spans": "AllAttributes",
+    "Cite_spans": "AllInnerContent",
     "Figref": "AllAttributes",
     "Location": "AllAttributes",
-    "Metadata": "AllAttributes",
+    "Metadata": "AllInnerContent",
     "Other_ids": "AllInnerContent",
     "Ref_entries": "AllInnerContent",
-    "Ref_spans": "AllAttributes",
+    "Ref_spans": "AllInnerContent",
     "Tabref": "AllAttributes",
 }
+
 
 # Define which properties can be taken as primary key for specific labels
 # {"label":"attribute-that-works-as-id"}
