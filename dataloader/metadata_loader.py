@@ -32,6 +32,10 @@ class Metadataloader(object):
                 "count": 0,
                 "per-attr": {},
             },
+            "non-full-paper-added": {
+                "desc": "Paper added from the metadata.csv not having a fulltext json dataset counterpart",
+                "count": 0,
+            },
         }
 
         # Id columns in metadata to node map
@@ -275,6 +279,7 @@ class Metadataloader(object):
                 )
             return _id
 
+        self.stats["non-full-paper-added"]["count"] += 1
         paper_node_props = {}
         for attr in self.attr_columns:
             if not pandas.isna(row[attr]):
@@ -329,6 +334,7 @@ def run_metadata_load():
     metaloader.define_graph()
 
     metaloader.merge_graph()
+    print(metaloader.stats)
 
 
 if __name__ == "__main__":
