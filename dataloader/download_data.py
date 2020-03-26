@@ -13,7 +13,7 @@ log.setLevel(getattr(logging, config.LOG_LEVEL))
 def download():
 
     log.info("Start downloading CORD-19 Dataset...")
-    os.makedirs(config.DATA_BASE_DIR)
+    # os.makedirs(config.DATA_BASE_DIR)
     cotools.download(dir=config.DATA_BASE_DIR)
     log.info("Finished downloading CORD-19 Dataset...")
 

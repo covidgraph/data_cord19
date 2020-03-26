@@ -28,9 +28,9 @@ class DEFAULT(ConfigBase):
 
     JSON2GRAPH_PROPOVERRIDE = {
         "Doi": {"DOI": "id"},
-        "Arxiv": {"Arxiv": "id"},
-        "Pmcid": {"Pmcid": "id"},
-        "Pmid": {"Pmid": "id"},
+        "Arxiv": {"arXiv": "id"},
+        "Pmcid": {"PMCID": "id"},
+        "Pmid": {"PMID": "id"},
     }
 
     JSON2GRAPH_GENERATED_HASH_ID_ATTR_NAME = "_hash_id"
