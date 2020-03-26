@@ -25,6 +25,14 @@ class DEFAULT(ConfigBase):
     JSON2GRAPH_LABELOVERRIDE = {
         "authors": "Author",
     }
+
+    JSON2GRAPH_PROPOVERRIDE = {
+        "Doi": {"DOI": "id"},
+        "Arxiv": {"Arxiv": "id"},
+        "Pmcid": {"Pmcid": "id"},
+        "Pmid": {"Pmid": "id"},
+    }
+
     JSON2GRAPH_GENERATED_HASH_ID_ATTR_NAME = "_hash_id"
     # Define for which labels and how a hash id attr should be generated
     JSON2GRAPH_GENERATED_HASH_IDS = {
@@ -48,11 +56,11 @@ class DEFAULT(ConfigBase):
     # Define which properties can be taken as primary key for specific labels
     # {"label":"attribute-that-works-as-id"}
     JSON2GRAPH_ID_ATTR = {
-        "Arxiv": "arXiv",
-        "Doi": "DOI",
+        "Arxiv": "id",
+        "Doi": "id",
         "Paper": "paper_id",
-        "Pmcid": "PMCID",
-        "Pmid": "PMID",
+        "Pmcid": "id",
+        "Pmid": "id",
     }
     JSON2GRAPH_CONCAT_LIST_ATTR = {"middle": " "}
     JSON2GRAPH_COLLECTION_NODE_LABEL = "CollectionHub"

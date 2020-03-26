@@ -34,6 +34,8 @@ class DataLoader(object):
             config.JSON2GRAPH_GENERATED_HASH_ID_ATTR_NAME
         )
         c.config_func_node_pre_modifier = DataTransformer.renameLabels
+        c.config_func_node_post_modifier = DataTransformer.addExtraLabels
+        c.config_dict_property_name_override = config.JSON2GRAPH_PROPOVERRIDE
         self.loader = c
 
     def load_json(self):
@@ -70,6 +72,13 @@ class DataTransformer(object):
                 node.remove_label(label)
                 node.add_label("Tabref")
                 node.__primarylabel__ = "Tabref"
+        return node
+
+    @classmethod
+    def addExtraLabels(cls, node):
+        if node.__primarylabel__ in ["Doi", "Arxiv", "Pmcid", "Pmid"]:
+            if config.JSON2GRAPH_COLLECTION_NODE_LABEL not in node.labels:
+                node.add_label("PaperID")
         return node
 
     @classmethod

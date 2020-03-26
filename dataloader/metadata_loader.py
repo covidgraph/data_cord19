@@ -48,6 +48,7 @@ class Metadataloader(object):
                 "label": "MsAcademicPaperID",
                 "attr": "id",
             },
+            "WHO #Covidence": {"label": "WHO_Covidence", "attr": "id"},
         }
 
         self.attr_columns = [
@@ -55,7 +56,6 @@ class Metadataloader(object):
             "title",
             "journal",
             "source_x",
-            "WHO #Covidence",
             "license",
         ]
         self.id_node_label = "PaperID"
