@@ -126,7 +126,7 @@ def chunks(lst, n):
         yield lst[i : i + n]
 
 
-def load():
+def load_fulltext_papers():
     GraphSchema.create_uniqueness_constraint()
     for index, datadir in enumerate(config.DATA_DIRS):
         dir_ = os.path.join(config.DATA_BASE_DIR, datadir)

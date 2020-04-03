@@ -13,14 +13,30 @@ ThanksTo: https://pypi.org/project/cord-19-tools/
 
 # Usage
 
-Enter your neo4j connection string in `dataloader/env/DEFAULT.env` into the variable `CONFIGS_NEO4J_CON`
+## Docker
 
-(or create a new .env file with you environment name. For more details have a look at the [Configs](https://git.connect.dzd-ev.de/dzdtools/pythonmodules/tree/master/Configs) module)
+**Build**
 
-**Hint**: You can change you env quickly with `export ENV="DEVELOPMENT"`
+From the root directorie of this repo run:
 
-```
-CONFIGS_NEO4J_CON='bolt://localhost:7687'
+`docker build -t cord-19-data-loader .`
+
+**Run**
+
+`docker run -it --rm --name cord-19-data-loader -e CONFIGS_NEO4J_CON='bolt://myuser:mypasswd@myneo4jhostname:7687' cord-19-data-loader`
+
+`docker run -it --rm --cord-19-data-loader -e CONFIGS_NEO4J_CON='bolt://neo4j:test@${HOSTNAME}:7687' cord-19-data-loader`
+
+## Local
+
+Copy `dataloader/env/DEFAULT.env` to `dataloader/env/DEVELOPMENT.env`:
+
+`cp dataloader/env/DEFAULT.env dataloader/env/DEVELOPMENT.env`
+
+Enter your neo4j connection string at `dataloader/env/DEVELOPMENT.env` into the variable `CONFIGS_NEO4J_CON`:
+
+```env
+CONFIGS_NEO4J_CON='bolt://myuser:mypasswd@localhost:7687'
 ```
 
 Install the requirements with
@@ -32,8 +48,6 @@ run the main.py
 `python3 main.py`
 
 # Data
-
-At the moment only the json files in the dataset will be imported
 
 Have a look at dataloader/config.py -> DATA_DIRS . There is a list of all directories in the dataset which will be taken into account
 

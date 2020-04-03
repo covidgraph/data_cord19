@@ -1,6 +1,8 @@
 py2neo
 linetimer
 cord-19-tools
+requests
 graphio
+pandas
 git+https://git.connect.dzd-ev.de/dzdtools/pythonmodules.git#subdirectory=DZDjson2GraphIO
 git+https://git.connect.dzd-ev.de/dzdtools/pythonmodules.git#subdirectory=Configs

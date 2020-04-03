@@ -328,7 +328,7 @@ class Metadataloader(object):
             rSet.merge(self.graph)
 
 
-def run_metadata_load():
+def load_abstracts():
 
     metaloader = Metadataloader(config.METADATA_FILE, graph)
     metaloader.define_graph()
@@ -338,4 +338,4 @@ def run_metadata_load():
 
 
 if __name__ == "__main__":
-    run_metadata_load()
+    load_abstracts()
