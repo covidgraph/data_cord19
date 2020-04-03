@@ -4,5 +4,6 @@ cord-19-tools
 requests
 graphio
 pandas
+pydash
 git+https://git.connect.dzd-ev.de/dzdtools/pythonmodules.git#subdirectory=DZDjson2GraphIO
 git+https://git.connect.dzd-ev.de/dzdtools/pythonmodules.git#subdirectory=Configs

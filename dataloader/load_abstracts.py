@@ -1,5 +1,6 @@
 import os
 import pandas
+import pydash
 import hashlib
 import json
 from Configs import getConfig
@@ -7,6 +8,179 @@ from py2neo import Graph, NodeMatcher, Node, Subgraph
 from graphio import NodeSet, RelationshipSet
 import pprint
 
+
+json_files_index = None
+config = getConfig()
+graph = Graph(config.NEO4J_CON)
+
+
+class FullTextPaperJsonFilesIndex(object):
+    _index = None
+
+    def __init__(self, base_path):
+        self._index = {}
+        self.base_path = base_path
+        self._index_dirs(self.base_path)
+
+    def _index_dirs(self, path):
+        for root, dirs, files in os.walk(path):
+            for file in files:
+                # Each full text paper in the CORD-19 dataset comes as a file in json format.
+                # The filename is made of the paper id (a sha hash of the origin pdf)
+                file_id = os.path.splitext(os.path.basename(file))
+                self._index[file_id] = os.path.join(root, file)
+
+    def get_full_text_paper_path(self, paper_id):
+        if paper_id is None:
+            return None
+        return self._index[id]
+
+
+# ToDo:
+# * Create a option to bootstrap a paper only by json, for supplement papers. hang these supplemental papers on the main paper
+# * Take over all row attributes
+# * create abstract
+# * create body text
+# * check what is missing
+
+
+class Paper(object):
+    self.__raw_data_json = None
+    self.__raw_data_csv_row = None
+    self.Author = None
+    self.PaperID = None
+    self.References = None
+    self.BodyText = None
+
+    @classmethod
+    def from_metadata_csv_row(cls, row: pandas.Series):
+        # cord_uid,sha,source_x,title,doi,pmcid,pubmed_id,license,abstract,publish_time,author,journal,microsoft_academic_id,who_covidence,has_full_text,full_text_file,url
+        paper = cls()
+        full_text_paper_ids = [pid.strip() for pid in row["sha"].split(";")]
+
+        paper.paper_id = full_text_paper_ids[0] if full_text_paper_ids else None
+        paper.supplemental_paper_ids = full_text_paper_ids[1:]
+        paper.PaperID = []
+        paper.References = []
+        paper.BodyText = []
+        paper.__raw_data_csv_row = row
+        paper._load_full_json()
+        return paper
+
+    def _load_full_json(self):
+        self.full_text_source_file_path = None
+        self.full_text_source_file_path = json_files_index.get_full_text_paper_path(
+            self.paper_id
+        )
+        if self.full_text_source_file_path is not None:
+            json_data = None
+            with open(self.full_text_source_file_path) as json_file:
+                json_data = json.load(json_file)
+            self.__raw_data_json = json_data
+
+    def _load_full_supplemental_json(self):
+        for sup_paper in self.supplemental_paper_ids:
+            self.supplement_paper
+
+
+class PaperParser(object):
+    def __init__(self, paper: Paper):
+        self.paper = paper
+        self.parse_paper_ids()
+        self.parse_authors()
+        self.parse_references()
+
+    def parse_authors(self):
+        def parse_author_row(paper_row):
+            authors_cell = paper_row["author"]
+            authors = []
+            if pandas.isna(authors_cell):
+                return authors
+            for author_str in authors_cell.split(";"):
+                author = {"last": None, "first": None, "middle": None}
+                try:
+                    author["last"], author["first"] = author.split(",")
+                except ValueError:
+                    last = author_str
+                if author["first"] is not None:
+                    try:
+                        author["fist"], author["middle"] = author["first"].split(" ")
+                    except ValueError:
+                        pass
+                authors.append(author)
+            return authors
+
+        # First we check if there is json data of authors, which is more detailed and formated(+pre splitted,+affiliation,+location)
+        try:
+            self.paper.Author = paper.__raw_data_json["metadata"]["authors"]
+        except KeyError:
+            # if not we will parse the author string in the metadata.csv row
+            self.paper.Author = self.parse_author_row(self.paper.__raw_data_csv_row)
+
+    def _normalize_paper_id_name(self, paper_id_name):
+        for (
+            correct_format,
+            occurent_format,
+        ) in config.PAPER_ID_NAME_NORMALISATION.items():
+            if paper_id_name in occurent_format or paper_id_name == correct_format:
+                return correct_format
+        return paper_id_name
+
+    def parse_paper_ids(self):
+        for id_col in config.METADATA_FILE_ID_COLUMNS:
+            paper_id_name = self._normalize_paper_id_name(id_col)
+            self.paper.PaperID.append(
+                {paper_id_name: self.paper.__raw_data_csv_row[id_col]}
+            )
+
+    def parse_references(self):
+        refs = []
+        try:
+            raw_refs = paper.__raw_data_json["metadata"]["bib_entries"]
+        except KeyError:
+            return refs
+        for ref_name, ref_attrs in raw_refs.items():
+            ref = {"name": ref_name}
+            ref["PaperID"] = []
+            for key, val in ref_attrs.items():
+                if isinstance(val, (str, int)):
+                    ref[key] = val
+            if "other_ids" in ref_attrs:
+                for id_type, id_vals in ref_attrs["other_ids"].items():
+                    paper_id_name = self._normalize_paper_id_name(id_type)
+                    for id_val in id_vals:
+                        ref["PaperID"].append({paper_id_name: id_val})
+        self.paper.References = refs
+
+    def parse_body_text(self):
+        body_text = None
+        self.paper.BodyText.append(body_text)
+
+    def parse_abstract(self):
+        pass
+
+
+class Dataloader(object):
+    def __init__(self, metadata_csv_path, dataset_dir_path):
+        self.data = pandas.read_csv(metadata_csv_path)
+        self.data.rename(columns=config.METADATA_FILE_COLUMN_OVERRIDE)
+        json_files_index = FullTextPaperJsonFilesIndex(dataset_dir_path)
+
+    def parse(self):
+        for index, row in self.data.iterrows():
+            paper = Paper.from_metadata_csv_row(row)
+
+
+def load_abstracts():
+
+    dataloader = Dataloader(config.METADATA_FILE, config.DATA_BASE_DIR)
+    dataloader.parse()
+
+
+if __name__ == "__main__":
+    load_abstracts()
+
+"""
 config = getConfig()
 graph = Graph(config.NEO4J_CON)
 # TODO: This class needs a major refactor
@@ -339,3 +513,4 @@ def load_abstracts():
 
 if __name__ == "__main__":
     load_abstracts()
+"""

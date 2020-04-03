@@ -19,7 +19,33 @@ class DEFAULT(ConfigBase):
         "noncomm_use_subset",
         "custom_license",
     ]
+
+    # {CORRECT_FORMAT:[OCCURENT_FORMAT]}
+    PAPER_ID_NAME_NORMALISATION = {
+        "DOI": ["Doi", "doi"],
+        "arXiv": ["arxiv", "ARXIV"],
+        "Pmcid": ["pmcid", "PMICD"],
+    }
+
     METADATA_FILE = os.path.join(DATA_BASE_DIR, "metadata.csv")
+
+    # Column names will be take over in the created nodes attributes or child nodes.
+    # if you are not happy with the names you can overide them here.
+    # follow the format from
+    # https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html
+    # {"old_name":"new_name", "other_column_old_name", "other_column_new_name"}
+    METADATA_FILE_COLUMN_OVERRIDE = {
+        "WHO #Covidence": "who_covidence",
+        "authors": "author",
+        "Microsoft Academic Paper ID": "microsoft_academic_id",
+    }
+    METADATA_FILE_ID_COLUMNS = [
+        "doi",
+        "pmcid",
+        "pubmed_id",
+        "microsoft_academic_id",
+        "who_covidence",
+    ]
 
     # Override label names
     JSON2GRAPH_LABELOVERRIDE = {
