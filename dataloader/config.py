@@ -13,12 +13,6 @@ class DEFAULT(ConfigBase):
     )
 
     DATA_BASE_DIR = os.path.join(SCRIPT_DIR, "dataset/")
-    DATA_DIRS = [
-        "biorxiv_medrxiv",
-        "comm_use_subset",
-        "noncomm_use_subset",
-        "custom_license",
-    ]
 
     # {CORRECT_FORMAT:[OCCURENT_FORMAT]}
     PAPER_ID_NAME_NORMALISATION = {
@@ -38,6 +32,7 @@ class DEFAULT(ConfigBase):
         "WHO #Covidence": "who_covidence",
         "authors": "author",
         "Microsoft Academic Paper ID": "microsoft_academic_id",
+        "source_x": "source",
     }
     METADATA_FILE_ID_COLUMNS = [
         "doi",
@@ -46,18 +41,23 @@ class DEFAULT(ConfigBase):
         "microsoft_academic_id",
         "who_covidence",
     ]
+    METADATA_PAPER_PROPERTY_COLUMNS = [
+        "source",
+        "title",
+        "publish_time",
+        "journal",
+        "url",
+    ]
 
-    # Override label names
-    JSON2GRAPH_LABELOVERRIDE = {
-        "authors": "Author",
-    }
-
-    JSON2GRAPH_PROPOVERRIDE = {
-        "Doi": {"DOI": "id"},
-        "Arxiv": {"arXiv": "id"},
-        "Pmcid": {"PMCID": "id"},
-        "Pmid": {"PMID": "id"},
-    }
+    FULLTEXT_PAPER_BIBREF_ATTRS = [
+        "ref_id",
+        "title",
+        "year",
+        "venue",
+        "volume",
+        "issn",
+        "pages",
+    ]
 
     JSON2GRAPH_GENERATED_HASH_ID_ATTR_NAME = "_hash_id"
     # Define for which labels and how a hash id attr should be generated
