@@ -41,7 +41,7 @@ CONFIGS_NEO4J_CON='bolt://myuser:mypasswd@localhost:7687'
 
 Install the requirements with
 
-`pip3 install -r dataloader/requirement.txt`
+`pip3 install -r requirement.txt`
 
 run the main.py
 

@@ -11,13 +11,10 @@ if __name__ == "__main__":
 
 
 from dataloader.download_data import download
-from dataloader.load_abstracts import load_abstracts
-from dataloader.load_fulltext_papers import load_fulltext_papers
+from dataloader.load_data import load_data
 
 if __name__ == "__main__":
     with CodeTimer("Downloader", unit="s"):
         download()
     with CodeTimer("Importer", unit="s"):
-        load_fulltext_papers()
-    with CodeTimer("Import Metadata.csv", unit="s"):
-        load_abstracts()
+        load_data()
