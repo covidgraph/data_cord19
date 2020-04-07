@@ -1,13 +1,16 @@
 import os
+import multiprocessing
 from Configs import ConfigBase
 
 # define different classes per environment
 
 
 class DEFAULT(ConfigBase):
-    # commit every n papers
-    COMMIT_INTERVAL = 500
-
+    # commit every n nodes/relations
+    COMMIT_INTERVAL = 10000
+    # Bundle workloads to <PAPER_BATCH_SIZE>-papers and load them into database
+    PAPER_BATCH_SIZE = 500
+    NO_OF_PROCESSES = multiprocessing.cpu_count() - 1 or 1
     SCRIPT_DIR = os.path.dirname(
         os.path.realpath(os.path.join(os.getcwd(), os.path.expanduser(__file__)))
     )
@@ -83,7 +86,8 @@ class DEFAULT(ConfigBase):
         "Metadata": "AllInnerContent",
     }
     JSON2GRAPH_CONCAT_LIST_ATTR = {"middle": " "}
-    JSON2GRAPH_COLLECTION_NODE_LABEL = "CollectionHub"
+    JSON2GRAPH_COLLECTION_NODE_LABEL = "{LIST_MEMBER_LABEL}Collection"
+    JSON2GRAPH_COLLECTION_EXTRA_LABELS = []
 
 
 # All following config classes inherit from DEFAULT

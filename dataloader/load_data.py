@@ -94,6 +94,8 @@ class Paper(object):
         self.full_text_source_file_path = json_files_index.get_full_text_paper_path(
             self.paper_sha
         )
+        #####################################
+
         if self.full_text_source_file_path is not None:
             json_data = None
             with open(self.full_text_source_file_path) as json_file:
@@ -161,7 +163,7 @@ class PaperParser(object):
         for ref_name, raw_attrs in raw_refs.items():
             ref = {"name": ref_name}
             for ref_attr_name, ref_attr_val in raw_attrs.items():
-                # Safe simple attributes
+                # Save simple attributes
                 if (
                     ref_attr_name in config.FULLTEXT_PAPER_BIBREF_ATTRS
                     and isinstance(ref_attr_val, (str, int))
@@ -170,10 +172,11 @@ class PaperParser(object):
                     ref[ref_attr_name] = ref_attr_val
                 # save public IDs
                 ref["PaperID"] = []
-                if ref_attr_val == "other_ids":
-                    for id_type, id_vals in ref_attr_val["other_ids"].items():
+                if ref_attr_name == "other_ids":
+                    for id_type, id_vals in ref_attr_val.items():
                         paper_id_name = self._normalize_paper_id_name(id_type)
                         for id_val in id_vals:
+
                             ref["PaperID"].append({"type": paper_id_name, "id": id_val})
                 refs.append(ref)
         self.paper.Reference = refs
@@ -232,16 +235,11 @@ class PaperParser(object):
 
 class Dataloader(object):
     def __init__(
-        self,
-        metadata_csv_path,
-        from_row=None,
-        to_row=None,
-        db_loading_lock: multiprocessing.Lock = None,
-        worker_name: str = None,
+        self, metadata_csv_path, from_row=None, to_row=None, worker_name: str = None,
     ):
-        self.db_loading_lock = db_loading_lock
         self.name = worker_name
         self.data = pandas.read_csv(metadata_csv_path)[from_row:to_row]
+
         self.data = self.data.rename(
             columns=config.METADATA_FILE_COLUMN_OVERRIDE, errors="raise"
         )
@@ -250,10 +248,12 @@ class Dataloader(object):
     def parse(self):
         papers = []
         paper_total_count = len(self.data)
+
         paper_count = 0
         for index, row in self.data.iterrows():
+
             papers.append(Paper(row))
-            if len(papers) == config.COMMIT_INTERVAL:
+            if len(papers) == config.PAPER_BATCH_SIZE:
                 log.info(
                     "{}Load next {} papers.".format(
                         self.name + ": " if self.name else "", len(papers)
@@ -276,8 +276,8 @@ class Dataloader(object):
 
         for index, paper in enumerate(papers):
             self.loader.load_json("Paper", paper.to_dict())
-        if self.db_loading_lock is not None:
-            self.db_loading_lock.acquire()
+        if db_loading_lock is not None:
+            db_loading_lock.acquire()
             log.info(
                 "{}Acquired DB loading lock.".format(
                     self.name + ": " if self.name else ""
@@ -285,13 +285,13 @@ class Dataloader(object):
             )
         self.loader.create_indexes(graph)
         self.loader.merge(graph)
-        if self.db_loading_lock is not None:
+        if db_loading_lock is not None:
             log.info(
                 "{}Release DB loading lock.".format(
                     self.name + ": " if self.name else ""
                 )
             )
-            self.db_loading_lock.release()
+            db_loading_lock.release()
 
     def _build_loader(self):
         c = Json2graphio()
@@ -302,6 +302,10 @@ class Dataloader(object):
         )
         c.config_dict_concat_list_attr = config.JSON2GRAPH_CONCAT_LIST_ATTR
         c.config_str_collection_anchor_label = config.JSON2GRAPH_COLLECTION_NODE_LABEL
+        c.config_list_collection_anchor_extra_labels = (
+            config.JSON2GRAPH_COLLECTION_EXTRA_LABELS
+        )
+        c.config_graphio_batch_size = config.COMMIT_INTERVAL
         # c.config_dict_primarykey_attr_by_label = config.JSON2GRAPH_ID_ATTR
         c.config_str_primarykey_generated_attr_name = (
             config.JSON2GRAPH_GENERATED_HASH_ID_ATTR_NAME
@@ -313,34 +317,35 @@ class Dataloader(object):
         # c.config_dict_property_name_override = config.JSON2GRAPH_PROPOVERRIDE
         self.loader = c
 
+    # Todo: Make Worker class to function and create pool
+    # https://stackoverflow.com/questions/20886565/using-multiprocessing-process-with-a-maximum-number-of-simultaneous-processes
 
-class Worker(multiprocessing.Process):
-    def __init__(
-        self,
-        metadata_csv_path,
-        from_row: int,
-        to_row: int,
-        db_loading_lock: multiprocessing.Lock,
-        worker_name: str,
-    ):
-        super(Worker, self).__init__()
 
-        self.name = worker_name
-        self.dataloader = Dataloader(
+def worker_func(
+    metadata_csv_path, from_row: int, to_row: int, worker_name: str,
+):
+    log.info("Start {} -- row {} to row {}".format(worker_name, from_row, to_row))
+    try:
+        dataloader = Dataloader(
             metadata_csv_path,
             from_row=from_row,
             to_row=to_row,
-            db_loading_lock=db_loading_lock,
             worker_name=worker_name,
         )
+        dataloader.parse()
+    except Exception as er:
+        log.exception(er)
+        raise er
 
-    def run(self):
-        self.dataloader.parse()
+
+def worker_init(l):
+    global db_loading_lock
+    db_loading_lock = l
 
 
 def load_data_mp(worker_count: int, rows_per_worker=None):
     row_count_total = len(pandas.read_csv(config.METADATA_FILE).dropna(how="all"))
-    rows_distributed = 0
+
     if rows_per_worker is None:
         # just distribute all rows to workers. all workers will run simulationsly
         rows_per_worker = int(row_count_total / worker_count)
@@ -350,28 +355,29 @@ def load_data_mp(worker_count: int, rows_per_worker=None):
         # we create a queue of workers, only <worker_count> will run simulationsly
         worker_instances_count = int(row_count_total / rows_per_worker)
         leftover_rows = row_count_total % rows_per_worker
-    db_loading_lock = multiprocessing.Lock()
+    lock = multiprocessing.Lock()
     worker_queue = []
-    for worker_index in range(1, worker_instances_count):
-        from_row = rows_distributed
+
+    worker_pool = multiprocessing.Pool(
+        worker_count, initializer=worker_init, initargs=(lock,)
+    )
+
+    rows_distributed = 0
+    for worker_index in range(0, worker_instances_count):
+
+        from_row = rows_distributed + 1
         rows_distributed += rows_per_worker
-        if worker_index == worker_count:
+        if worker_index == worker_instances_count:
             # last worker gets the leftofter rows
             rows_distributed += leftover_rows
-        worker_queue.append(
-            Worker(
-                config.METADATA_FILE,
-                from_row=from_row,
-                to_row=rows_distributed,
-                db_loading_lock=db_loading_lock,
-                worker_name="WORKER_{}".format(worker_index),
-            )
+        worker_name = "WORKER_{}".format(worker_index)
+        log.info("Create worker '{}'".format(worker_name))
+        worker_pool.apply_async(
+            worker_func,
+            args=(config.METADATA_FILE, from_row, rows_distributed, worker_name),
         )
-
-    for w in worker_queue:
-        w.start()
-    for w in worker_queue:
-        w.join()
+    worker_pool.close()
+    worker_pool.join()
 
 
 # pandas.read_csv(config.METADATA_FILE)
@@ -382,4 +388,6 @@ def load_data():
 
 if __name__ == "__main__":
     with CodeTimer(unit="s"):
-        load_data_mp(6)
+        load_data_mp(config.NO_OF_PROCESSES, config.PAPER_BATCH_SIZE)
+        # load_data_mp(1)
+        # load_data()
