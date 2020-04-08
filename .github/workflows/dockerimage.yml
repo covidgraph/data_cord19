@@ -1,0 +1,24 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file dockerfile --tag data-cord19:latest
+    - name: Publish to Registry
+      uses: HurricanKai/Publish-Docker-Github-Action@master
+      with:
+        name: covidgraph/data-cord19
+        username: ${{ secrets.DZD_DOCKER_USERNAME }}
+        password: ${{ secrets.DZD_DOCKER_PASSWORD }}
