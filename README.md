@@ -15,17 +15,45 @@ ThanksTo: https://pypi.org/project/cord-19-tools/
 
 ## Docker
 
-**Build**
+**Run**
+
+`docker run -it --rm --name cord-19-data-loader -e CONFIGS_NEO4J_CON="bolt://${HOSTNAME}:7687" covidgraph/cord-19-data-loader`
+
+**Build local image**
 
 From the root directorie of this repo run:
 
 `docker build -t cord-19-data-loader .`
 
-**Run**
+**Run local image**
 
 `docker run -it --rm --name cord-19-data-loader -e CONFIGS_NEO4J_CON='bolt://myuser:mypasswd@myneo4jhostname:7687' cord-19-data-loader`
 
-`docker run -it --rm --cord-19-data-loader -e CONFIGS_NEO4J_CON='bolt://neo4j:test@${HOSTNAME}:7687' cord-19-data-loader`
+Example (neo4j runs on the docker linux host machine)
+
+`docker run -it --rm --name cord-19-data-loader -v ${PWD}/dataset:/app/dataset -e CONFIGS_NEO4J_CON="bolt://${HOSTNAME}:7687" cord-19-data-loader`
+
+**Envs**
+
+The most important Env variables are:
+
+`GC_NEO4J_URL`
+
+`GC_NEO4J_USER`
+
+`GC_NEO4J_PASSWORD`
+
+besides that you can set all variables in dataloader/config.py via env variable with a `CONFIGS_` prefix. See https://git.connect.dzd-ev.de/dzdtools/pythonmodules/-/tree/master/Configs for more details
+
+**Volumes**
+
+`/app/dataset`
+
+Here is the downloaded data set located. You can mount this path with `-v /mylocal/path:/app/dataset` to prevent redownloading of the dataset.
+
+`/app/dataloader`
+
+Here is the python source code located. You can mount this for development or tinkering
 
 ## Local
 

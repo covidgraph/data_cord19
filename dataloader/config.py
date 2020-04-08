@@ -22,7 +22,7 @@ class DEFAULT(ConfigBase):
     REDOWNLOAD_DATASET_IF_EXISTENT = False
 
     # Where to store the downloaded dataset
-    DATA_BASE_DIR = os.path.join(SCRIPT_DIR, "dataset/")
+    DATA_BASE_DIR = os.path.join(SCRIPT_DIR, "../dataset/")
 
     # Where the 'metadata.csv' file from the CORD-19 Dataset is stored
     METADATA_FILE = os.path.join(DATA_BASE_DIR, "metadata.csv")
@@ -61,6 +61,7 @@ class DEFAULT(ConfigBase):
     # Define which columns in 'metadata.csv' are properties of a paper
     # they will appear as properties of the :Paper nodes
     METADATA_PAPER_PROPERTY_COLUMNS = [
+        "cord_uid",
         "source",
         "title",
         "publish_time",

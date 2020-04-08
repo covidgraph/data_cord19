@@ -13,5 +13,5 @@ coverage.xml
 *,cover
 *.log
 .git
-dataloader/dataset
+dataset
 dataloader/testdataset
