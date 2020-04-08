@@ -1,5 +1,6 @@
 import os
 import sys
+from Configs import getConfig
 from linetimer import CodeTimer
 
 if __name__ == "__main__":
@@ -11,10 +12,21 @@ if __name__ == "__main__":
 
 
 from dataloader.download_data import download
-from dataloader.load_data import load_data
+from dataloader.load_data import load_data, load_data_mp
+
+
+# Adapt to CovidGraph Dataloaders env API
+
 
 if __name__ == "__main__":
+    config = getConfig()
     with CodeTimer("Downloader", unit="s"):
         download()
     with CodeTimer("Importer", unit="s"):
-        load_data()
+
+        if config.NO_OF_PROCESSES == 1:
+            load_data()
+        elif config.NO_OF_PROCESSES > 1:
+            load_data_mp(config.NO_OF_PROCESSES, config.PAPER_BATCH_SIZE)
+        else:
+            config.NO_OF_PROCESSES

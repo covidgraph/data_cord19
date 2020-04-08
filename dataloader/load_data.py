@@ -37,7 +37,10 @@ class FullTextPaperJsonFilesIndex(object):
     def get_full_text_paper_path(self, paper_sha):
         if paper_sha is None:
             return None
-        return self._index[paper_sha]
+        try:
+            return self._index[paper_sha]
+        except KeyError:
+            return None
 
 
 json_files_index = FullTextPaperJsonFilesIndex(config.DATA_BASE_DIR)
@@ -72,7 +75,7 @@ class Paper(object):
         else:
             self.paper_sha = None
 
-        self.properties = {}
+        self.properties = {"cord19-id": self.paper_sha}
         self.PaperID = []
         self.Reference = []
         self.BodyText = []
@@ -276,22 +279,30 @@ class Dataloader(object):
 
         for index, paper in enumerate(papers):
             self.loader.load_json("Paper", paper.to_dict())
-        if db_loading_lock is not None:
-            db_loading_lock.acquire()
-            log.info(
-                "{}Acquired DB loading lock.".format(
-                    self.name + ": " if self.name else ""
+        try:
+            if db_loading_lock is not None:
+                db_loading_lock.acquire()
+                log.info(
+                    "{}Acquired DB loading lock.".format(
+                        self.name + ": " if self.name else ""
+                    )
                 )
-            )
+        except NameError:
+            # we are in singlethreaded mode. no lock set
+            pass
         self.loader.create_indexes(graph)
         self.loader.merge(graph)
-        if db_loading_lock is not None:
-            log.info(
-                "{}Release DB loading lock.".format(
-                    self.name + ": " if self.name else ""
+        try:
+            if db_loading_lock is not None:
+                log.info(
+                    "{}Release DB loading lock.".format(
+                        self.name + ": " if self.name else ""
+                    )
                 )
-            )
-            db_loading_lock.release()
+                db_loading_lock.release()
+        except NameError:
+            # we are in singlethreaded mode. no lock set
+            pass
 
     def _build_loader(self):
         c = Json2graphio()
@@ -324,6 +335,7 @@ class Dataloader(object):
 def worker_func(
     metadata_csv_path, from_row: int, to_row: int, worker_name: str,
 ):
+
     log.info("Start {} -- row {} to row {}".format(worker_name, from_row, to_row))
     try:
         dataloader = Dataloader(
@@ -334,6 +346,7 @@ def worker_func(
         )
         dataloader.parse()
     except Exception as er:
+        print(er)
         log.exception(er)
         raise er
 
@@ -344,6 +357,7 @@ def worker_init(l):
 
 
 def load_data_mp(worker_count: int, rows_per_worker=None):
+
     row_count_total = len(pandas.read_csv(config.METADATA_FILE).dropna(how="all"))
 
     if rows_per_worker is None:
@@ -353,8 +367,9 @@ def load_data_mp(worker_count: int, rows_per_worker=None):
         worker_instances_count = worker_count
     else:
         # we create a queue of workers, only <worker_count> will run simulationsly
-        worker_instances_count = int(row_count_total / rows_per_worker)
+        worker_instances_count = int(row_count_total / rows_per_worker) or 1
         leftover_rows = row_count_total % rows_per_worker
+
     lock = multiprocessing.Lock()
     worker_queue = []
 
@@ -364,8 +379,7 @@ def load_data_mp(worker_count: int, rows_per_worker=None):
 
     rows_distributed = 0
     for worker_index in range(0, worker_instances_count):
-
-        from_row = rows_distributed + 1
+        from_row = rows_distributed
         rows_distributed += rows_per_worker
         if worker_index == worker_instances_count:
             # last worker gets the leftofter rows
@@ -376,6 +390,7 @@ def load_data_mp(worker_count: int, rows_per_worker=None):
             worker_func,
             args=(config.METADATA_FILE, from_row, rows_distributed, worker_name),
         )
+        rows_distributed += 1
     worker_pool.close()
     worker_pool.join()
 

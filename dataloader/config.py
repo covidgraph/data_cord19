@@ -9,24 +9,34 @@ class DEFAULT(ConfigBase):
     # commit every n nodes/relations
     COMMIT_INTERVAL = 10000
     # Bundle workloads to <PAPER_BATCH_SIZE>-papers and load them into database
-    PAPER_BATCH_SIZE = 500
+    # Decrease this number if you RAM is limited on the loading system
+    PAPER_BATCH_SIZE = 100
+    # The number of simultaneously working parsing processes
+    # You can try using more processes as you have CPU cores / threads, as the loading processes are often waiting for DB loading.
     NO_OF_PROCESSES = multiprocessing.cpu_count() - 1 or 1
     SCRIPT_DIR = os.path.dirname(
         os.path.realpath(os.path.join(os.getcwd(), os.path.expanduser(__file__)))
     )
 
+    # if set to True, the dataset will always be downloaded, regardless of its allready existing
+    REDOWNLOAD_DATASET_IF_EXISTENT = False
+
+    # Where to store the downloaded dataset
     DATA_BASE_DIR = os.path.join(SCRIPT_DIR, "dataset/")
 
-    # {CORRECT_FORMAT:[OCCURENT_FORMAT]}
+    # Where the 'metadata.csv' file from the CORD-19 Dataset is stored
+    METADATA_FILE = os.path.join(DATA_BASE_DIR, "metadata.csv")
+
+    # Paper IDs like 'DOI', Pmcid are coming in different spellings and cases
+    # With this option you cann compensate for that
+    # Format: {CORRECT_FORMAT:[OCCURENT_FORMAT]}
     PAPER_ID_NAME_NORMALISATION = {
         "DOI": ["Doi", "doi"],
         "arXiv": ["arxiv", "ARXIV"],
         "Pmcid": ["pmcid", "PMICD"],
     }
 
-    METADATA_FILE = os.path.join(DATA_BASE_DIR, "metadata.csv")
-
-    # Column names will be take over in the created nodes attributes or child nodes.
+    # Column names, in the 'metadata.csv' file, will be taken over in the created nodes attributes or child nodes.
     # if you are not happy with the names you can overide them here.
     # follow the format from
     # https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html
@@ -37,6 +47,9 @@ class DEFAULT(ConfigBase):
         "Microsoft Academic Paper ID": "microsoft_academic_id",
         "source_x": "source",
     }
+
+    # Define which columns in 'metadata.csv' are identifiers of a paper
+    # They will appear as :PaperID nodes in the resulting graph
     METADATA_FILE_ID_COLUMNS = [
         "doi",
         "pmcid",
@@ -44,6 +57,9 @@ class DEFAULT(ConfigBase):
         "microsoft_academic_id",
         "who_covidence",
     ]
+
+    # Define which columns in 'metadata.csv' are properties of a paper
+    # they will appear as properties of the :Paper nodes
     METADATA_PAPER_PROPERTY_COLUMNS = [
         "source",
         "title",
@@ -52,6 +68,8 @@ class DEFAULT(ConfigBase):
         "url",
     ]
 
+    # in the full text json files in the CORD19 dataset, every paper has references located under the key "bib_entries".
+    # Define here which attributes of these json objects you want to transfer to node properties to :Reference Nodes
     FULLTEXT_PAPER_BIBREF_ATTRS = [
         "ref_id",
         "title",
@@ -62,12 +80,14 @@ class DEFAULT(ConfigBase):
         "pages",
     ]
 
+    # Labels that are autocreated based on the json key names (from the full text json files) can be overriden here
     JSON2GRAPH_LABEL_OVERRIDE = {
         "location": "Location",
         "cite_spans": "Citation",
         "affiliation": "Affiliation",
     }
 
+    # if you JSON2GRAPH_GENERATED_HASH_IDS
     JSON2GRAPH_GENERATED_HASH_ID_ATTR_NAME = "_hash_id"
     # Define for which labels and how a hash id attr should be generated
     JSON2GRAPH_GENERATED_HASH_IDS = {
@@ -78,16 +98,10 @@ class DEFAULT(ConfigBase):
         "Abstract": ["text"],  # Generate an id based on the property "text"
         "Affiliation": "AllAttributes",  # Generate an id based all properties
         "Author": "AllAttributes",
-        "Back_matter": "AllAttributes",
-        "Bibref": "AllAttributes",
-        "Bib_entries": "AllInnerContent",  # Generate an id based all attr and childrens attr
-        "Cite_spans": "AllInnerContent",
-        "Figref": "AllAttributes",
-        "Metadata": "AllInnerContent",
     }
     JSON2GRAPH_CONCAT_LIST_ATTR = {"middle": " "}
     JSON2GRAPH_COLLECTION_NODE_LABEL = "{LIST_MEMBER_LABEL}Collection"
-    JSON2GRAPH_COLLECTION_EXTRA_LABELS = []
+    JSON2GRAPH_COLLECTION_EXTRA_LABELS = ["CollectionHub"]
 
 
 # All following config classes inherit from DEFAULT
@@ -96,9 +110,5 @@ class PRODUCTION(DEFAULT):
 
 
 class DEVELOPMENT(DEFAULT):
-    COMMIT_INTERVAL = 2
     DATA_BASE_DIR = os.path.join(DEFAULT.SCRIPT_DIR, "testdataset/")
-    DATA_DIRS = [
-        "test",
-    ]
     METADATA_FILE = os.path.join(DATA_BASE_DIR, "metadata.csv")
