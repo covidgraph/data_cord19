@@ -1,4 +1,5 @@
 import os
+import py2neo
 import multiprocessing
 from Configs import ConfigBase
 
@@ -6,6 +7,7 @@ from Configs import ConfigBase
 
 
 class DEFAULT(ConfigBase):
+    NEO4J_CON = "bolt://localhost:7687"
     # commit every n nodes/relations
     COMMIT_INTERVAL = 10000
     # Bundle workloads to <PAPER_BATCH_SIZE>-papers and load them into database
@@ -103,6 +105,17 @@ class DEFAULT(ConfigBase):
     JSON2GRAPH_CONCAT_LIST_ATTR = {"middle": " "}
     JSON2GRAPH_COLLECTION_NODE_LABEL = "{LIST_MEMBER_LABEL}Collection"
     JSON2GRAPH_COLLECTION_EXTRA_LABELS = ["CollectionHub"]
+
+    def get_graph(self):
+        if "GC_NEO4J_URL" in os.environ:
+            url = os.getenv("GC_NEO4J_URL")
+            if "GC_NEO4J_USER" in os.environ and "GC_NEO4J_PASSWORD" in os.environ:
+                user = os.getenv("GC_NEO4J_USER")
+                pw = os.getenv("GC_NEO4J_PASSWORD")
+                return py2neo.Graph(url, password=pw, user=user)
+            return py2neo.Graph(url)
+        else:
+            return py2neo.Graph(self.NEO4J_CON)
 
 
 # All following config classes inherit from DEFAULT

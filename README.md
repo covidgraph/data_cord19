@@ -5,7 +5,7 @@ into a neo4j graph
 
 Maintainer: [Tim](https://github.com/motey)
 
-Version: 0.0.1
+Version: 0.1.0
 
 Python-version: Python3
 
@@ -17,31 +17,31 @@ ThanksTo: https://pypi.org/project/cord-19-tools/
 
 **Run**
 
-`docker run -it --rm --name cord-19-data-loader -e CONFIGS_NEO4J_CON="bolt://${HOSTNAME}:7687" covidgraph/cord-19-data-loader`
+`docker run -it --rm --name data-cord19 -e GC_NEO4J_URL="bolt://${HOSTNAME}:7687" covidgraph/data-cord19`
 
 **Build local image**
 
 From the root directorie of this repo run:
 
-`docker build -t cord-19-data-loader .`
+`docker build -t data-cord19 .`
 
 **Run local image**
 
-`docker run -it --rm --name cord-19-data-loader -e CONFIGS_NEO4J_CON='bolt://myuser:mypasswd@myneo4jhostname:7687' cord-19-data-loader`
+`docker run -it --rm --name data-cord19 -e GC_NEO4J_URL='bolt://myneo4jhostname:7687' -e GC_NEO4J_USER=neo4j -e GC_NEO4J_PASSWORD=mysecret data-cord19`
 
 Example (neo4j runs on the docker linux host machine)
 
-`docker run -it --rm --name cord-19-data-loader -v ${PWD}/dataset:/app/dataset -e CONFIGS_NEO4J_CON="bolt://${HOSTNAME}:7687" cord-19-data-loader`
+`docker run -it --rm --name data-cord19 -v ${PWD}/dataset:/app/dataset -e CONFIGS_NEO4J_CON="bolt://${HOSTNAME}:7687" data-cord19`
 
 **Envs**
 
 The most important Env variables are:
 
-`GC_NEO4J_URL`
+`GC_NEO4J_URL`: The full bolt url example 'bolt://myneo4jhostname:7687'
 
-`GC_NEO4J_USER`
+`GC_NEO4J_USER`: The neo4j user
 
-`GC_NEO4J_PASSWORD`
+`GC_NEO4J_PASSWORD`: The neo4j password
 
 besides that you can set all variables in dataloader/config.py via env variable with a `CONFIGS_` prefix. See https://git.connect.dzd-ev.de/dzdtools/pythonmodules/-/tree/master/Configs for more details
 

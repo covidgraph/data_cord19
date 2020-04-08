@@ -15,7 +15,7 @@ config = getConfig()
 log = logging.getLogger(__name__)
 log.addHandler(logging.StreamHandler())
 log.setLevel(getattr(logging, config.LOG_LEVEL))
-graph = Graph(config.NEO4J_CON)
+graph = config.get_graph()
 
 
 class FullTextPaperJsonFilesIndex(object):
@@ -403,6 +403,6 @@ def load_data():
 
 if __name__ == "__main__":
     with CodeTimer(unit="s"):
-        load_data_mp(config.NO_OF_PROCESSES, config.PAPER_BATCH_SIZE)
+        # load_data_mp(config.NO_OF_PROCESSES, config.PAPER_BATCH_SIZE)
         # load_data_mp(1)
-        # load_data()
+        load_data()

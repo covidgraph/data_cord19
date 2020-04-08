@@ -23,7 +23,6 @@ if __name__ == "__main__":
     with CodeTimer("Downloader", unit="s"):
         download()
     with CodeTimer("Importer", unit="s"):
-
         if config.NO_OF_PROCESSES == 1:
             load_data()
         elif config.NO_OF_PROCESSES > 1:
