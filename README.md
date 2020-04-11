@@ -7,7 +7,7 @@ Maintainer: [Tim](https://github.com/motey)
 
 Version: 0.1.0
 
-Python-version: Python3
+Python version: Python3
 
 ThanksTo: https://pypi.org/project/cord-19-tools/
 
