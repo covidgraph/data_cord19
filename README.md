@@ -9,7 +9,7 @@ Version: 0.1.0
 
 Python version: Python3
 
-Thanks to: https://pypi.org/project/cord-19-tools/
+Thanksto: https://pypi.org/project/cord-19-tools/
 
 # Usage
 
