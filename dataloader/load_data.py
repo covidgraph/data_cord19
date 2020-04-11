@@ -3,7 +3,12 @@ import pandas
 import json
 import logging
 import multiprocessing
+import functools
 import time
+import concurrent
+import signal
+from pebble import ProcessPool
+import atexit
 import random
 from linetimer import CodeTimer
 from Configs import getConfig
@@ -34,13 +39,21 @@ class FullTextPaperJsonFilesIndex(object):
                 file_id = os.path.splitext(os.path.basename(file))[0]
                 self._index[file_id] = os.path.join(root, file)
 
-    def get_full_text_paper_path(self, paper_sha):
-        if paper_sha is None:
-            return None
+    def get_full_text_paper_pathes(self, paper_sha, paper_pmcid):
+        pathes = []
+        if paper_sha is None and paper_pmcid is None:
+            return pathes
+        if paper_pmcid is not None:
+            pmcid_file_name = "{}.xml".format(paper_pmcid.upper())
+            try:
+                pathes.append(self._index[pmcid_file_name])
+            except KeyError:
+                pass
         try:
-            return self._index[paper_sha]
+            pathes.append(self._index[paper_sha])
         except KeyError:
-            return None
+            pass
+        return pathes
 
 
 json_files_index = FullTextPaperJsonFilesIndex(config.DATA_BASE_DIR)
@@ -68,12 +81,12 @@ class Paper(object):
         # in some cases the extra papers a supplemental papers, in some cases they are reviewed version.
         # at the moment we ignore all this and only take the last refernce in list, as it usally the most recent paper and not a supplemental paper (not always :/ )
         # ToDo: Distinguish duplicate, supplemental and reviewd papers. Ignore duplicates and store the supplemental paper somehow
+        self.paper_sha = None
         if not pandas.isna(row["sha"]):
             full_text_paper_id = [pid.strip() for pid in row["sha"].split(";")][-1:]
             self.paper_sha = full_text_paper_id[0] if full_text_paper_id[0] else None
-            self._load_full_json()
-        else:
-            self.paper_sha = None
+        self.paper_pmcid = row["pmcid"] if not pandas.isna(row["pmcid"]) else None
+        self._load_full_json()
 
         self.properties = {"cord19-id": self.paper_sha}
         self.PaperID = []
@@ -93,17 +106,20 @@ class Paper(object):
         return dic
 
     def _load_full_json(self):
-        self.full_text_source_file_path = None
-        self.full_text_source_file_path = json_files_index.get_full_text_paper_path(
-            self.paper_sha
+        self.full_text_source_file_pathes = []
+        self.full_text_source_file_pathes = json_files_index.get_full_text_paper_pathes(
+            self.paper_sha, self.paper_pmcid
         )
         #####################################
 
-        if self.full_text_source_file_path is not None:
-            json_data = None
-            with open(self.full_text_source_file_path) as json_file:
-                json_data = json.load(json_file)
-            self._raw_data_json = json_data
+        if self.full_text_source_file_pathes:
+            self._raw_data_json = {}
+            for path in self.full_text_source_file_pathes:
+
+                json_data = None
+                with open(path) as json_file:
+                    json_data = json.load(json_file)
+                self._raw_data_json.update(json_data)
 
 
 class PaperParser(object):
@@ -200,15 +216,17 @@ class PaperParser(object):
     def parse_abstract(self):
         abstract_sections = []
         if self.paper._raw_data_json is not None:
-            for abstract_sections in self.paper._raw_data_json["abstract"]:
-                if "cite_spans" in abstract_sections:
-                    self._link_references(abstract_sections["cite_spans"])
-                # delete non needed data
-                if "eq_spans" in abstract_sections:
-                    del abstract_sections["eq_spans"]
-                if "ref_spans" in abstract_sections:
-                    del abstract_sections["ref_spans"]
-                self.paper.Abstract.append(abstract_sections)
+            if "abstract" in self.paper._raw_data_json:
+                for abstract_sections in self.paper._raw_data_json["abstract"]:
+                    if "cite_spans" in abstract_sections:
+                        self._link_references(abstract_sections["cite_spans"])
+                    # delete non needed data
+                    if "eq_spans" in abstract_sections:
+                        del abstract_sections["eq_spans"]
+                    if "ref_spans" in abstract_sections:
+                        del abstract_sections["ref_spans"]
+                    self.paper.Abstract.append(abstract_sections)
+
         else:
             abst = self.paper._raw_data_csv_row["abstract"]
             if not pandas.isna(abst):
@@ -254,7 +272,6 @@ class Dataloader(object):
 
         paper_count = 0
         for index, row in self.data.iterrows():
-
             papers.append(Paper(row))
             if len(papers) == config.PAPER_BATCH_SIZE:
                 log.info(
@@ -290,19 +307,21 @@ class Dataloader(object):
         except NameError:
             # we are in singlethreaded mode. no lock set
             pass
-        self.loader.create_indexes(graph)
-        self.loader.merge(graph)
         try:
-            if db_loading_lock is not None:
-                log.info(
-                    "{}Release DB loading lock.".format(
-                        self.name + ": " if self.name else ""
+            self.loader.create_indexes(graph)
+            self.loader.merge(graph)
+        finally:
+            try:
+                if db_loading_lock is not None:
+                    log.info(
+                        "{}Release DB loading lock.".format(
+                            self.name + ": " if self.name else ""
+                        )
                     )
-                )
-                db_loading_lock.release()
-        except NameError:
-            # we are in singlethreaded mode. no lock set
-            pass
+                    db_loading_lock.release()
+            except NameError:
+                # we are in singlethreaded mode. no lock set
+                pass
 
     def _build_loader(self):
         c = Json2graphio()
@@ -332,32 +351,59 @@ class Dataloader(object):
     # https://stackoverflow.com/questions/20886565/using-multiprocessing-process-with-a-maximum-number-of-simultaneous-processes
 
 
-def worker_func(
+def worker_task(
     metadata_csv_path, from_row: int, to_row: int, worker_name: str,
 ):
 
     log.info("Start {} -- row {} to row {}".format(worker_name, from_row, to_row))
-    try:
-        dataloader = Dataloader(
-            metadata_csv_path,
-            from_row=from_row,
-            to_row=to_row,
-            worker_name=worker_name,
-        )
-        dataloader.parse()
-    except Exception as er:
-        print(er)
-        log.exception(er)
-        raise er
+    # l = 1 / 0
+    dataloader = Dataloader(
+        metadata_csv_path, from_row=from_row, to_row=to_row, worker_name=worker_name,
+    )
+    dataloader.parse()
 
 
-def worker_init(l):
+def worker_task_init(l):
     global db_loading_lock
     db_loading_lock = l
 
 
-def load_data_mp(worker_count: int, rows_per_worker=None):
+def worker_task_done(task_name, pool, other_futures, from_row, to_row, future):
+    try:
+        result = future.result()
+    except concurrent.futures.CancelledError:
+        # canceled by god or anyone
+        log.info("{} cancelled".format(task_name))
+        return
+    except Exception as error:
+        if config.CANCEL_WHOLE_IMPORT_IF_A_WORKER_FAILS:
+            log.warning(
+                "{} failed. Cancel all tasks and stop workers...".format(task_name)
+            )
+            pool.close()
 
+            for fut in other_futures:
+                fut.cancel()
+            future.cancel()
+        log.info("{} failed".format(task_name))
+        log.exception("[{}] Function raised {}".format(task_name, error))
+        log.info(
+            "Exception happend in {} -> row range {} - {}".format(
+                config.METADATA_FILE, from_row, to_row
+            )
+        )
+        if config.CANCEL_WHOLE_IMPORT_IF_A_WORKER_FAILS:
+            pool.stop()
+        global exit_code
+        exit_code = 1
+        raise error
+    log.info("{} finished".format(task_name))
+    return
+
+
+def load_data_mp(worker_count: int, rows_per_worker=None):
+    global exit_code
+    exit_code = 0
     row_count_total = len(pandas.read_csv(config.METADATA_FILE).dropna(how="all"))
 
     if rows_per_worker is None:
@@ -371,38 +417,57 @@ def load_data_mp(worker_count: int, rows_per_worker=None):
         leftover_rows = row_count_total % rows_per_worker
 
     lock = multiprocessing.Lock()
-    worker_queue = []
-
-    worker_pool = multiprocessing.Pool(
-        worker_count, initializer=worker_init, initargs=(lock,)
-    )
-
     rows_distributed = 0
-    for worker_index in range(0, worker_instances_count):
-        from_row = rows_distributed
-        rows_distributed += rows_per_worker
-        if worker_index == worker_instances_count:
-            # last worker gets the leftofter rows
-            rows_distributed += leftover_rows
-        worker_name = "WORKER_{}".format(worker_index)
-        log.info("Create worker '{}'".format(worker_name))
-        worker_pool.apply_async(
-            worker_func,
-            args=(config.METADATA_FILE, from_row, rows_distributed, worker_name),
-        )
-        rows_distributed += 1
-    worker_pool.close()
-    worker_pool.join()
+    futures = []
+    with ProcessPool(
+        max_workers=worker_count,
+        max_tasks=1,
+        initializer=worker_task_init,
+        initargs=(lock,),
+    ) as pool:
+        for worker_index in range(0, worker_instances_count):
+            from_row = rows_distributed
+            rows_distributed += rows_per_worker
+            if worker_index == worker_instances_count:
+                # last worker gets the leftofter rows
+                rows_distributed += leftover_rows
+            worker_task_name = "WORKER_TASK_{}".format(worker_index)
+            log.info("Add worker task '{}' to schedule".format(worker_task_name))
+            future = pool.schedule(
+                worker_task,
+                args=(
+                    config.METADATA_FILE,
+                    from_row,
+                    rows_distributed,
+                    worker_task_name,
+                ),
+            )
+
+            future.add_done_callback(
+                functools.partial(
+                    worker_task_done,
+                    worker_task_name,
+                    pool,
+                    futures,
+                    from_row,
+                    rows_distributed,
+                )
+            )
+            futures.append(future)
+            rows_distributed += 1
+    exit(exit_code)
 
 
 # pandas.read_csv(config.METADATA_FILE)
+
+# Simple singleprocessed loading
 def load_data():
     dataloader = Dataloader(config.METADATA_FILE)
     dataloader.parse()
 
 
 if __name__ == "__main__":
-    with CodeTimer(unit="s"):
-        # load_data_mp(config.NO_OF_PROCESSES, config.PAPER_BATCH_SIZE)
-        # load_data_mp(1)
-        load_data()
+    # with CodeTimer(unit="s"):
+    load_data_mp(config.NO_OF_PROCESSES, config.PAPER_BATCH_SIZE)
+    # load_data_mp(2, 1)
+    # load_data()

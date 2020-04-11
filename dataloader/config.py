@@ -12,10 +12,13 @@ class DEFAULT(ConfigBase):
     COMMIT_INTERVAL = 10000
     # Bundle workloads to <PAPER_BATCH_SIZE>-papers and load them into database
     # Decrease this number if you RAM is limited on the loading system
-    PAPER_BATCH_SIZE = 100
+    PAPER_BATCH_SIZE = 300
     # The number of simultaneously working parsing processes
     # You can try using more processes as you have CPU cores / threads, as the loading processes are often waiting for DB loading.
     NO_OF_PROCESSES = multiprocessing.cpu_count() - 1 or 1
+    # if one worker fails should we cancel the whole import, or import the rest of the data.
+    # you will get feedback on which rows the import failed
+    CANCEL_WHOLE_IMPORT_IF_A_WORKER_FAILS = True
     SCRIPT_DIR = os.path.dirname(
         os.path.realpath(os.path.join(os.getcwd(), os.path.expanduser(__file__)))
     )
@@ -101,6 +104,7 @@ class DEFAULT(ConfigBase):
         "Abstract": ["text"],  # Generate an id based on the property "text"
         "Affiliation": "AllAttributes",  # Generate an id based all properties
         "Author": "AllAttributes",
+        # "Citation": "AllAttributes",
     }
     JSON2GRAPH_CONCAT_LIST_ATTR = {"middle": " "}
     JSON2GRAPH_COLLECTION_NODE_LABEL = "{LIST_MEMBER_LABEL}Collection"
@@ -112,6 +116,9 @@ class DEFAULT(ConfigBase):
             if "GC_NEO4J_USER" in os.environ and "GC_NEO4J_PASSWORD" in os.environ:
                 user = os.getenv("GC_NEO4J_USER")
                 pw = os.getenv("GC_NEO4J_PASSWORD")
+                print("URL", url)
+                print("pw", pw)
+                print("user", user)
                 return py2neo.Graph(url, password=pw, user=user)
             return py2neo.Graph(url)
         else:
@@ -123,6 +130,12 @@ class PRODUCTION(DEFAULT):
     pass
 
 
-class DEVELOPMENT(DEFAULT):
+class SMOKETEST(DEFAULT):
     DATA_BASE_DIR = os.path.join(DEFAULT.SCRIPT_DIR, "testdataset/")
     METADATA_FILE = os.path.join(DATA_BASE_DIR, "metadata.csv")
+
+
+class DEVELOPMENT(DEFAULT):
+    # DATA_BASE_DIR = os.path.join(DEFAULT.SCRIPT_DIR, "testdataset/")
+    # METADATA_FILE = os.path.join(DATA_BASE_DIR, "metadata.csv")
+    pass

@@ -29,13 +29,17 @@ From the root directorie of this repo run:
 
 `docker run -it --rm --name data-cord19 -e GC_NEO4J_URL='bolt://myneo4jhostname:7687' -e GC_NEO4J_USER=neo4j -e GC_NEO4J_PASSWORD=mysecret data-cord19`
 
-Example (neo4j runs on the docker linux host machine)
+Examples (neo4j runs on the docker linux host machine)
 
-`docker run -it --rm --name data-cord19 -v ${PWD}/dataset:/app/dataset -e CONFIGS_NEO4J_CON="bolt://${HOSTNAME}:7687" data-cord19`
+`docker run -it --rm --name data-cord19 -v ${PWD}/dataset:/app/dataset -e GC_NEO4J_USER=neo4j, -e GC_NEO4J_PASSWORD=test -e CONFIGS_NEO4J_CON="bolt://${HOSTNAME}:7687" data-cord19`
+
+`docker run -it --rm --name data-cord19 -e CONFIGS_NEO4J_CON="bolt://neo4j:test@${HOSTNAME}:7687" data-cord19`
 
 **Envs**
 
 The most important Env variables are:
+
+`ENV`: will be `PROD` or `DEV`
 
 `GC_NEO4J_URL`: The full bolt url example 'bolt://myneo4jhostname:7687'
 
