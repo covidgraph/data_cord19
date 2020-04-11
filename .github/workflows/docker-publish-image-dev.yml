@@ -15,10 +15,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file dockerfile --tag data-cord19:dev
+      run: docker build . --file dockerfile --tag dev
     - name: Publish to Registry
       uses: HurricanKai/Publish-Docker-Github-Action@master
       with:
-        name: covidgraph/data-cord19
+        name: covidgraph/data-cord19:dev
         username: ${{ secrets.DZD_DOCKER_USERNAME }}
         password: ${{ secrets.DZD_DOCKER_PASSWORD }}
