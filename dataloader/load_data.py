@@ -88,7 +88,7 @@ class Paper(object):
         self.paper_pmcid = row["pmcid"] if not pandas.isna(row["pmcid"]) else None
         self._load_full_json()
 
-        self.properties = {"cord19-id": self.paper_sha}
+        self.properties = {"cord19-fulltext_hash": self.paper_sha}
         self.PaperID = []
         self.Reference = []
         self.BodyText = []
