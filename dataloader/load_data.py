@@ -342,6 +342,7 @@ class Dataloader(object):
         )
         c.config_bool_capitalize_labels = False
         c.config_dict_label_override = config.JSON2GRAPH_LABEL_OVERRIDE
+        c.config_list_collection_anchor_extra_labels = []
         # c.config_func_node_pre_modifier = DataTransformer.renameLabels
         # c.config_func_node_post_modifier = DataTransformer.addExtraLabels
         # c.config_dict_property_name_override = config.JSON2GRAPH_PROPOVERRIDE
