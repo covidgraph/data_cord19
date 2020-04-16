@@ -104,7 +104,7 @@ class DEFAULT(ConfigBase):
         "Abstract": ["text"],  # Generate an id based on the property "text"
         "Affiliation": "AllAttributes",  # Generate an id based all properties
         "Author": "AllAttributes",
-        # "Citation": "AllAttributes",
+        "Citation": "AllAttributes",
     }
     JSON2GRAPH_CONCAT_LIST_ATTR = {"middle": " "}
     JSON2GRAPH_COLLECTION_NODE_LABEL = "{LIST_MEMBER_LABEL}Collection"

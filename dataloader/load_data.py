@@ -441,6 +441,7 @@ def load_data_mp(worker_count: int, rows_per_worker=None):
                     rows_distributed,
                     worker_task_name,
                 ),
+                timeout=600,
             )
 
             future.add_done_callback(
