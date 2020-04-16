@@ -14,8 +14,12 @@ class DEFAULT(ConfigBase):
     # Decrease this number if you RAM is limited on the loading system
     PAPER_BATCH_SIZE = 300
     # The number of simultaneously working parsing processes
-    # You can try using more processes as you have CPU cores / threads, as the loading processes are often waiting for DB loading.
-    NO_OF_PROCESSES = multiprocessing.cpu_count() - 1 or 1
+    # Atm more than 3 or 4 makes no sense as there will build up a task queue for database loading
+    NO_OF_PROCESSES = (
+        4
+        if multiprocessing.cpu_count() >= 4
+        else (multiprocessing.cpu_count() - 1 or 1)
+    )
     # if one worker fails should we cancel the whole import, or import the rest of the data.
     # you will get feedback on which rows the import failed
     CANCEL_WHOLE_IMPORT_IF_A_WORKER_FAILS = True
@@ -106,6 +110,12 @@ class DEFAULT(ConfigBase):
         "Author": "AllAttributes",
         "Citation": "AllAttributes",
     }
+
+    SKIP_COLLECTION_HUBS = [
+        "PaperIDCollection",
+        "CitationCollection",
+    ]
+
     JSON2GRAPH_CONCAT_LIST_ATTR = {"middle": " "}
     JSON2GRAPH_COLLECTION_NODE_LABEL = "{LIST_MEMBER_LABEL}Collection"
     JSON2GRAPH_COLLECTION_EXTRA_LABELS = ["CollectionHub"]

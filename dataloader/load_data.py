@@ -340,6 +340,7 @@ class Dataloader(object):
         c.config_str_primarykey_generated_attr_name = (
             config.JSON2GRAPH_GENERATED_HASH_ID_ATTR_NAME
         )
+        c.config_list_skip_collection_hubs = config.SKIP_COLLECTION_HUBS
         c.config_bool_capitalize_labels = False
         c.config_dict_label_override = config.JSON2GRAPH_LABEL_OVERRIDE
         c.config_list_collection_anchor_extra_labels = []
