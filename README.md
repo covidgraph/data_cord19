@@ -81,4 +81,14 @@ run the main.py
 
 # Data
 
-Have a look at dataloader/config.py -> DATA_DIRS . There is a list of all directories in the dataset which will be taken into account
+## Scheme
+
+![Datascheme](https://raw.githubusercontent.com/covidgraph/data_cord19/master/docs/datascheme.png)
+
+## Exmaple
+
+
+![Exmaple Data](https://raw.githubusercontent.com/covidgraph/data_cord19/master/docs/datascheme_example.png)
+
+
+
