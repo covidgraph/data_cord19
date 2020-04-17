@@ -7,6 +7,7 @@ from Configs import ConfigBase
 
 
 class DEFAULT(ConfigBase):
+    LOG_LEVEL = "INFO"
     NEO4J_CON = "bolt://localhost:7687"
     # commit every n nodes/relations
     COMMIT_INTERVAL = 10000
@@ -149,3 +150,11 @@ class DEVELOPMENT(DEFAULT):
     # DATA_BASE_DIR = os.path.join(DEFAULT.SCRIPT_DIR, "testdataset/")
     # METADATA_FILE = os.path.join(DATA_BASE_DIR, "metadata.csv")
     pass
+
+
+class PROFILING(DEFAULT):
+    # DATA_BASE_DIR = os.path.join(DEFAULT.SCRIPT_DIR, "testdataset/")
+    # METADATA_FILE = os.path.join(DATA_BASE_DIR, "metadata.csv")
+    NO_OF_PROCESSES = 1
+    COMMIT_INTERVAL = 100000
+    LOG_LEVEL = "DEBUG"

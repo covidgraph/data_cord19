@@ -20,6 +20,12 @@ from dataloader.load_data import load_data, load_data_mp
 
 if __name__ == "__main__":
     config = getConfig()
+    print(
+        "Start with loglevel '{}' and ENV={}".format(
+            config.LOG_LEVEL, os.environ["ENV"]
+        )
+    )
+
     with CodeTimer("Downloader", unit="s"):
         download()
     with CodeTimer("Importer", unit="s"):

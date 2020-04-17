@@ -110,12 +110,9 @@ class Paper(object):
         self.full_text_source_file_pathes = json_files_index.get_full_text_paper_pathes(
             self.paper_sha, self.paper_pmcid
         )
-        #####################################
-
         if self.full_text_source_file_pathes:
             self._raw_data_json = {}
             for path in self.full_text_source_file_pathes:
-
                 json_data = None
                 with open(path) as json_file:
                     json_data = json.load(json_file)
@@ -267,6 +264,7 @@ class Dataloader(object):
         self._build_loader()
 
     def parse(self):
+
         papers = []
         paper_total_count = len(self.data)
 
@@ -290,12 +288,16 @@ class Dataloader(object):
                         paper_total_count,
                     )
                 )
+        # load the leftovers papers
         self.load(papers)
 
     def load(self, papers):
+        ct = CodeTimer("Convert paper to graph", silent=True, unit="s")
+        with ct:
+            for index, paper in enumerate(papers):
+                self.loader.load_json("Paper", paper.to_dict())
+        log.debug("Convert papers to graph took {}s".format(ct.took))
 
-        for index, paper in enumerate(papers):
-            self.loader.load_json("Paper", paper.to_dict())
         try:
             if db_loading_lock is not None:
                 db_loading_lock.acquire()
@@ -307,9 +309,16 @@ class Dataloader(object):
         except NameError:
             # we are in singlethreaded mode. no lock set
             pass
+            log.debug("Load Data to DB...")
         try:
-            self.loader.create_indexes(graph)
-            self.loader.merge(graph)
+            ct = CodeTimer("Create Indexes", silent=True, unit="s")
+            with ct:
+                self.loader.create_indexes(graph)
+            log.debug("Creating Indexes took {}s".format(ct.took))
+            ct = CodeTimer("Load to DB", silent=True, unit="s")
+            with ct:
+                self.loader.merge(graph)
+            log.debug("Loading papers to db took {}s".format(ct.took))
         finally:
             try:
                 if db_loading_lock is not None:
@@ -321,6 +330,7 @@ class Dataloader(object):
                     db_loading_lock.release()
             except NameError:
                 # we are in singlethreaded mode. no lock set
+                log.debug("...Loaded Data to DB")
                 pass
 
     def _build_loader(self):
