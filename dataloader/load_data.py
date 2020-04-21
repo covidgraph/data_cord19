@@ -295,7 +295,7 @@ class Dataloader(object):
         ct = CodeTimer("Convert paper to graph", silent=True, unit="s")
         with ct:
             for index, paper in enumerate(papers):
-                self.loader.load_json("Paper", paper.to_dict())
+                self.loader.load_json(paper.to_dict(), "Paper")
         log.debug("Convert papers to graph took {}s".format(ct.took))
 
         try:
