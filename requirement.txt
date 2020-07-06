@@ -6,5 +6,5 @@ requests
 git+https://github.com/motey/graphio
 pandas
 pydash
-git+https://git.connect.dzd-ev.de/dzdtools/pythonmodules.git@legacy-json2graphIO#subdirectory=DZDjson2GraphIO
+git+https://git.connect.dzd-ev.de/dzdtools/pythonmodules.git#subdirectory=dict2graph
 git+https://git.connect.dzd-ev.de/dzdtools/pythonmodules.git#subdirectory=Configs
