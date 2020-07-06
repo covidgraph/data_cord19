@@ -22,7 +22,7 @@ if __name__ == "__main__":
     config = getConfig()
     print(
         "Start with loglevel '{}' and ENV={}".format(
-            config.LOG_LEVEL, os.environ["ENV"]
+            config.LOG_LEVEL, os.getenv("ENV", "DEV")
         )
     )
 

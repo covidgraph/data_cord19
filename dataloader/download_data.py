@@ -21,7 +21,7 @@ def download():
             )
             return
     log.info("Start downloading CORD-19 Dataset...")
-    cotools.download(dir=config.DATA_BASE_DIR)
+    cotools.download(dir=config.DATA_BASE_DIR,match="^((?!embeddings).)*tar\.gz*$",regex=True)
     log.info("Finished downloading CORD-19 Dataset...")
 
 

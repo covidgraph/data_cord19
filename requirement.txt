@@ -1,7 +1,7 @@
 py2neo
 linetimer
 pebble
-cord-19-tools
+git+https://github.com/motey/cord-19-tools
 requests
 graphio
 pandas

@@ -91,36 +91,6 @@ class DEFAULT(ConfigBase):
         "pages",
     ]
 
-    # Labels that are autocreated based on the json key names (from the full text json files) can be overriden here
-    JSON2GRAPH_LABEL_OVERRIDE = {
-        "location": "Location",
-        "cite_spans": "Citation",
-        "affiliation": "Affiliation",
-    }
-
-    # if you JSON2GRAPH_GENERATED_HASH_IDS
-    JSON2GRAPH_GENERATED_HASH_ID_ATTR_NAME = "_hash_id"
-    # Define for which labels and how a hash id attr should be generated
-    JSON2GRAPH_GENERATED_HASH_IDS = {
-        "BodyText": "AllAttributes",
-        "Paper": "AllAttributes",
-        "Reference": "AllInnerContent",
-        "Location": "AllAttributes",
-        "Abstract": ["text"],  # Generate an id based on the property "text"
-        "Affiliation": "AllAttributes",  # Generate an id based all properties
-        "Author": "AllAttributes",
-        "Citation": "AllAttributes",
-    }
-
-    SKIP_COLLECTION_HUBS = [
-        "PaperIDCollection",
-        "CitationCollection",
-    ]
-
-    JSON2GRAPH_CONCAT_LIST_ATTR = {"middle": " "}
-    JSON2GRAPH_COLLECTION_NODE_LABEL = "{LIST_MEMBER_LABEL}Collection"
-    JSON2GRAPH_COLLECTION_EXTRA_LABELS = ["CollectionHub"]
-
     def get_graph(self):
         if "GC_NEO4J_URL" in os.environ:
             url = os.getenv("GC_NEO4J_URL")
@@ -156,5 +126,5 @@ class PROFILING(DEFAULT):
     # DATA_BASE_DIR = os.path.join(DEFAULT.SCRIPT_DIR, "testdataset/")
     # METADATA_FILE = os.path.join(DATA_BASE_DIR, "metadata.csv")
     NO_OF_PROCESSES = 1
-    COMMIT_INTERVAL = 100000
+    COMMIT_INTERVAL = 10000
     LOG_LEVEL = "DEBUG"

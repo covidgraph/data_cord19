@@ -337,23 +337,33 @@ class Dataloader(object):
         c = Json2graphio()
         # c.config_dict_label_override = config.JSON2GRAPH_LABELOVERRIDE
         # c.config_func_custom_relation_name_generator = DataTransformer.nameRelation
-        c.config_dict_primarykey_generated_hashed_attrs_by_label = (
-            config.JSON2GRAPH_GENERATED_HASH_IDS
-        )
-        c.config_dict_concat_list_attr = config.JSON2GRAPH_CONCAT_LIST_ATTR
-        c.config_str_collection_anchor_label = config.JSON2GRAPH_COLLECTION_NODE_LABEL
-        c.config_list_collection_anchor_extra_labels = (
-            config.JSON2GRAPH_COLLECTION_EXTRA_LABELS
-        )
+        c.config_dict_primarykey_generated_hashed_attrs_by_label = {
+            "BodyText": "AllAttributes",
+            "Paper": "AllAttributes",
+            "Reference": "InnerContent",
+            "Location": "AllAttributes",
+            "Abstract": ["text"],  # Generate an id based on the property "text"
+            "Affiliation": "AllAttributes",  # Generate an id based all properties
+            "Author": "AllAttributes",
+            "Citation": "AllAttributes",
+        }
+        c.config_dict_concat_list_attr = {"Author": {"middle": " "}}
+        c.config_str_collection_hub_label = "{LIST_MEMBER_LABEL}Collection"
+        c.config_list_collection_hub_extra_labels = ["CollectionHub"]
+
         c.config_graphio_batch_size = config.COMMIT_INTERVAL
         # c.config_dict_primarykey_attr_by_label = config.JSON2GRAPH_ID_ATTR
-        c.config_str_primarykey_generated_attr_name = (
-            config.JSON2GRAPH_GENERATED_HASH_ID_ATTR_NAME
-        )
-        c.config_list_skip_collection_hubs = config.SKIP_COLLECTION_HUBS
+        c.config_str_primarykey_generated_attr_name = "_hash_id"
+        c.config_list_blocklist_collection_hubsinstead = [
+            "PaperIDCollection",
+            "CitationCollection",
+        ]
         c.config_bool_capitalize_labels = False
-        c.config_dict_label_override = config.JSON2GRAPH_LABEL_OVERRIDE
-        c.config_list_collection_anchor_extra_labels = []
+        c.config_dict_label_override = {
+            "location": "Location",
+            "cite_spans": "Citation",
+            "affiliation": "Affiliation",
+        }
         # c.config_func_node_pre_modifier = DataTransformer.renameLabels
         # c.config_func_node_post_modifier = DataTransformer.addExtraLabels
         # c.config_dict_property_name_override = config.JSON2GRAPH_PROPOVERRIDE
