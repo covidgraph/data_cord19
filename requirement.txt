@@ -3,7 +3,7 @@ linetimer
 pebble
 git+https://github.com/motey/cord-19-tools
 requests
-graphio
+git+https://github.com/motey/graphio
 pandas
 pydash
 git+https://git.connect.dzd-ev.de/dzdtools/pythonmodules.git@legacy-json2graphIO#subdirectory=DZDjson2GraphIO
