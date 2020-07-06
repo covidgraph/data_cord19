@@ -13,7 +13,7 @@ import random
 from linetimer import CodeTimer
 from Configs import getConfig
 from py2neo import Graph
-from DZDjson2GraphIO import Json2graphio
+from dict2graph import Dict2graph
 
 
 config = getConfig()
@@ -334,7 +334,7 @@ class Dataloader(object):
                 pass
 
     def _build_loader(self):
-        c = Json2graphio()
+        c = Dict2graph()
         # c.config_dict_label_override = config.JSON2GRAPH_LABELOVERRIDE
         # c.config_func_custom_relation_name_generator = DataTransformer.nameRelation
         c.config_dict_primarykey_generated_hashed_attrs_by_label = {
@@ -349,12 +349,12 @@ class Dataloader(object):
         }
         c.config_dict_concat_list_attr = {"Author": {"middle": " "}}
         c.config_str_collection_hub_label = "{LIST_MEMBER_LABEL}Collection"
-        c.config_list_collection_hub_extra_labels = ["CollectionHub"]
+        c.config_list_collection_hub_extra_labels = []
 
         c.config_graphio_batch_size = config.COMMIT_INTERVAL
         # c.config_dict_primarykey_attr_by_label = config.JSON2GRAPH_ID_ATTR
         c.config_str_primarykey_generated_attr_name = "_hash_id"
-        c.config_list_blocklist_collection_hubsinstead = [
+        c.config_list_blocklist_collection_hubs = [
             "PaperIDCollection",
             "CitationCollection",
         ]

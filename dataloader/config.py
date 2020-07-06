@@ -52,9 +52,9 @@ class DEFAULT(ConfigBase):
     # https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html
     # {"old_name":"new_name", "other_column_old_name", "other_column_new_name"}
     METADATA_FILE_COLUMN_OVERRIDE = {
-        "WHO #Covidence": "who_covidence",
+        "who_covidence_id": "who_covidence",
         "authors": "author",
-        "Microsoft Academic Paper ID": "microsoft_academic_id",
+        "mag_id": "microsoft_academic_id",
         "source_x": "source",
     }
 
