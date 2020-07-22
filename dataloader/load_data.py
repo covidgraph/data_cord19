@@ -189,7 +189,9 @@ class PaperParser(object):
                         paper_id_name = self._normalize_paper_id_name(id_type)
                         for id_val in id_vals:
 
-                            ref["PaperID"].append({"type": paper_id_name, "id": id_val})
+                            ref["PaperID"].append(
+                                {"type": paper_id_name, "id": str(id_val)}
+                            )
                 refs.append(ref)
         self.paper.Reference = refs
 
