@@ -377,9 +377,6 @@ class Dataloader(object):
         # c.config_dict_property_name_override = config.JSON2GRAPH_PROPOVERRIDE
         self.loader = c
 
-    # Todo: Make Worker class to function and create pool
-    # https://stackoverflow.com/questions/20886565/using-multiprocessing-process-with-a-maximum-number-of-simultaneous-processes
-
 
 def worker_task(
     metadata_csv_path, from_row: int, to_row: int, worker_name: str,
