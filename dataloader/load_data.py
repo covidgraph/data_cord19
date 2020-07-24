@@ -95,7 +95,7 @@ class Paper(object):
         dic = self.properties
         # sub/child dicts
         dic["Author"] = self.Author
-        dic["PaperID"] = self._non_trailing_float_to_int(self.PaperID)
+        dic["PaperID"] = self.PaperID
         dic["Reference"] = self.Reference
         dic["BodyText"] = self.BodyText
         dic["Abstract"] = self.Abstract
@@ -165,10 +165,7 @@ class PaperParser(object):
             paper_id = self.paper._raw_data_csv_row[id_col]
             if not pandas.isna(paper_id):
                 self.paper.PaperID.append(
-                    {
-                        "type": paper_id_name,
-                        "id": self._non_trailing_float_to_int(paper_id),
-                    }
+                    {"type": paper_id_name, "id": self._normalize_paper_id(paper_id),}
                 )
 
     def parse_references(self):
@@ -197,7 +194,7 @@ class PaperParser(object):
                             ref["PaperID"].append(
                                 {
                                     "type": paper_id_name,
-                                    "id": self._non_trailing_float_to_int(id_val),
+                                    "id": self._normalize_paper_id(id_val),
                                 }
                             )
                 refs.append(ref)
@@ -250,16 +247,16 @@ class PaperParser(object):
                 return correct_format
         return paper_id_name
 
+    def _normalize_paper_id(self, number):
+        if isinstance(number, (int, float)):
+            return str(int(number))
+        return number
+
     def _find_reference(self, ref_name):
         for ref in self.paper.Reference:
             if ref_name == ref["name"]:
                 return ref
         return ref_name
-
-    def _non_trailing_float_to_int(number):
-        if isinstance(number, float) and (number - int(number) == 0.0):
-            return int(number)
-        return number
 
 
 class Dataloader(object):
