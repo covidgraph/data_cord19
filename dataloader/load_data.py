@@ -99,7 +99,7 @@ class Paper(object):
         dic = self.properties
         # sub/child dicts
         dic["Author"] = self.Author
-        dic["PaperID"] = self.PaperID
+        dic["PaperID"] = non_trailing_float_to_int(self.PaperID)
         dic["Reference"] = self.Reference
         dic["BodyText"] = self.BodyText
         dic["Abstract"] = self.Abstract
@@ -168,7 +168,9 @@ class PaperParser(object):
             paper_id_name = self._normalize_paper_id_name(id_col)
             paper_id = self.paper._raw_data_csv_row[id_col]
             if not pandas.isna(paper_id):
-                self.paper.PaperID.append({"type": paper_id_name, "id": str(paper_id)})
+                self.paper.PaperID.append(
+                    {"type": paper_id_name, "id": non_trailing_float_to_int(paper_id)}
+                )
 
     def parse_references(self):
         refs = []
@@ -194,7 +196,10 @@ class PaperParser(object):
                         for id_val in id_vals:
 
                             ref["PaperID"].append(
-                                {"type": paper_id_name, "id": str(id_val)}
+                                {
+                                    "type": paper_id_name,
+                                    "id": non_trailing_float_to_int(id_val),
+                                }
                             )
                 refs.append(ref)
         self.paper.Reference = refs
@@ -496,3 +501,9 @@ if __name__ == "__main__":
     load_data_mp(config.NO_OF_PROCESSES, config.PAPER_BATCH_SIZE)
     # load_data_mp(2, 1)
     # load_data()
+
+
+def non_trailing_float_to_int(number):
+    if isinstance(number, float) and (number - int(number) == 0.0):
+        return int(number)
+    return number
