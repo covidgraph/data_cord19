@@ -17,7 +17,9 @@ ThanksTo: https://pypi.org/project/cord-19-tools/
 
 **Run**
 
-`docker run -it --rm --name data-cord19 -e GC_NEO4J_URL="bolt://${HOSTNAME}:7687" covidgraph/data-cord19`
+`docker run -it --rm --name data-lens-org-covid19-patents -e CONFIGS_NEO4J={"host":"localhost"} covidgraph/data-cord19`
+
+> **NOTE**: For details on the `-e CONFIGS_NEO4J`env variable see https://github.com/covidgraph/motherlode/blob/master/README.md#the-neo4j-connection-string
 
 **Build local image**
 
@@ -27,13 +29,13 @@ From the root directorie of this repo run:
 
 **Run local image**
 
-`docker run -it --rm --name data-cord19 -e GC_NEO4J_URL='bolt://myneo4jhostname:7687' -e GC_NEO4J_USER=neo4j -e GC_NEO4J_PASSWORD=mysecret data-cord19`
+`docker run -it --rm --name data-cord19 -e CONFIGS_NEO4J={"host":"localhost"} data-cord19`
 
 Examples (neo4j runs on the docker linux host machine)
 
-`docker run -it --rm --name data-cord19 -v ${PWD}/dataset:/app/dataset -e GC_NEO4J_USER=neo4j, -e GC_NEO4J_PASSWORD=test -e CONFIGS_NEO4J_CON="bolt://${HOSTNAME}:7687" data-cord19`
+`docker run -it --rm --name data-cord19 -v ${PWD}/dataset:/app/dataset -e GC_NEO4J_USER=neo4j CONFIGS_NEO4J={"host":"localhost"} data-cord19`
 
-`docker run -it --rm --name data-cord19 -e CONFIGS_NEO4J_CON="bolt://neo4j:test@${HOSTNAME}:7687" data-cord19`
+`docker run -it --rm --name data-cord19 -e CONFIGS_NEO4J={"host":"localhost"} data-cord19`
 
 **Envs**
 
@@ -65,10 +67,10 @@ Copy `dataloader/env/DEFAULT.env` to `dataloader/env/DEVELOPMENT.env`:
 
 `cp dataloader/env/DEFAULT.env dataloader/env/DEVELOPMENT.env`
 
-Enter your neo4j connection string at `dataloader/env/DEVELOPMENT.env` into the variable `CONFIGS_NEO4J_CON`:
+Enter your neo4j connection string at `dataloader/env/DEVELOPMENT.env` into the variable `CONFIGS_NEO4J`:
 
 ```env
-CONFIGS_NEO4J_CON='bolt://myuser:mypasswd@localhost:7687'
+CONFIGS_NEO4J='bolt://myuser:mypasswd@localhost:7687'
 ```
 
 Install the requirements with

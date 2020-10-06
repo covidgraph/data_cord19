@@ -5,6 +5,8 @@ import logging
 import multiprocessing
 import functools
 import concurrent
+
+import py2neo
 from pebble import ProcessPool
 from linetimer import CodeTimer
 from Configs import getConfig
@@ -16,7 +18,8 @@ config = getConfig()
 log = logging.getLogger(__name__)
 log.addHandler(logging.StreamHandler())
 log.setLevel(getattr(logging, config.LOG_LEVEL))
-graph = config.get_graph()
+graph = py2neo.Graph(**config.NEO4J)
+
 
 
 class FullTextPaperJsonFilesIndex(object):
