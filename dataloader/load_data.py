@@ -18,6 +18,7 @@ config = getConfig()
 log = logging.getLogger(__name__)
 log.addHandler(logging.StreamHandler())
 log.setLevel(getattr(logging, config.LOG_LEVEL))
+log.info("Neo4j DB connection details: {}".format(config.NEO4J))
 graph = py2neo.Graph(**config.NEO4J)
 
 

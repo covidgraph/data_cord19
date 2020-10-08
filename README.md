@@ -17,7 +17,7 @@ ThanksTo: https://pypi.org/project/cord-19-tools/
 
 **Run**
 
-`docker run -it --rm --name data-lens-org-covid19-patents -e CONFIGS_NEO4J={"host":"localhost"} covidgraph/data-cord19`
+`docker run -it --rm --name data-lens-org-covid19-patents -e CONFIGS_NEO4J='{"host":"localhost"}' covidgraph/data-cord19`
 
 > **NOTE**: For details on the `-e CONFIGS_NEO4J`env variable see https://github.com/covidgraph/motherlode/blob/master/README.md#the-neo4j-connection-string
 
@@ -29,13 +29,15 @@ From the root directorie of this repo run:
 
 **Run local image**
 
-`docker run -it --rm --name data-cord19 -e CONFIGS_NEO4J={"host":"localhost"} data-cord19`
+`docker run -it --rm --name data-cord19 -e CONFIGS_NEO4J='{"host":"localhost"}' data-cord19`
 
 Examples (neo4j runs on the docker linux host machine)
 
-`docker run -it --rm --name data-cord19 -v ${PWD}/dataset:/app/dataset -e GC_NEO4J_USER=neo4j CONFIGS_NEO4J={"host":"localhost"} data-cord19`
+`docker run -it --rm --name data-cord19 -v ${PWD}/dataset:/app/dataset -e CONFIGS_NEO4J='{"host":"localhost"}' data-cord19`
 
-`docker run -it --rm --name data-cord19 -e CONFIGS_NEO4J={"host":"localhost"} data-cord19`
+`docker run -it --rm --name data-cord19 -e CONFIGS_NEO4J='{"host":"localhost"}' data-cord19`
+
+`docker run -it --rm --network host --name data-cord19 -v ${PWD}/dataset:/app/dataset -v ${PWD}/dataloader:/app/dataloader -e CONFIGS_NEO4J='{"host":"localhost"}' data-cord19`
 
 **Envs**
 

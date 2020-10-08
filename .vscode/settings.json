@@ -2,5 +2,13 @@
     "python.formatting.provider": "black",
     "python.linting.pylintEnabled": false,
     "python.linting.banditEnabled": true,
-    "python.linting.enabled": true
+    "python.linting.enabled": true,
+    "search.exclude": {
+        "**/dataset/**": true,
+        "**/testdataset/**": true,
+    },
+    "files.watcherExclude": {
+        "**/dataset/**": true,
+        "**/testdataset/**": true,
+    }
 }
