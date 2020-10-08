@@ -37,6 +37,8 @@ Examples (neo4j runs on the docker linux host machine)
 
 `docker run -it --rm --name data-cord19 -e CONFIGS_NEO4J='{"host":"localhost"}' data-cord19`
 
+My common dev docker call looks like this:
+
 `docker run -it --rm --network host --name data-cord19 -v ${PWD}/dataset:/app/dataset -v ${PWD}/dataloader:/app/dataloader -e CONFIGS_NEO4J='{"host":"localhost"}' data-cord19`
 
 **Envs**
@@ -45,13 +47,10 @@ The most important Env variables are:
 
 `ENV`: will be `PROD` or `DEV`
 
-`GC_NEO4J_URL`: The full bolt url example 'bolt://myneo4jhostname:7687'
 
-`GC_NEO4J_USER`: The neo4j user
+`CONFIGS_NEO4J`: defaults to `{"host":"localhost"}`. The connections details for the database. For details see https://github.com/covidgraph/motherlode/blob/master/README.md#the-neo4j-connection-string
 
-`GC_NEO4J_PASSWORD`: The neo4j password
-
-besides that you can set all variables in dataloader/config.py via env variable with a `CONFIGS_` prefix. See https://git.connect.dzd-ev.de/dzdtools/pythonmodules/-/tree/master/Configs for more details
+besides that you can set all variables in `dataloader/config.py` via env variable with a `CONFIGS_` prefix. See https://git.connect.dzd-ev.de/dzdtools/pythonmodules/-/tree/master/Configs for more details on how to manipulate the parameters
 
 **Volumes**
 
@@ -72,7 +71,7 @@ Copy `dataloader/env/DEFAULT.env` to `dataloader/env/DEVELOPMENT.env`:
 Enter your neo4j connection string at `dataloader/env/DEVELOPMENT.env` into the variable `CONFIGS_NEO4J`:
 
 ```env
-CONFIGS_NEO4J='bolt://myuser:mypasswd@localhost:7687'
+CONFIGS_NEO4J={"host":"localhost"}
 ```
 
 Install the requirements with
