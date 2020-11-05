@@ -29,7 +29,7 @@ From the root directorie of this repo run:
 
 **Run local image**
 
-`docker run -it --rm --name data-cord19 -e CONFIGS_NEO4J='{"host":"localhost"}' data-cord19`
+`docker run -it --rm --network host --name data-cord19 -e CONFIGS_NEO4J='{"host":"localhost"}' data-cord19`
 
 Examples (neo4j runs on the docker linux host machine)
 
