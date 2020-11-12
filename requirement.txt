@@ -1,4 +1,4 @@
-git+https://github.com/motey/py2neo.git@proc-id-in-connection-profile#egg=py2neo
+git+https://github.com/technige/py2neo.git@master#egg=py2neo
 linetimer
 pebble
 git+https://github.com/motey/cord-19-tools
