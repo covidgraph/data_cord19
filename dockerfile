@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM python:3.8
 
 RUN mkdir -p /app/dataset
 RUN mkdir -p /app/dataloader

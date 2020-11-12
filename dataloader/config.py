@@ -8,7 +8,7 @@ from Configs import ConfigBase
 
 class DEFAULT(ConfigBase):
     LOG_LEVEL = "INFO"
-    NEO4J = {"host":"localhost"}
+    NEO4J = {"host": "localhost"}
     # commit every n nodes/relations
     COMMIT_INTERVAL = 10000
     # Bundle workloads to <PAPER_BATCH_SIZE>-papers and load them into database
@@ -90,6 +90,7 @@ class DEFAULT(ConfigBase):
         "issn",
         "pages",
     ]
+
 
 # All following config classes inherit from DEFAULT
 class PRODUCTION(DEFAULT):
