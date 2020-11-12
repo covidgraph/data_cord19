@@ -104,7 +104,7 @@ class Paper(object):
     def to_dict(self):
         dic = self.properties
         # sub/child dicts
-        dic["authors"] = self.Author
+        dic["Author"] = self.Author
         dic["PaperID"] = self.PaperID
         dic["Reference"] = self.Reference
         dic["BodyText"] = self.BodyText
@@ -144,7 +144,7 @@ class PaperParser(object):
 
     def parse_authors(self):
         def parse_author_row(paper_row):
-            authors_cell = paper_row["authors"]
+            authors_cell = paper_row["author"]
             authors = []
             if pandas.isna(authors_cell):
                 return authors
@@ -362,10 +362,10 @@ class Dataloader(object):
             "Location": "AllAttributes",
             "Abstract": ["text"],  # Generate an id based on the property "text"
             "Affiliation": "AllAttributes",  # Generate an id based all properties
-            "authors": "AllAttributes",
+            "Author": "AllAttributes",
             "Citation": "AllAttributes",
         }
-        c.config_dict_concat_list_attr = {"authors": {"middle": " "}}
+        c.config_dict_concat_list_attr = {"Author": {"middle": " "}}
         c.config_str_collection_hub_label = "{LIST_MEMBER_LABEL}Collection"
         c.config_list_collection_hub_extra_labels = []
 
