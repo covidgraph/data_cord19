@@ -38,6 +38,7 @@ class FullTextPaperJsonFilesIndex(object):
                 # The filename is made of the paper id (a sha hash of the origin pdf)
                 file_id = os.path.splitext(os.path.basename(file))[0]
                 self._index[file_id] = os.path.join(root, file)
+        log.info(f"Indexed {len(list(self._index.keys()))} json files")
 
     def get_full_text_paper_pathes(self, paper_sha, paper_pmcid):
         pathes = []
@@ -507,7 +508,7 @@ def load_data():
 
 if __name__ == "__main__":
     # with CodeTimer(unit="s"):
-    # load_data_mp(config.NO_OF_PROCESSES, config.PAPER_BATCH_SIZE)
-    load_data_mp(1, 1)
+    load_data_mp(config.NO_OF_PROCESSES, config.PAPER_BATCH_SIZE)
+    # load_data_mp(1, 1)
     # load_data()
 
