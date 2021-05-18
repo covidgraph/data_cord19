@@ -33,7 +33,7 @@ class DEFAULT(ConfigBase):
 
     # Where to store the downloaded dataset
     DATA_BASE_DIR = os.path.join(SCRIPT_DIR, "../dataset/")
-
+    # DATA_BASE_DIR = "/media/tim/SSD_1201/cord19"
     # Where the 'metadata.csv' file from the CORD-19 Dataset is stored
     METADATA_FILE = os.path.join(DATA_BASE_DIR, "metadata.csv")
 

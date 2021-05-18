@@ -1,4 +1,5 @@
 import os
+from typing import NamedTuple
 import pandas
 import json
 import logging
@@ -72,7 +73,7 @@ class Paper(object):
     BodyText = None
     Abstract = None
 
-    def __init__(self, row: pandas.Series):
+    def __init__(self, row: NamedTuple):
         # cord_uid,sha,source,title,doi,pmcid,pubmed_id,license,abstract,publish_time,author,journal,microsoft_academic_id,who_covidence,has_full_text,full_text_file,url
 
         # cord_uid,sha,source_x,title,doi,pmcid,pubmed_id,license,abstract,publish_time,authors,journal,mag_id,who_covidence_id,arxiv_id,pdf_json_files,pmc_json_files,url,s2_id
@@ -88,10 +89,10 @@ class Paper(object):
         # at the moment we ignore all this and only take the last refernce in list, as it usally the most recent paper and not a supplemental paper (not always :/ )
         # ToDo: Distinguish duplicate, supplemental and reviewd papers. Ignore duplicates and store the supplemental paper somehow
         self.paper_sha = None
-        if not pandas.isna(row["sha"]):
-            full_text_paper_id = [pid.strip() for pid in row["sha"].split(";")][-1:]
+        if not pandas.isna(row.sha):
+            full_text_paper_id = [pid.strip() for pid in row.sha.split(";")][-1:]
             self.paper_sha = full_text_paper_id[0] if full_text_paper_id[0] else None
-        self.paper_pmcid = row["pmcid"] if not pandas.isna(row["pmcid"]) else None
+        self.paper_pmcid = row.pmcid if not pandas.isna(row.pmcid) else None
         self._load_full_json()
 
         self.properties = {"cord19-fulltext_hash": self.paper_sha}
@@ -138,13 +139,13 @@ class PaperParser(object):
 
     def parse_paper_properties(self):
         for prop_name in config.METADATA_PAPER_PROPERTY_COLUMNS:
-            prop_val = self.paper._raw_data_csv_row[prop_name]
+            prop_val = getattr(self.paper._raw_data_csv_row, prop_name)
             if not pandas.isna(prop_val):
                 self.paper.properties[prop_name] = prop_val
 
     def parse_authors(self):
         def parse_author_row(paper_row):
-            authors_cell = paper_row["author"]
+            authors_cell = paper_row.author
             authors = []
             if pandas.isna(authors_cell):
                 return authors
@@ -172,7 +173,7 @@ class PaperParser(object):
     def parse_paper_ids(self):
         for id_col in config.METADATA_FILE_ID_COLUMNS:
             paper_id_name = self._normalize_paper_id_name(id_col)
-            paper_id = self.paper._raw_data_csv_row[id_col]
+            paper_id = getattr(self.paper._raw_data_csv_row, id_col)
             if not pandas.isna(paper_id):
                 self.paper.PaperID.append(
                     {"type": paper_id_name, "id": self._normalize_paper_id(paper_id),}
@@ -238,7 +239,7 @@ class PaperParser(object):
                     self.paper.Abstract.append(abstract_sections)
 
         else:
-            abst = self.paper._raw_data_csv_row["abstract"]
+            abst = self.paper._raw_data_csv_row.abstract
             if not pandas.isna(abst):
                 self.paper.Abstract.append({"text": abst})
 
@@ -287,7 +288,7 @@ class Dataloader(object):
         paper_total_count = len(self.data)
 
         paper_count = 0
-        for index, row in self.data.iterrows():
+        for row in self.data.itertuples():
             papers.append(Paper(row))
             if len(papers) == config.PAPER_BATCH_SIZE:
                 log.info(
@@ -313,7 +314,7 @@ class Dataloader(object):
         ct = CodeTimer("Convert paper to graph", silent=True, unit="s")
         with ct:
             for index, paper in enumerate(papers):
-                self.loader.load_json(paper.to_dict(), "Paper")
+                self.loader.parse(paper.to_dict(), "Paper")
         log.debug("Convert papers to graph took {}s".format(ct.took))
 
         try:
@@ -506,7 +507,7 @@ def load_data():
 
 if __name__ == "__main__":
     # with CodeTimer(unit="s"):
-    load_data_mp(config.NO_OF_PROCESSES, config.PAPER_BATCH_SIZE)
-    # load_data_mp(2, 1)
+    # load_data_mp(config.NO_OF_PROCESSES, config.PAPER_BATCH_SIZE)
+    load_data_mp(1, 1)
     # load_data()
 
