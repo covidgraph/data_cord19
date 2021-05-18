@@ -57,7 +57,6 @@ class FullTextPaperJsonFilesIndex(object):
         return pathes
 
 
-json_files_index = FullTextPaperJsonFilesIndex(config.DATA_BASE_DIR)
 # ToDo:
 # * (postponed for now)Create a option to bootstrap a paper only by json, for supplement papers. hang these supplemental papers on the main paper
 
@@ -74,7 +73,7 @@ class Paper(object):
     BodyText = None
     Abstract = None
 
-    def __init__(self, row: NamedTuple):
+    def __init__(self, row: NamedTuple, json_file_index):
         # cord_uid,sha,source,title,doi,pmcid,pubmed_id,license,abstract,publish_time,author,journal,microsoft_academic_id,who_covidence,has_full_text,full_text_file,url
 
         # cord_uid,sha,source_x,title,doi,pmcid,pubmed_id,license,abstract,publish_time,authors,journal,mag_id,who_covidence_id,arxiv_id,pdf_json_files,pmc_json_files,url,s2_id
@@ -84,6 +83,7 @@ class Paper(object):
         # 2b73a28n,348055649b6b8cf2b9a376498df9bf41f7123605,PMC,Role of endothelin-1 in lung disease,10.1186/rr44,PMC59574,11686871,no-cc,"Endothelin-1 (ET-1) is a 21 amino acid peptide with diverse biological activity that has been implicated in numerous diseases. ET-1 is a potent mitogen regulator of smooth muscle tone, and inflammatory mediator that may play a key role in diseases of the airways, pulmonary circulation, and inflammatory lung diseases, both acute and chronic. This review will focus on the biology of ET-1 and its role in lung disease.",2001-02-22,"Fagan, Karen A; McMurtry, Ivan F; Rodman, David M",Respir Res,,,,document_parses/pdf_json/348055649b6b8cf2b9a376498df9bf41f7123605.json,document_parses/pmc_json/PMC59574.xml.json,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC59574/,
 
         self._raw_data_csv_row = row
+        self.json_files_index = json_file_index
         # some row refernce multiple json files (in form of a sha hash of the paper).
         # in most cases the files are the same (dunno why)
         # in some cases the extra papers a supplemental papers, in some cases they are reviewed version.
@@ -115,7 +115,7 @@ class Paper(object):
 
     def _load_full_json(self):
         self.full_text_source_file_pathes = []
-        self.full_text_source_file_pathes = json_files_index.get_full_text_paper_pathes(
+        self.full_text_source_file_pathes = self.json_files_index.get_full_text_paper_pathes(
             self.paper_sha, self.paper_pmcid
         )
         if self.full_text_source_file_pathes:
@@ -281,6 +281,7 @@ class Dataloader(object):
         self.data = self.data.rename(
             columns=config.METADATA_FILE_COLUMN_OVERRIDE, errors="raise"
         )
+        self.json_files_index = FullTextPaperJsonFilesIndex(config.DATA_BASE_DIR)
         self._build_loader()
 
     def parse(self):
@@ -290,7 +291,7 @@ class Dataloader(object):
 
         paper_count = 0
         for row in self.data.itertuples():
-            papers.append(Paper(row))
+            papers.append(Paper(row, self.json_files_index))
             if len(papers) == config.PAPER_BATCH_SIZE:
                 log.info(
                     "{}Load next {} papers.".format(
@@ -312,6 +313,7 @@ class Dataloader(object):
         self.load(papers)
 
     def load(self, papers):
+
         ct = CodeTimer("Convert paper to graph", silent=True, unit="s")
         with ct:
             for index, paper in enumerate(papers):
@@ -393,7 +395,6 @@ class Dataloader(object):
 def worker_task(
     metadata_csv_path, from_row: int, to_row: int, worker_name: str,
 ):
-
     log.info("Start {} -- row {} to row {}".format(worker_name, from_row, to_row))
     # l = 1 / 0
     dataloader = Dataloader(
